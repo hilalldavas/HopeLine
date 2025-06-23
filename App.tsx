@@ -1,28 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { useState } from 'react'
+import LoginScreen from './src/presentation/pages/auth/LoginScreen'
+import RegisterScreen from './src/presentation/pages/auth/RegisterScreen'
+import DashboardScreen from './src/presentation/pages/dashboard/DashboardScreen'
+import ProfileScreen from './src/presentation/pages/profile/ProfileScreen'
+import MedicationScreen from './src/presentation/pages/medication/MedicationScreen'
+import CalendarScreen from './src/presentation/pages/calendar/CalendarScreen'
+import SymptomScreen from './src/presentation/pages/symptom/SymptomScreen'
+import MoodScreen from './src/presentation/pages/mood/MoodScreen'
+import ReportScreen from './src/presentation/pages/report/ReportScreen'
+import NutritionScreen from './src/presentation/pages/nutrition/NutritionScreen'
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+const App = () => {
+  const [screen, setScreen] = useState<'login' | 'register'>('login');
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
-  );
+  return <MedicationScreen />;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
+export default App
