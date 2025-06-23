@@ -21,7 +21,9 @@ const MedicationScreen: React.FC = () => {
   useEffect(() => {
     if (search.length > 0) {
       setFilteredDrugs(
-        allDrugs.filter((d: any) => d["ÜRÜN ADI"].toLowerCase().includes(search.toLowerCase()))
+        allDrugs.filter((d: any) =>
+          (d["ÜRÜN ADI"] || '').toLowerCase().includes(search.toLowerCase())
+        )
       );
     } else {
       setFilteredDrugs([]);
@@ -30,10 +32,10 @@ const MedicationScreen: React.FC = () => {
 
   const addDrug = () => {
     if (!selectedDrug || !dose || !time) return;
-    setUserDrugs([
+    setUserDrugs([ 
       ...userDrugs,
       {
-        id: Date.now().toString(),
+        id: Date.now().toString(),  // id'yi benzersiz tutmaya devam et
         name: selectedDrug["ÜRÜN ADI"],
         dose,
         time,
@@ -77,13 +79,21 @@ const MedicationScreen: React.FC = () => {
                   {filteredDrugs.slice(0, 5).map(drug => (
                     <TouchableOpacity key={drug.BARKOD} onPress={() => {
                       setSelectedDrug(drug);
-                      setDose(drug.dose || '');
+                      setDose(drug["DOZ MİKTARI"] || '');
                     }} style={styles.autocompleteItem}>
-                      <View style={{ flex: 1 }}>
-                        <Text style={styles.drugName}>{drug["ÜRÜN ADI"]}</Text>
-                        <Text style={styles.drugEtken}>Etken Madde: {drug["ETKEN MADDE"]}</Text>
+                      <View style={styles.autocompleteContent}>
+                        <Text style={styles.autocompleteDrugName}>{(drug["ÜRÜN ADI"] || '').trim()}</Text>
+                        <View style={styles.autocompleteInfoRow}>
+                          <Text style={styles.autocompleteEtiket}>Etken Madde:</Text>
+                          <Text style={styles.autocompleteValue}>{drug["ETKEN MADDE"]}</Text>
+                          {drug["DOZ MİKTARI"] && (
+                            <>
+                              <Text style={styles.autocompleteEtiket}>  |  Doz:</Text>
+                              <Text style={styles.autocompleteValue}>{drug["DOZ MİKTARI"]}</Text>
+                            </>
+                          )}
+                        </View>
                       </View>
-                      {drug.dose && <Text style={styles.drugDose}>Doz: {drug.dose}</Text>}
                     </TouchableOpacity>
                   ))}
                   {filteredDrugs.length === 0 && <Text style={styles.noResult}>Sonuç yok</Text>}
@@ -100,32 +110,39 @@ const MedicationScreen: React.FC = () => {
             <View style={styles.etkenBox}>
               <Text style={styles.etkenLabel}>Etken Madde:</Text>
               <Text style={styles.etkenValue}>{selectedDrug["ETKEN MADDE"]}</Text>
+              {selectedDrug["DOZ MİKTARI"] && (
+                <Text style={styles.etkenValue}>Doz: {selectedDrug["DOZ MİKTARI"]}</Text>
+              )}
             </View>
           )}
-          <View style={styles.inputRow}>
-            <TextInput
-              style={[styles.input, { flex: 1, marginRight: 6 }]}
-              placeholder="Doz (örn. 500mg)"
-              value={dose}
-              onChangeText={setDose}
-              editable={!!selectedDrug}
-            />
-            <TextInput
-              style={[styles.input, { flex: 1, marginLeft: 6 }]}
-              placeholder="Saat (örn. 08:00) ⏰"
-              value={time}
-              onChangeText={setTime}
-              editable={!!selectedDrug}
-            />
-          </View>
-          <TouchableOpacity style={[styles.addButton, !(selectedDrug && dose && time) && { opacity: 0.5 }]} onPress={addDrug} disabled={!(selectedDrug && dose && time)}>
-            <Text style={styles.addButtonText}>Ekle</Text>
-          </TouchableOpacity>
+          {!(search.length > 0 && !selectedDrug) && (
+            <>
+              <View style={styles.inputRow}>
+                <TextInput
+                  style={[styles.input, { flex: 1, marginRight: 6 }]}
+                  placeholder="Doz (örn. 500mg)"
+                  value={dose}
+                  onChangeText={setDose}
+                  editable={!!selectedDrug}
+                />
+                <TextInput
+                  style={[styles.input, { flex: 1, marginLeft: 6 }]}
+                  placeholder="Saat (örn. 08:00) ⏰"
+                  value={time}
+                  onChangeText={setTime}
+                  editable={!!selectedDrug}
+                />
+              </View>
+              <TouchableOpacity style={[styles.addButton, !(selectedDrug && dose && time) && { opacity: 0.5 }]} onPress={addDrug} disabled={!(selectedDrug && dose && time)}>
+                <Text style={styles.addButtonText}>Ekle</Text>
+              </TouchableOpacity>
+            </>
+          )}
         </View>
         <Text style={styles.sectionTitle}>İlaçlarım</Text>
         <FlatList
           data={userDrugs}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.id} // keyExtractor kullanarak benzersiz ID sağladık
           renderItem={({ item }) => (
             <View style={styles.card}>
               <Text style={styles.cardIcon}>💊</Text>
@@ -156,10 +173,45 @@ const styles = StyleSheet.create({
   inputRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 8 },
   input: { backgroundColor: '#fff', borderRadius: 8, borderWidth: 1, borderColor: '#eee', padding: 12, fontSize: 15 },
   autocompleteBox: { backgroundColor: '#fff', borderRadius: 8, borderWidth: 1, borderColor: '#eee', marginTop: 2, marginBottom: 8, maxHeight: 120 },
-  autocompleteItem: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 10, borderBottomWidth: 1, borderBottomColor: '#eee' },
-  drugName: { fontWeight: '600', color: '#1976D2', flex: 1 },
-  drugDose: { fontSize: 13, color: '#444', marginLeft: 8 },
-  drugEtken: { fontSize: 13, color: '#888', marginTop: 2 },
+  autocompleteItem: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    marginBottom: 8,
+    padding: 12,
+    shadowColor: '#000',
+    shadowOpacity: 0.04,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  autocompleteContent: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  },
+  autocompleteDrugName: {
+    fontWeight: '700',
+    color: '#1976D2',
+    fontSize: 16,
+    marginBottom: 4,
+  },
+  autocompleteInfoRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    backgroundColor: '#F5F5F5',
+    borderRadius: 6,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+  },
+  autocompleteEtiket: {
+    fontWeight: '600',
+    color: '#888',
+    fontSize: 12,
+  },
+  autocompleteValue: {
+    color: '#444',
+    fontSize: 12,
+    marginLeft: 2,
+  },
   noResult: { padding: 10, color: '#888' },
   clearDrug: { marginLeft: 8, backgroundColor: '#E3EAFD', borderRadius: 8, padding: 6 },
   etkenBox: { flexDirection: 'row', alignItems: 'center', marginBottom: 8, marginTop: 2 },
@@ -182,4 +234,4 @@ const styles = StyleSheet.create({
   emptyText: { color: '#888', fontSize: 15 },
 });
 
-export default MedicationScreen; 
+export default MedicationScreen;
