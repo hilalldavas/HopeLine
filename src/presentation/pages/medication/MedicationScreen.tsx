@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput, SafeAreaView, Modal } from 'react-native';
 import allDrugs from '../../../data/oncologydrugdata.json';
 
 interface Drug {
@@ -8,6 +8,8 @@ interface Drug {
   dose: string;
   time: string;
   etkenMadde?: string;
+  addedAt?: string;
+  isActive?: boolean;
 }
 
 const MedicationScreen: React.FC = () => {
@@ -17,6 +19,8 @@ const MedicationScreen: React.FC = () => {
   const [dose, setDose] = useState('');
   const [time, setTime] = useState('');
   const [userDrugs, setUserDrugs] = useState<Drug[]>([]);
+  const [editDrugId, setEditDrugId] = useState<string | null>(null);
+  const [historyModalVisible, setHistoryModalVisible] = useState(false);
 
   useEffect(() => {
     if (search.length > 0) {
@@ -32,14 +36,16 @@ const MedicationScreen: React.FC = () => {
 
   const addDrug = () => {
     if (!selectedDrug || !dose || !time) return;
-    setUserDrugs([ 
+    setUserDrugs([
       ...userDrugs,
       {
-        id: Date.now().toString(),  // id'yi benzersiz tutmaya devam et
+        id: Date.now().toString(),
         name: selectedDrug["ÜRÜN ADI"],
         dose,
         time,
-        etkenMadde: selectedDrug["ETKEN MADDE"]
+        etkenMadde: selectedDrug["ETKEN MADDE"],
+        addedAt: new Date().toISOString(),
+        isActive: true,
       },
     ]);
     setSearch('');
@@ -54,6 +60,68 @@ const MedicationScreen: React.FC = () => {
     setDose('');
     setTime('');
   };
+
+  const deleteDrug = (id: string) => {
+    setUserDrugs(userDrugs.map(drug =>
+      drug.id === id ? { ...drug, isActive: false } : drug
+    ));
+    if (editDrugId === id) {
+      setEditDrugId(null);
+      clearSelectedDrug();
+    }
+  };
+
+  const startEditDrug = (drug: Drug) => {
+    setEditDrugId(drug.id);
+    setSelectedDrug({
+      "ÜRÜN ADI": drug.name,
+      "ETKEN MADDE": drug.etkenMadde,
+      "DOZ MİKTARI": drug.dose,
+    });
+    setDose(drug.dose);
+    setTime(drug.time);
+    setSearch(drug.name);
+  };
+
+  const updateDrug = () => {
+    if (!selectedDrug || !dose || !time || !editDrugId) return;
+    setUserDrugs(userDrugs.map(drug =>
+      drug.id === editDrugId
+        ? {
+            ...drug,
+            name: selectedDrug["ÜRÜN ADI"],
+            dose,
+            time,
+            etkenMadde: selectedDrug["ETKEN MADDE"]
+          }
+        : drug
+    ));
+    setEditDrugId(null);
+    setSearch('');
+    setSelectedDrug(null);
+    setDose('');
+    setTime('');
+  };
+
+  function formatDateTime(dateString?: string) {
+    if (!dateString) return 'Bilgi yok';
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return 'Bilgi yok';
+    return `${date.toLocaleDateString('tr-TR')} ${date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' })}`;
+  }
+
+  function DrugHistoryItem({ item, formatDateTime }: { item: Drug, formatDateTime: (d?: string) => string }) {
+    return (
+      <View style={styles.historyCard}>
+        <Text style={styles.historyName}>{item.name}</Text>
+        <Text style={styles.historyInfo}>Doz: {item.dose}  |  Saat: {item.time}</Text>
+        <Text style={styles.historyDate}>Eklenme: {formatDateTime(item.addedAt)}</Text>
+        {item.isActive === false && (
+          <Text style={styles.deletedLabel}>Silindi</Text>
+        )}
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -133,16 +201,22 @@ const MedicationScreen: React.FC = () => {
                   editable={!!selectedDrug}
                 />
               </View>
-              <TouchableOpacity style={[styles.addButton, !(selectedDrug && dose && time) && { opacity: 0.5 }]} onPress={addDrug} disabled={!(selectedDrug && dose && time)}>
-                <Text style={styles.addButtonText}>Ekle</Text>
-              </TouchableOpacity>
+              {editDrugId ? (
+                <TouchableOpacity style={[styles.addButton, !(selectedDrug && dose && time) && { opacity: 0.5 }]} onPress={updateDrug} disabled={!(selectedDrug && dose && time)}>
+                  <Text style={styles.addButtonText}>Güncelle</Text>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity style={[styles.addButton, !(selectedDrug && dose && time) && { opacity: 0.5 }]} onPress={addDrug} disabled={!(selectedDrug && dose && time)}>
+                  <Text style={styles.addButtonText}>Ekle</Text>
+                </TouchableOpacity>
+              )}
             </>
           )}
         </View>
         <Text style={styles.sectionTitle}>İlaçlarım</Text>
         <FlatList
-          data={userDrugs}
-          keyExtractor={item => item.id} // keyExtractor kullanarak benzersiz ID sağladık
+          data={userDrugs.filter(drug => drug.isActive !== false)}
+          keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <View style={styles.card}>
               <Text style={styles.cardIcon}>💊</Text>
@@ -153,12 +227,47 @@ const MedicationScreen: React.FC = () => {
                   <View style={styles.doseBox}><Text style={styles.dose}>{item.dose}</Text></View>
                   <View style={styles.timeBox}><Text style={styles.time}>{item.time}</Text></View>
                 </View>
+                <View style={{ flexDirection: 'row', marginTop: 8 }}>
+                  <TouchableOpacity style={[styles.actionButton, { backgroundColor: '#E3F2FD', marginRight: 8 }]} onPress={() => startEditDrug(item)}>
+                    <Text style={{ color: '#1976D2', fontWeight: '700' }}>Düzenle</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={[styles.actionButton, { backgroundColor: '#FFEBEE' }]} onPress={() => deleteDrug(item.id)}>
+                    <Text style={{ color: '#D32F2F', fontWeight: '700' }}>Sil</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           )}
           ListEmptyComponent={<View style={styles.emptyBox}><Text style={styles.emptyText}>Henüz ilaç eklenmedi.</Text></View>}
           contentContainerStyle={{ paddingBottom: 24 }}
         />
+        <TouchableOpacity style={styles.historyButton} onPress={() => setHistoryModalVisible(true)}>
+          <Text style={styles.historyButtonText}>Geçmişi Gör</Text>
+        </TouchableOpacity>
+        <Modal
+          visible={historyModalVisible}
+          animationType="slide"
+          transparent={true}
+          onRequestClose={() => setHistoryModalVisible(false)}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
+              <Text style={styles.modalTitle}>İlaç Geçmişi</Text>
+              <FlatList
+                data={[...userDrugs].sort((a, b) => (b.addedAt || '').localeCompare(a.addedAt || ''))}
+                keyExtractor={item => item.id + '_history'}
+                renderItem={({ item }) => (
+                  <DrugHistoryItem item={item} formatDateTime={formatDateTime} />
+                )}
+                ListEmptyComponent={<View style={styles.emptyBox}><Text style={styles.emptyText}>Henüz geçmiş yok.</Text></View>}
+                contentContainerStyle={{ paddingBottom: 24 }}
+              />
+              <TouchableOpacity style={styles.closeModalButton} onPress={() => setHistoryModalVisible(false)}>
+                <Text style={styles.closeModalButtonText}>Kapat</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
       </View>
     </SafeAreaView>
   );
@@ -232,6 +341,113 @@ const styles = StyleSheet.create({
   time: { fontSize: 15, color: '#1976D2', fontWeight: '600' },
   emptyBox: { backgroundColor: '#F5F5F5', borderRadius: 14, padding: 18, alignItems: 'center', marginTop: 12 },
   emptyText: { color: '#888', fontSize: 15 },
+  actionButton: {
+    paddingVertical: 6,
+    paddingHorizontal: 18,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOpacity: 0.04,
+    shadowRadius: 2,
+    elevation: 1,
+  },
+  historyCard: {
+    backgroundColor: '#F3F8E8',
+    borderRadius: 16,
+    paddingVertical: 16,
+    paddingHorizontal: 18,
+    marginBottom: 16,
+    shadowColor: '#000',
+    shadowOpacity: 0.06,
+    shadowRadius: 6,
+    elevation: 2,
+  },
+  historyName: {
+    fontWeight: '700',
+    color: '#2E7D32',
+    fontSize: 16,
+    marginBottom: 6,
+    letterSpacing: 0.1,
+  },
+  historyInfo: {
+    color: '#4B4B4B',
+    fontSize: 14,
+    marginBottom: 8,
+    fontWeight: '500',
+  },
+  historyDate: {
+    color: '#A0A0A0',
+    fontSize: 12,
+    marginTop: 6,
+    fontStyle: 'italic',
+    alignSelf: 'flex-end',
+  },
+  historyButton: {
+    backgroundColor: '#1976D2',
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: 10,
+    marginBottom: 18,
+  },
+  historyButtonText: {
+    color: '#fff',
+    fontWeight: '700',
+    fontSize: 16,
+    letterSpacing: 0.2,
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.18)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    backgroundColor: '#fff',
+    borderRadius: 18,
+    padding: 22,
+    width: '90%',
+    maxHeight: '80%',
+    shadowColor: '#000',
+    shadowOpacity: 0.12,
+    shadowRadius: 12,
+    elevation: 8,
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: '800',
+    color: '#1976D2',
+    marginBottom: 18,
+    alignSelf: 'center',
+  },
+  closeModalButton: {
+    backgroundColor: '#E3F2FD',
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: 10,
+  },
+  closeModalButtonText: {
+    color: '#1976D2',
+    fontWeight: '700',
+    fontSize: 15,
+  },
+  deletedLabel: {
+    color: '#D32F2F',
+    fontWeight: '700',
+    fontSize: 13,
+    marginTop: 6,
+    alignSelf: 'flex-end',
+    backgroundColor: '#FFEBEE',
+    borderRadius: 6,
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+  },
 });
 
 export default MedicationScreen;
