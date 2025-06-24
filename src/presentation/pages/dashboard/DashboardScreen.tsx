@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, Dimensions, Animated } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import ConfettiCannon from 'react-native-confetti-cannon';
+import Chatbox from '../../components/Chatbox';
 
 const mockMedications = [
   { id: '1', name: 'Capecitabine', time: '08:00' },
@@ -76,7 +77,7 @@ const BackgroundAnimation = () => {
 
 const DashboardScreen: React.FC = () => {
   const [showConfetti, setShowConfetti] = React.useState(true);
-  const fullText = 'Merhaba, Ece';
+  const fullText = 'Merhaba, Hilal';
 
   React.useEffect(() => {
     setShowConfetti(true);
@@ -128,8 +129,7 @@ const DashboardScreen: React.FC = () => {
           </View>
         </ScrollView>
       </Animatable.View>
-      {/* Alt menü */}
-      
+      <Chatbox />
     </View>
   );
 };
@@ -137,7 +137,7 @@ const DashboardScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff', paddingTop: 40 },
   logoContainer: { alignItems: 'center', marginBottom: 8 },
-  logoImg: { width: 120, height: 120, resizeMode: 'contain' },
+  logoImg: { width: 150, height: 150, resizeMode: 'contain' },
   logoText: { fontSize: 18, color: '#1976D2', fontWeight: 'bold', marginTop: 2, opacity: 0.7 },
   hello: { fontSize: 28, fontWeight: '700', marginLeft: 24, marginBottom: 8, color: '#222' },
   sectionTitle: { fontSize: 20, fontWeight: '600', marginLeft: 24, marginBottom: 16, color: '#444' },

@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput, SafeAreaView, Modal, Dimensions, Animated } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput, SafeAreaView, Modal, Dimensions, Animated, Platform } from 'react-native';
 import allDrugs from '../../../data/oncologydrugdata.json';
 import * as Animatable from 'react-native-animatable';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 // Animated baloncuklar
 const BackgroundAnimation = () => {
@@ -85,6 +86,8 @@ const MedicationScreen: React.FC = () => {
   const [userDrugs, setUserDrugs] = useState<Drug[]>([]);
   const [editDrugId, setEditDrugId] = useState<string | null>(null);
   const [historyModalVisible, setHistoryModalVisible] = useState(false);
+  const [showTimePicker, setShowTimePicker] = useState(false);
+  const [etkenMadde, setEtkenMadde] = useState('');
 
   useEffect(() => {
     if (search.length > 0) {
@@ -116,6 +119,7 @@ const MedicationScreen: React.FC = () => {
     setSelectedDrug(null);
     setDose('');
     setTime('');
+    setEtkenMadde('');
   };
 
   const clearSelectedDrug = () => {
@@ -123,6 +127,7 @@ const MedicationScreen: React.FC = () => {
     setSearch('');
     setDose('');
     setTime('');
+    setEtkenMadde('');
   };
 
   const deleteDrug = (id: string) => {
@@ -145,6 +150,7 @@ const MedicationScreen: React.FC = () => {
     setDose(drug.dose);
     setTime(drug.time);
     setSearch(drug.name);
+    setEtkenMadde(drug.etkenMadde || '');
   };
 
   const updateDrug = () => {
@@ -165,6 +171,7 @@ const MedicationScreen: React.FC = () => {
     setSelectedDrug(null);
     setDose('');
     setTime('');
+    setEtkenMadde('');
   };
 
   function formatDateTime(dateString?: string) {
@@ -187,6 +194,16 @@ const MedicationScreen: React.FC = () => {
     );
   }
 
+  // Saat seçici açıldığında seçilen saati güncelle
+  const handleTimeChange = (_: any, selectedTime?: Date) => {
+    setShowTimePicker(false);
+    if (selectedTime) {
+      const hours = selectedTime.getHours().toString().padStart(2, '0');
+      const minutes = selectedTime.getMinutes().toString().padStart(2, '0');
+      setTime(`${hours}:${minutes}`);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <BackgroundAnimation />
@@ -194,51 +211,53 @@ const MedicationScreen: React.FC = () => {
         <Text style={styles.title}>İlaç Takibi</Text>
         <View style={styles.addPanel}>
           <Text style={styles.panelTitle}>İlaç Ekle</Text>
-          <View style={styles.inputRow}>
-            <View style={{ flex: 1 }}>
-              <TextInput
-                style={styles.input}
-                placeholder="İlaç adı yazın"
-                value={selectedDrug ? selectedDrug["ÜRÜN ADI"] : search}
-                onChangeText={text => {
-                  setSearch(text);
-                  setSelectedDrug(null);
-                  setDose('');
-                }}
-                editable={!selectedDrug}
+          <TextInput
+            style={styles.input}
+            placeholder="İlaç adı yazın"
+            value={selectedDrug ? selectedDrug["ÜRÜN ADI"] : search}
+            onChangeText={text => {
+              setSearch(text);
+              setSelectedDrug(null);
+              setDose('');
+              setEtkenMadde('');
+            }}
+            editable={!selectedDrug}
+          />
+          {search.length > 0 && filteredDrugs.length > 0 && (
+            <View style={styles.searchResultsBox}>
+              <FlatList
+                data={filteredDrugs}
+                keyExtractor={(item) => item["ÜRÜN ADI"]}
+                renderItem={({ item }) => (
+                  <TouchableOpacity
+                    style={styles.searchResultItem}
+                    onPress={() => {
+                      setSelectedDrug(item);
+                      setSearch(item["ÜRÜN ADI"]);
+                      setDose(item["DOZ MİKTARI"] || '');
+                      setEtkenMadde(item["ETKEN MADDE"] || '');
+                      setFilteredDrugs([]);
+                    }}
+                  >
+                    <Text style={styles.searchResultText}>{item["ÜRÜN ADI"]}</Text>
+                  </TouchableOpacity>
+                )}
+                keyboardShouldPersistTaps="handled"
               />
-              {search.length > 0 && !selectedDrug && (
-                <View style={styles.autocompleteBox}>
-                  {filteredDrugs.slice(0, 5).map(drug => (
-                    <TouchableOpacity key={drug.BARKOD} onPress={() => {
-                      setSelectedDrug(drug);
-                      setDose(drug["DOZ MİKTARI"] || '');
-                    }} style={styles.autocompleteItem}>
-                      <View style={styles.autocompleteContent}>
-                        <Text style={styles.autocompleteDrugName}>{(drug["ÜRÜN ADI"] || '').trim()}</Text>
-                        <View style={styles.autocompleteInfoRow}>
-                          <Text style={styles.autocompleteEtiket}>Etken Madde:</Text>
-                          <Text style={styles.autocompleteValue}>{drug["ETKEN MADDE"]}</Text>
-                          {drug["DOZ MİKTARI"] && (
-                            <>
-                              <Text style={styles.autocompleteEtiket}>  |  Doz:</Text>
-                              <Text style={styles.autocompleteValue}>{drug["DOZ MİKTARI"]}</Text>
-                            </>
-                          )}
-                        </View>
-                      </View>
-                    </TouchableOpacity>
-                  ))}
-                  {filteredDrugs.length === 0 && <Text style={styles.noResult}>Sonuç yok</Text>}
-                </View>
-              )}
             </View>
-            {selectedDrug && (
-              <TouchableOpacity style={styles.clearDrug} onPress={clearSelectedDrug}>
-                <Text style={{ fontSize: 18, color: '#1976D2' }}>✕</Text>
-              </TouchableOpacity>
-            )}
-          </View>
+          )}
+          <TouchableOpacity style={styles.timePickerButton} onPress={() => setShowTimePicker(true)}>
+            <Text style={styles.timePickerButtonText}>{time ? `Saat: ${time}` : 'Saat Seç'}</Text>
+          </TouchableOpacity>
+          {showTimePicker && (
+            <DateTimePicker
+              value={time ? new Date(`1970-01-01T${time}:00`) : new Date()}
+              mode="time"
+              is24Hour
+              display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+              onChange={handleTimeChange}
+            />
+          )}
           {selectedDrug && (
             <View style={styles.etkenBox}>
               <Text style={styles.etkenLabel}>Etken Madde:</Text>
@@ -250,22 +269,20 @@ const MedicationScreen: React.FC = () => {
           )}
           {!(search.length > 0 && !selectedDrug) && (
             <>
-              <View style={styles.inputRow}>
-                <TextInput
-                  style={[styles.input, { flex: 1, marginRight: 6 }]}
-                  placeholder="Doz (örn. 500mg)"
-                  value={dose}
-                  onChangeText={setDose}
-                  editable={!!selectedDrug}
-                />
-                <TextInput
-                  style={[styles.input, { flex: 1, marginLeft: 6 }]}
-                  placeholder="Saat (örn. 08:00) ⏰"
-                  value={time}
-                  onChangeText={setTime}
-                  editable={!!selectedDrug}
-                />
-              </View>
+              <TextInput
+                style={[styles.input, { marginTop: 8 }]}
+                placeholder="Doz (örn. 500mg)"
+                value={dose}
+                onChangeText={setDose}
+                editable={!!selectedDrug}
+              />
+              <TextInput
+                style={[styles.input, { marginTop: 8 }]}
+                placeholder="Etken Madde"
+                value={etkenMadde}
+                onChangeText={setEtkenMadde}
+                editable={!!selectedDrug}
+              />
               {editDrugId ? (
                 <TouchableOpacity style={[styles.addButton, !(selectedDrug && dose && time) && { opacity: 0.5 }]} onPress={updateDrug} disabled={!(selectedDrug && dose && time)}>
                   <Text style={styles.addButtonText}>Güncelle</Text>
@@ -512,6 +529,38 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     paddingHorizontal: 8,
     paddingVertical: 2,
+  },
+  timePickerButton: {
+    backgroundColor: '#E3EAFD',
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 8,
+  },
+  timePickerButtonText: {
+    color: '#1976D2',
+    fontWeight: '700',
+    fontSize: 15,
+  },
+  searchResultsBox: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 8,
+    marginTop: 2,
+    marginBottom: 8,
+    maxHeight: 180,
+  },
+  searchResultItem: {
+    padding: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+  },
+  searchResultText: {
+    fontSize: 15,
+    color: '#222',
   },
 });
 

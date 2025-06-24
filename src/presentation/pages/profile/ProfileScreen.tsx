@@ -7,12 +7,12 @@ interface ProfileScreenProps {
 }
 
 const mockProfile = {
-  name: 'Ece Yılmaz',
-  email: 'ece.yilmaz@example.com',
+  name: 'Hilal',
+  email: 'hilalldavas@gmail.com',
   diagnosisDate: '2022-11-15',
   treatmentProcess: 'Kemoterapi',
   doctorName: 'Dr. Ahmet Demir',
-  photo: require('../../../assets/images/logo.png'), // Geçici olarak logo kullanılıyor
+  photo: require('../../../assets/images/profil.jpg'),
 };
 
 // Animated kalpler (hearts)
@@ -55,7 +55,7 @@ const BackgroundAnimation = () => {
       {hearts.map((h, i) => {
         const top = animatedValues[i].interpolate({
           inputRange: [0, 1],
-          outputRange: [height + h.baseSize, -h.baseSize],
+          outputRange: [-h.baseSize, height + h.baseSize],
         });
         const size = getRandomSize(h.baseSize);
         return (
