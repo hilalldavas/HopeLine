@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, SafeAreaView, TextInput, Platform, ScrollView } from 'react-native';
+import React, { useState, useRef, useEffect } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, SafeAreaView, TextInput, Platform, ScrollView, Dimensions, Animated } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import yemekler from '../../../data/yemek.json';
+import * as Animatable from 'react-native-animatable';
 
 const OGUNLER = ['Kahvaltı', 'Öğle', 'Akşam', 'Ara Öğün'];
 
@@ -11,6 +12,69 @@ interface Meal {
   date: string; // yyyy-MM-dd
   ogun: string;
 }
+
+// Animated baloncuklar
+const BackgroundAnimation = () => {
+  const { width, height } = Dimensions.get('window');
+  const bubbles = [
+    { left: 0.15, baseSize: 18, color: '#1976D2' },
+    { left: 0.28, baseSize: 14, color: '#90CAF9' },
+    { left: 0.41, baseSize: 16, color: '#1976D2' },
+    { left: 0.54, baseSize: 15, color: '#90CAF9' },
+    { left: 0.67, baseSize: 17, color: '#1976D2' },
+    { left: 0.80, baseSize: 13, color: '#90CAF9' },
+  ];
+  const animatedValues = React.useRef(bubbles.map(() => new Animated.Value(0))).current;
+
+  // Her baloncuk için rastgele delay ve duration üreten fonksiyonlar
+  const getRandomDuration = () => 15000 + Math.random() * 9000; // 15-24sn arası
+  const getRandomDelay = () => Math.random() * 8000; // 0-8sn arası
+  const getRandomSize = (base: number) => base + Math.floor(Math.random() * 7) - 3; // +-3px oynama
+
+  React.useEffect(() => {
+    bubbles.forEach((b, i) => {
+      const animate = () => {
+        animatedValues[i].setValue(0);
+        const duration = getRandomDuration();
+        const delay = getRandomDelay();
+        Animated.timing(animatedValues[i], {
+          toValue: 1,
+          duration,
+          delay,
+          useNativeDriver: false,
+        }).start(() => animate());
+      };
+      animate();
+    });
+  }, [animatedValues]);
+
+  return (
+    <View style={{ ...StyleSheet.absoluteFillObject, zIndex: 2 }} pointerEvents="none">
+      {bubbles.map((b, i) => {
+        const top = animatedValues[i].interpolate({
+          inputRange: [0, 1],
+          outputRange: [-b.baseSize, height + b.baseSize],
+        });
+        const size = getRandomSize(b.baseSize);
+        return (
+          <Animated.View
+            key={i}
+            style={{
+              position: 'absolute',
+              left: b.left * width,
+              top,
+              width: size,
+              height: size,
+              borderRadius: size / 2,
+              backgroundColor: b.color,
+              opacity: 0.7,
+            }}
+          />
+        );
+      })}
+    </View>
+  );
+};
 
 const NutritionScreen: React.FC = () => {
   const [water, setWater] = useState(0);
@@ -76,7 +140,8 @@ const NutritionScreen: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
+      <BackgroundAnimation />
+      <Animatable.View animation="slideInUp" duration={800} style={styles.container}>
         <Text style={styles.title}>Beslenme & Su Takibi</Text>
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Günlük Su Tüketimi</Text>
@@ -148,8 +213,8 @@ const NutritionScreen: React.FC = () => {
                   <Text style={[styles.ogunBtnText, selectedOgun === ogun && styles.ogunBtnTextSelected]}>{ogun}</Text>
                 </TouchableOpacity>
               ))}
-            </View>
-          )}
+              </View>
+            )}
           {selectedMeals.length > 0 && (
             <TouchableOpacity style={styles.pickerButton} onPress={() => setShowDatePicker(true)}>
               <Text style={styles.pickerButtonText}>Tarih Seç: {formatDate(mealDate)}</Text>
@@ -164,7 +229,7 @@ const NutritionScreen: React.FC = () => {
                 setShowDatePicker(false);
                 if (selectedDate) setMealDate(selectedDate);
               }}
-            />
+          />
           )}
           <TouchableOpacity style={[styles.addButton, selectedMeals.length === 0 && { opacity: 0.5 }]} onPress={addMeals} disabled={selectedMeals.length === 0}>
             <Text style={styles.addButtonText}>+ Yemekleri Ekle</Text>
@@ -192,7 +257,7 @@ const NutritionScreen: React.FC = () => {
             )}
           </ScrollView>
         </View>
-      </View>
+      </Animatable.View>
     </SafeAreaView>
   );
 };

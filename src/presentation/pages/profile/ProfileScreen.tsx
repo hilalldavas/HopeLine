@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, Dimensions, Animated } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 interface ProfileScreenProps {
   onLogout: () => void;
@@ -14,39 +15,104 @@ const mockProfile = {
   photo: require('../../../assets/images/logo.png'), // Geçici olarak logo kullanılıyor
 };
 
+// Animated kalpler (hearts)
+const BackgroundAnimation = () => {
+  const { width, height } = Dimensions.get('window');
+  const hearts = [
+    { left: 0.18, baseSize: 28 },
+    { left: 0.32, baseSize: 22 },
+    { left: 0.46, baseSize: 25 },
+    { left: 0.60, baseSize: 24 },
+    { left: 0.74, baseSize: 27 },
+    { left: 0.88, baseSize: 21 },
+  ];
+  const animatedValues = React.useRef(hearts.map(() => new Animated.Value(0))).current;
+
+  // Her kalp için rastgele delay ve duration üreten fonksiyonlar
+  const getRandomDuration = () => 15000 + Math.random() * 9000; // 15-24sn arası
+  const getRandomDelay = () => Math.random() * 8000; // 0-8sn arası
+  const getRandomSize = (base: number) => base + Math.floor(Math.random() * 7) - 3; // +-3px oynama
+
+  React.useEffect(() => {
+    hearts.forEach((h, i) => {
+      const animate = () => {
+        animatedValues[i].setValue(0);
+        const duration = getRandomDuration();
+        const delay = getRandomDelay();
+        Animated.timing(animatedValues[i], {
+          toValue: 1,
+          duration,
+          delay,
+          useNativeDriver: false,
+        }).start(() => animate());
+      };
+      animate();
+    });
+  }, [animatedValues]);
+
+  return (
+    <View style={{ ...StyleSheet.absoluteFillObject, zIndex: 2 }} pointerEvents="none">
+      {hearts.map((h, i) => {
+        const top = animatedValues[i].interpolate({
+          inputRange: [0, 1],
+          outputRange: [height + h.baseSize, -h.baseSize],
+        });
+        const size = getRandomSize(h.baseSize);
+        return (
+          <Animated.Text
+            key={i}
+            style={{
+              position: 'absolute',
+              left: h.left * width,
+              top,
+              fontSize: size,
+              opacity: 0.7,
+            }}
+          >
+            {'❤️'}
+          </Animated.Text>
+        );
+      })}
+    </View>
+  );
+};
+
 const ProfileScreen: React.FC<ProfileScreenProps> = ({ onLogout }) => {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.profileCard}>
-        <View style={styles.photoContainer}>
-          <Image source={mockProfile.photo} style={styles.photo} />
-        </View>
-        <Text style={styles.title}>Profil Bilgileri</Text>
-        <View style={styles.infoRow}>
-          <Text style={styles.label}>İsim:</Text>
-          <Text style={styles.value}>{mockProfile.name}</Text>
-        </View>
-        <View style={styles.infoRow}>
-          <Text style={styles.label}>E-posta:</Text>
-          <Text style={styles.value}>{mockProfile.email}</Text>
-        </View>
-        <View style={styles.infoRow}>
-          <Text style={styles.label}>Tanı Tarihi:</Text>
-          <Text style={styles.value}>{mockProfile.diagnosisDate}</Text>
-        </View>
-        <View style={styles.infoRow}>
-          <Text style={styles.label}>Tedavi Süreci:</Text>
-          <Text style={styles.value}>{mockProfile.treatmentProcess}</Text>
-        </View>
-        <View style={styles.infoRow}>
-          <Text style={styles.label}>Doktor:</Text>
-          <Text style={styles.value}>{mockProfile.doctorName}</Text>
-        </View>
-        <TouchableOpacity style={styles.editButton} disabled>
-          <Text style={styles.editButtonText}>Düzenle</Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+    <View style={{ flex: 1, backgroundColor: '#fff' }}>
+      <BackgroundAnimation />
+      <ScrollView contentContainerStyle={styles.container}>
+        <Animatable.View animation="slideInUp" duration={800} style={styles.profileCard}>
+          <View style={styles.photoContainer}>
+            <Image source={mockProfile.photo} style={styles.photo} />
+          </View>
+          <Text style={styles.title}>Profil Bilgileri</Text>
+          <View style={styles.infoRow}>
+            <Text style={styles.label}>İsim:</Text>
+            <Text style={styles.value}>{mockProfile.name}</Text>
+          </View>
+          <View style={styles.infoRow}>
+            <Text style={styles.label}>E-posta:</Text>
+            <Text style={styles.value}>{mockProfile.email}</Text>
+          </View>
+          <View style={styles.infoRow}>
+            <Text style={styles.label}>Tanı Tarihi:</Text>
+            <Text style={styles.value}>{mockProfile.diagnosisDate}</Text>
+          </View>
+          <View style={styles.infoRow}>
+            <Text style={styles.label}>Tedavi Süreci:</Text>
+            <Text style={styles.value}>{mockProfile.treatmentProcess}</Text>
+          </View>
+          <View style={styles.infoRow}>
+            <Text style={styles.label}>Doktor:</Text>
+            <Text style={styles.value}>{mockProfile.doctorName}</Text>
+          </View>
+          <TouchableOpacity style={styles.editButton} disabled>
+            <Text style={styles.editButtonText}>Düzenle</Text>
+          </TouchableOpacity>
+        </Animatable.View>
+      </ScrollView>
+    </View>
   );
 };
 

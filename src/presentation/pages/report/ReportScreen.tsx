@@ -1,8 +1,9 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert, Platform } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert, Platform, Dimensions, Animated } from 'react-native';
 import { VictoryPie, VictoryBar, VictoryChart, VictoryTheme, VictoryLine, VictoryAxis } from 'victory-native';
 import { VictoryLabel } from 'victory-native';
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
+import * as Animatable from 'react-native-animatable';
 
 const mockIlacData = [
   { x: 'Pzt', y: 2 },
@@ -33,6 +34,68 @@ const mockDuyguData = [
   { x: 'Kötü', y: 1 },
 ];
 
+// Animated yıldızlar
+const BackgroundAnimation = () => {
+  const { width, height } = Dimensions.get('window');
+  const stars = [
+    { left: 0.15, baseSize: 22 },
+    { left: 0.28, baseSize: 18 },
+    { left: 0.41, baseSize: 20 },
+    { left: 0.54, baseSize: 19 },
+    { left: 0.67, baseSize: 21 },
+    { left: 0.80, baseSize: 17 },
+  ];
+  const animatedValues = React.useRef(stars.map(() => new Animated.Value(0))).current;
+
+  // Her yıldız için rastgele delay ve duration üreten fonksiyonlar
+  const getRandomDuration = () => 15000 + Math.random() * 9000; // 15-24sn arası
+  const getRandomDelay = () => Math.random() * 8000; // 0-8sn arası
+  const getRandomSize = (base: number) => base + Math.floor(Math.random() * 7) - 3; // +-3px oynama
+
+  React.useEffect(() => {
+    stars.forEach((s, i) => {
+      const animate = () => {
+        animatedValues[i].setValue(0);
+        const duration = getRandomDuration();
+        const delay = getRandomDelay();
+        Animated.timing(animatedValues[i], {
+          toValue: 1,
+          duration,
+          delay,
+          useNativeDriver: false,
+        }).start(() => animate());
+      };
+      animate();
+    });
+  }, [animatedValues]);
+
+  return (
+    <View style={{ ...StyleSheet.absoluteFillObject, zIndex: 2 }} pointerEvents="none">
+      {stars.map((s, i) => {
+        const top = animatedValues[i].interpolate({
+          inputRange: [0, 1],
+          outputRange: [-s.baseSize, height + s.baseSize],
+        });
+        const size = getRandomSize(s.baseSize);
+        return (
+          <Animated.Text
+            key={i}
+            style={{
+              position: 'absolute',
+              left: s.left * width,
+              top,
+              fontSize: size,
+              opacity: 0.7,
+            }}
+          >
+            {'⭐️'}
+          </Animated.Text>
+        );
+      })}
+    </View>
+  );
+};
+
 const ReportScreen: React.FC = () => {
   const handleExportPDF = async () => {
     const html = `
@@ -56,9 +119,11 @@ const ReportScreen: React.FC = () => {
 
   return (
     <View style={styles.safeArea}>
+      <BackgroundAnimation />
       <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 120 }}>
         <Text style={styles.title}>Raporlama</Text>
         {/* İlaç Alımı */}
+        <Animatable.View animation="slideInDown" duration={700} delay={0}>
         <View style={styles.section}>
           <View style={styles.sectionHeader}><Text style={styles.sectionIcon}>💊</Text><Text style={styles.sectionTitle}>İlaç Alımı</Text></View>
           <View style={styles.card}>
@@ -70,7 +135,9 @@ const ReportScreen: React.FC = () => {
             <Text style={styles.placeholderText}>Haftalık ilaç alım yoğunluğu</Text>
           </View>
         </View>
+        </Animatable.View>
         {/* Randevular */}
+        <Animatable.View animation="slideInDown" duration={700} delay={150}>
         <View style={styles.section}>
           <View style={styles.sectionHeader}><Text style={styles.sectionIcon}>📅</Text><Text style={styles.sectionTitle}>Randevular</Text></View>
           <View style={styles.card}>
@@ -82,7 +149,9 @@ const ReportScreen: React.FC = () => {
             <Text style={styles.placeholderText}>Haftalık randevu yoğunluğu</Text>
           </View>
         </View>
+        </Animatable.View>
         {/* Belirti Yoğunluğu */}
+        <Animatable.View animation="slideInDown" duration={700} delay={300}>
         <View style={styles.section}>
           <View style={styles.sectionHeader}><Text style={styles.sectionIcon}>📝</Text><Text style={styles.sectionTitle}>Belirti Yoğunluğu</Text></View>
           <View style={styles.card}>
@@ -94,7 +163,9 @@ const ReportScreen: React.FC = () => {
             <Text style={styles.placeholderText}>Haftalık belirti yoğunluğu</Text>
           </View>
         </View>
+        </Animatable.View>
         {/* Duygu Durumu */}
+        <Animatable.View animation="slideInDown" duration={700} delay={450}>
         <View style={styles.section}>
           <View style={styles.sectionHeader}><Text style={styles.sectionIcon}>😊</Text><Text style={styles.sectionTitle}>Duygu Durumu</Text></View>
           <View style={styles.card}>
@@ -105,6 +176,7 @@ const ReportScreen: React.FC = () => {
             <Text style={styles.placeholderText}>Duygu durumu dağılımı</Text>
           </View>
         </View>
+        </Animatable.View>
       </ScrollView>
       <TouchableOpacity style={styles.exportButton} onPress={handleExportPDF}>
         <Text style={styles.exportButtonText}>📄 PDF Olarak Dışa Aktar</Text>

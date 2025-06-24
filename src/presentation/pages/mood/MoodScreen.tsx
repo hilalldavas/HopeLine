@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, SafeAreaView, FlatList } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, SafeAreaView, FlatList, Dimensions, Animated } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 const moods = [
   { key: 'very_happy', emoji: '😃', label: 'Çok İyi' },
@@ -15,6 +16,68 @@ interface MoodEntry {
   note: string;
   date: string; // yyyy-MM-dd
 }
+
+// Animated yıldızlar
+const BackgroundAnimation = () => {
+  const { width, height } = Dimensions.get('window');
+  const stars = [
+    { left: 0.15, baseSize: 22 },
+    { left: 0.28, baseSize: 18 },
+    { left: 0.41, baseSize: 20 },
+    { left: 0.54, baseSize: 19 },
+    { left: 0.67, baseSize: 21 },
+    { left: 0.80, baseSize: 17 },
+  ];
+  const animatedValues = React.useRef(stars.map(() => new Animated.Value(0))).current;
+
+  // Her yıldız için rastgele delay ve duration üreten fonksiyonlar
+  const getRandomDuration = () => 15000 + Math.random() * 9000; // 15-24sn arası
+  const getRandomDelay = () => Math.random() * 8000; // 0-8sn arası
+  const getRandomSize = (base: number) => base + Math.floor(Math.random() * 7) - 3; // +-3px oynama
+
+  React.useEffect(() => {
+    stars.forEach((s, i) => {
+      const animate = () => {
+        animatedValues[i].setValue(0);
+        const duration = getRandomDuration();
+        const delay = getRandomDelay();
+        Animated.timing(animatedValues[i], {
+          toValue: 1,
+          duration,
+          delay,
+          useNativeDriver: false,
+        }).start(() => animate());
+      };
+      animate();
+    });
+  }, [animatedValues]);
+
+  return (
+    <View style={{ ...StyleSheet.absoluteFillObject, zIndex: 2 }} pointerEvents="none">
+      {stars.map((s, i) => {
+        const top = animatedValues[i].interpolate({
+          inputRange: [0, 1],
+          outputRange: [-s.baseSize, height + s.baseSize],
+        });
+        const size = getRandomSize(s.baseSize);
+        return (
+          <Animated.Text
+            key={i}
+            style={{
+              position: 'absolute',
+              left: s.left * width,
+              top,
+              fontSize: size,
+              opacity: 0.7,
+            }}
+          >
+            {'⭐️'}
+          </Animated.Text>
+        );
+      })}
+    </View>
+  );
+};
 
 const MoodScreen: React.FC = () => {
   const [selectedMood, setSelectedMood] = useState<string | null>(null);
@@ -46,7 +109,8 @@ const MoodScreen: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
+      <BackgroundAnimation />
+      <Animatable.View animation="slideInUp" duration={800} style={styles.container}>
         <Text style={styles.title}>Duygu Durumu</Text>
         <Text style={styles.subtitle}>Bugünkü ruh halini seç:</Text>
         <View style={styles.moodRow}>
@@ -95,7 +159,7 @@ const MoodScreen: React.FC = () => {
           ListEmptyComponent={<Text style={{ color: '#888', alignSelf: 'center', marginTop: 24 }}>Henüz kayıt yok.</Text>}
           contentContainerStyle={{ paddingBottom: 40 }}
         />
-      </View>
+      </Animatable.View>
     </SafeAreaView>
   );
 };

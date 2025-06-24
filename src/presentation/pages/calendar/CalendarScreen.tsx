@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, SafeAreaView, Modal, TextInput, Platform } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, SafeAreaView, Modal, TextInput, Platform, Dimensions, Animated } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import * as Animatable from 'react-native-animatable';
 
 interface Appointment {
   id: string;
@@ -8,6 +9,69 @@ interface Appointment {
   date: string; // yyyy-MM-dd
   time: string; // HH:mm
 }
+
+// Animated baloncuklar
+const BackgroundAnimation = () => {
+  const { width, height } = Dimensions.get('window');
+  const bubbles = [
+    { left: 0.15, baseSize: 18, color: '#1976D2' },
+    { left: 0.28, baseSize: 14, color: '#90CAF9' },
+    { left: 0.41, baseSize: 16, color: '#1976D2' },
+    { left: 0.54, baseSize: 15, color: '#90CAF9' },
+    { left: 0.67, baseSize: 17, color: '#1976D2' },
+    { left: 0.80, baseSize: 13, color: '#90CAF9' },
+  ];
+  const animatedValues = React.useRef(bubbles.map(() => new Animated.Value(0))).current;
+
+  // Her baloncuk için rastgele delay ve duration üreten fonksiyonlar
+  const getRandomDuration = () => 15000 + Math.random() * 9000; // 15-24sn arası
+  const getRandomDelay = () => Math.random() * 8000; // 0-8sn arası
+  const getRandomSize = (base: number) => base + Math.floor(Math.random() * 7) - 3; // +-3px oynama
+
+  React.useEffect(() => {
+    bubbles.forEach((b, i) => {
+      const animate = () => {
+        animatedValues[i].setValue(0);
+        const duration = getRandomDuration();
+        const delay = getRandomDelay();
+        Animated.timing(animatedValues[i], {
+          toValue: 1,
+          duration,
+          delay,
+          useNativeDriver: false,
+        }).start(() => animate());
+      };
+      animate();
+    });
+  }, [animatedValues]);
+
+  return (
+    <View style={{ ...StyleSheet.absoluteFillObject, zIndex: 2 }} pointerEvents="none">
+      {bubbles.map((b, i) => {
+        const top = animatedValues[i].interpolate({
+          inputRange: [0, 1],
+          outputRange: [-b.baseSize, height + b.baseSize],
+        });
+        const size = getRandomSize(b.baseSize);
+        return (
+          <Animated.View
+            key={i}
+            style={{
+              position: 'absolute',
+              left: b.left * width,
+              top,
+              width: size,
+              height: size,
+              borderRadius: size / 2,
+              backgroundColor: b.color,
+              opacity: 0.7,
+            }}
+          />
+        );
+      })}
+    </View>
+  );
+};
 
 const CalendarScreen: React.FC = () => {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
@@ -43,7 +107,8 @@ const CalendarScreen: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
+      <BackgroundAnimation />
+      <Animatable.View animation="slideInUp" duration={800} style={[styles.container, { zIndex: 1 }]}>
         <Text style={styles.title}>Takvim & Randevular</Text>
         <FlatList
           data={appointments}
@@ -69,7 +134,7 @@ const CalendarScreen: React.FC = () => {
           ListEmptyComponent={<Text style={{ color: '#888', alignSelf: 'center', marginTop: 40 }}>Henüz randevu yok.</Text>}
           contentContainerStyle={{ paddingBottom: 100 }}
         />
-      </View>
+      </Animatable.View>
       <TouchableOpacity style={styles.addButton} onPress={() => setModalVisible(true)}>
         <Text style={styles.addButtonText}>+ Randevu Ekle</Text>
       </TouchableOpacity>
