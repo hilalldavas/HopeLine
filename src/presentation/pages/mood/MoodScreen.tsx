@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, SafeAreaView, FlatList } from 'react-native';
 
 const moods = [
   { key: 'very_happy', emoji: '😃', label: 'Çok İyi' },
@@ -9,9 +9,40 @@ const moods = [
   { key: 'very_sad', emoji: '😫', label: 'Çok Kötü' },
 ];
 
+interface MoodEntry {
+  id: string;
+  moodKey: string;
+  note: string;
+  date: string; // yyyy-MM-dd
+}
+
 const MoodScreen: React.FC = () => {
   const [selectedMood, setSelectedMood] = useState<string | null>(null);
   const [note, setNote] = useState('');
+  const [moodEntries, setMoodEntries] = useState<MoodEntry[]>([]);
+
+  const today = new Date().toISOString().slice(0, 10);
+
+  const handleSave = () => {
+    if (!selectedMood) return;
+    setMoodEntries([
+      ...moodEntries,
+      {
+        id: Date.now().toString(),
+        moodKey: selectedMood,
+        note,
+        date: today,
+      },
+    ]);
+    setSelectedMood(null);
+    setNote('');
+  };
+
+  const handleDelete = (id: string) => {
+    setMoodEntries(moodEntries.filter(m => m.id !== id));
+  };
+
+  const getMood = (key: string) => moods.find(m => m.key === key);
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -38,9 +69,32 @@ const MoodScreen: React.FC = () => {
           onChangeText={setNote}
           multiline
         />
-        <TouchableOpacity style={styles.saveButton} disabled>
+        <TouchableOpacity style={[styles.saveButton, !selectedMood && { opacity: 0.5 }]} onPress={handleSave} disabled={!selectedMood}>
           <Text style={styles.saveButtonText}>Kaydet</Text>
         </TouchableOpacity>
+        <Text style={styles.listTitle}>Kayıtlı Duygu Durumları</Text>
+        <FlatList
+          data={moodEntries}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => {
+            const mood = getMood(item.moodKey);
+            return (
+              <View style={styles.entryCard}>
+                <Text style={styles.entryEmoji}>{mood?.emoji}</Text>
+                <View style={styles.entryInfo}>
+                  <Text style={styles.entryLabel}>{mood?.label}</Text>
+                  <Text style={styles.entryDate}>{item.date}</Text>
+                  {item.note ? <Text style={styles.entryNote}>{item.note}</Text> : null}
+                </View>
+                <TouchableOpacity onPress={() => handleDelete(item.id)}>
+                  <Text style={styles.deleteBtn}>🗑️</Text>
+                </TouchableOpacity>
+              </View>
+            );
+          }}
+          ListEmptyComponent={<Text style={{ color: '#888', alignSelf: 'center', marginTop: 24 }}>Henüz kayıt yok.</Text>}
+          contentContainerStyle={{ paddingBottom: 40 }}
+        />
       </View>
     </SafeAreaView>
   );
@@ -60,6 +114,14 @@ const styles = StyleSheet.create({
   input: { backgroundColor: '#F5F5F5', borderRadius: 10, padding: 12, fontSize: 15, minHeight: 60, marginBottom: 18, marginTop: 4, color: '#222' },
   saveButton: { backgroundColor: '#1976D2', borderRadius: 10, paddingVertical: 14, alignItems: 'center', opacity: 0.8 },
   saveButtonText: { color: '#fff', fontSize: 17, fontWeight: '700', letterSpacing: 0.5 },
+  listTitle: { fontSize: 16, fontWeight: '700', color: '#1976D2', marginTop: 24, marginBottom: 10 },
+  entryCard: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#F5F5F5', borderRadius: 14, padding: 12, marginBottom: 10 },
+  entryEmoji: { fontSize: 28, marginRight: 12 },
+  entryInfo: { flex: 1 },
+  entryLabel: { fontSize: 15, fontWeight: '700', color: '#1976D2' },
+  entryDate: { fontSize: 12, color: '#888', marginBottom: 2 },
+  entryNote: { fontSize: 14, color: '#444' },
+  deleteBtn: { fontSize: 18, color: '#D32F2F', marginLeft: 8 },
 });
 
 export default MoodScreen; 

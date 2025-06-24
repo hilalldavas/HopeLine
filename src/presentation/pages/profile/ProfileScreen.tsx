@@ -1,6 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
 
+interface ProfileScreenProps {
+  onLogout: () => void;
+}
+
 const mockProfile = {
   name: 'Ece Yılmaz',
   email: 'ece.yilmaz@example.com',
@@ -10,7 +14,7 @@ const mockProfile = {
   photo: require('../../../assets/images/logo.png'), // Geçici olarak logo kullanılıyor
 };
 
-const ProfileScreen: React.FC = () => {
+const ProfileScreen: React.FC<ProfileScreenProps> = ({ onLogout }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.profileCard}>

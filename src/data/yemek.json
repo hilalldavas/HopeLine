@@ -1,0 +1,4672 @@
+[
+  {
+    "Malzeme Adı":"Acur",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":23,
+    "Yağ (g)":0.18,
+    "Karbonhidrat (g)":5.16,
+    "Protein (g)":0.72,
+    "Şeker (g)":4.62,
+    "Fiber (g)":0.8
+  },
+  {
+    "Malzeme Adı":"Ahududu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":52,
+    "Yağ (g)":0.65,
+    "Karbonhidrat (g)":11.94,
+    "Protein (g)":1.2,
+    "Şeker (g)":4.42,
+    "Fiber (g)":6.5
+  },
+  {
+    "Malzeme Adı":"Ahududu Reçeli",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":274,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":67.32,
+    "Protein (g)":1.29,
+    "Şeker (g)":67.32,
+    "Fiber (g)":2.8
+  },
+  {
+    "Malzeme Adı":"Alabalık",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":138,
+    "Yağ (g)":5.4,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.87,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Ananas",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":48,
+    "Yağ (g)":0.12,
+    "Karbonhidrat (g)":12.63,
+    "Protein (g)":0.54,
+    "Şeker (g)":9.26,
+    "Fiber (g)":1.4
+  },
+  {
+    "Malzeme Adı":"Andız Pekmezi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":276,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":68.5,
+    "Protein (g)":1.25,
+    "Şeker (g)":32.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Anjelika Erik",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":48,
+    "Yağ (g)":0.28,
+    "Karbonhidrat (g)":12.11,
+    "Protein (g)":0.7,
+    "Şeker (g)":8.27,
+    "Fiber (g)":1.2
+  },
+  {
+    "Malzeme Adı":"Antep Fıstığı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":557,
+    "Yağ (g)":44.44,
+    "Karbonhidrat (g)":27.97,
+    "Protein (g)":20.61,
+    "Şeker (g)":7.64,
+    "Fiber (g)":10.3
+  },
+  {
+    "Malzeme Adı":"Armut",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":58,
+    "Yağ (g)":0.12,
+    "Karbonhidrat (g)":15.46,
+    "Protein (g)":0.38,
+    "Şeker (g)":9.8,
+    "Fiber (g)":3.1
+  },
+  {
+    "Malzeme Adı":"Arpa",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":122,
+    "Yağ (g)":0.44,
+    "Karbonhidrat (g)":28.09,
+    "Protein (g)":2.25,
+    "Şeker (g)":0.28,
+    "Fiber (g)":3.8
+  },
+  {
+    "Malzeme Adı":"Arpa Unu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":354,
+    "Yağ (g)":2.3,
+    "Karbonhidrat (g)":73.0,
+    "Protein (g)":12.0,
+    "Şeker (g)":0.8,
+    "Fiber (g)":17.0
+  },
+  {
+    "Malzeme Adı":"Asma Yaprağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":93,
+    "Yağ (g)":2.12,
+    "Karbonhidrat (g)":17.31,
+    "Protein (g)":5.6,
+    "Şeker (g)":6.3,
+    "Fiber (g)":11.0
+  },
+  {
+    "Malzeme Adı":"Aşure",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":140,
+    "Yağ (g)":3.81,
+    "Karbonhidrat (g)":25.73,
+    "Protein (g)":2.72,
+    "Şeker (g)":14.46,
+    "Fiber (g)":2.5
+  },
+  {
+    "Malzeme Adı":"Aşurelik Buğday",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":327,
+    "Yağ (g)":2.0,
+    "Karbonhidrat (g)":48.9,
+    "Protein (g)":11.82,
+    "Şeker (g)":2.8,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Avokado",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":160,
+    "Yağ (g)":14.66,
+    "Karbonhidrat (g)":8.53,
+    "Protein (g)":2.0,
+    "Şeker (g)":0.66,
+    "Fiber (g)":6.7
+  },
+  {
+    "Malzeme Adı":"Ayçiçek Yağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":884,
+    "Yağ (g)":100.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Ayran",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":41,
+    "Yağ (g)":2.15,
+    "Karbonhidrat (g)":3.17,
+    "Protein (g)":2.32,
+    "Şeker (g)":3.08,
+    "Fiber (g)":0.1
+  },
+  {
+    "Malzeme Adı":"Ayva",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":57,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":15.3,
+    "Protein (g)":0.4,
+    "Şeker (g)":0.0,
+    "Fiber (g)":1.9
+  },
+  {
+    "Malzeme Adı":"Ayva Reçeli",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":242,
+    "Yağ (g)":0.03,
+    "Karbonhidrat (g)":62.8,
+    "Protein (g)":0.14,
+    "Şeker (g)":57.58,
+    "Fiber (g)":0.6
+  },
+  {
+    "Malzeme Adı":"Az Yağlı Beyaz Peynir",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":112,
+    "Yağ (g)":4.8,
+    "Karbonhidrat (g)":3.7,
+    "Protein (g)":13.5,
+    "Şeker (g)":3.7,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Az Yağlı Margarin",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":175,
+    "Yağ (g)":19.5,
+    "Karbonhidrat (g)":0.4,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Badem",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":578,
+    "Yağ (g)":50.64,
+    "Karbonhidrat (g)":19.74,
+    "Protein (g)":21.26,
+    "Şeker (g)":4.8,
+    "Fiber (g)":11.8
+  },
+  {
+    "Malzeme Adı":"Badem Ezmesi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":633,
+    "Yağ (g)":59.1,
+    "Karbonhidrat (g)":21.22,
+    "Protein (g)":15.08,
+    "Şeker (g)":4.9,
+    "Fiber (g)":3.7
+  },
+  {
+    "Malzeme Adı":"Bakla",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":88,
+    "Yağ (g)":0.73,
+    "Karbonhidrat (g)":17.63,
+    "Protein (g)":7.92,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Bal",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":331,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":82.3,
+    "Protein (g)":0.3,
+    "Şeker (g)":82.12,
+    "Fiber (g)":0.2
+  },
+  {
+    "Malzeme Adı":"Balkabağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":26,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":6.5,
+    "Protein (g)":1.0,
+    "Şeker (g)":1.36,
+    "Fiber (g)":0.5
+  },
+  {
+    "Malzeme Adı":"Bamya",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":31,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":7.03,
+    "Protein (g)":2.0,
+    "Şeker (g)":1.2,
+    "Fiber (g)":3.2
+  },
+  {
+    "Malzeme Adı":"Barbekü Sosu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":75,
+    "Yağ (g)":1.8,
+    "Karbonhidrat (g)":12.8,
+    "Protein (g)":1.8,
+    "Şeker (g)":3.92,
+    "Fiber (g)":1.2
+  },
+  {
+    "Malzeme Adı":"Barbun",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":117,
+    "Yağ (g)":3.79,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":19.35,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Barbunya",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":301,
+    "Yağ (g)":1.6,
+    "Karbonhidrat (g)":60.0,
+    "Protein (g)":23.0,
+    "Şeker (g)":5.7,
+    "Fiber (g)":17.0
+  },
+  {
+    "Malzeme Adı":"Barbunya Fasulyesi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":337,
+    "Yağ (g)":1.06,
+    "Karbonhidrat (g)":61.29,
+    "Protein (g)":22.53,
+    "Şeker (g)":2.23,
+    "Fiber (g)":15.2
+  },
+  {
+    "Malzeme Adı":"Bazlama",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":232,
+    "Yağ (g)":1.05,
+    "Karbonhidrat (g)":47.75,
+    "Protein (g)":7.05,
+    "Şeker (g)":1.27,
+    "Fiber (g)":2.1
+  },
+  {
+    "Malzeme Adı":"Bebe Bisküvisi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":449,
+    "Yağ (g)":14.6,
+    "Karbonhidrat (g)":73.0,
+    "Protein (g)":5.8,
+    "Şeker (g)":24.0,
+    "Fiber (g)":2.8
+  },
+  {
+    "Malzeme Adı":"Beyaz Çikolata",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":539,
+    "Yağ (g)":32.0,
+    "Karbonhidrat (g)":59.0,
+    "Protein (g)":6.0,
+    "Şeker (g)":59.0,
+    "Fiber (g)":0.2
+  },
+  {
+    "Malzeme Adı":"Beyaz Dut",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":43,
+    "Yağ (g)":0.39,
+    "Karbonhidrat (g)":9.8,
+    "Protein (g)":1.44,
+    "Şeker (g)":8.1,
+    "Fiber (g)":1.7
+  },
+  {
+    "Malzeme Adı":"Beyaz Peynir",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":264,
+    "Yağ (g)":21.28,
+    "Karbonhidrat (g)":4.09,
+    "Protein (g)":14.21,
+    "Şeker (g)":4.09,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Beyaz Peynir",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":264,
+    "Yağ (g)":21.28,
+    "Karbonhidrat (g)":4.09,
+    "Protein (g)":14.21,
+    "Şeker (g)":4.09,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Beyaz Şarap",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":83,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":2.6,
+    "Protein (g)":0.07,
+    "Şeker (g)":0.96,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Bezelye",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":87,
+    "Yağ (g)":0.4,
+    "Karbonhidrat (g)":14.46,
+    "Protein (g)":5.42,
+    "Şeker (g)":5.67,
+    "Fiber (g)":5.1
+  },
+  {
+    "Malzeme Adı":"Bıldırcın Eti",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":227,
+    "Yağ (g)":14.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":25.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Bıldırcın Yumurtası",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":158,
+    "Yağ (g)":11.09,
+    "Karbonhidrat (g)":0.41,
+    "Protein (g)":13.05,
+    "Şeker (g)":0.41,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Biber Salçası",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":84,
+    "Yağ (g)":0.8,
+    "Karbonhidrat (g)":14.5,
+    "Protein (g)":3.7,
+    "Şeker (g)":11.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Bira",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":43,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":3.6,
+    "Protein (g)":0.5,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Bitter Çikolata",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":546,
+    "Yağ (g)":31.0,
+    "Karbonhidrat (g)":61.0,
+    "Protein (g)":4.9,
+    "Şeker (g)":48.0,
+    "Fiber (g)":7.0
+  },
+  {
+    "Malzeme Adı":"Boza",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":150,
+    "Yağ (g)":1.05,
+    "Karbonhidrat (g)":31.32,
+    "Protein (g)":2.68,
+    "Şeker (g)":13.8,
+    "Fiber (g)":1.9
+  },
+  {
+    "Malzeme Adı":"Böğürtlen",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":43,
+    "Yağ (g)":0.5,
+    "Karbonhidrat (g)":10.0,
+    "Protein (g)":1.4,
+    "Şeker (g)":4.9,
+    "Fiber (g)":5.0
+  },
+  {
+    "Malzeme Adı":"Böğürtlen Reçeli",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":277,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":69.0,
+    "Protein (g)":0.4,
+    "Şeker (g)":68.0,
+    "Fiber (g)":2.7
+  },
+  {
+    "Malzeme Adı":"Börülce",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":115,
+    "Yağ (g)":0.5,
+    "Karbonhidrat (g)":21.0,
+    "Protein (g)":8.0,
+    "Şeker (g)":3.3,
+    "Fiber (g)":7.0
+  },
+  {
+    "Malzeme Adı":"Brokoli",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":33,
+    "Yağ (g)":0.4,
+    "Karbonhidrat (g)":7.0,
+    "Protein (g)":2.8,
+    "Şeker (g)":1.7,
+    "Fiber (g)":2.6
+  },
+  {
+    "Malzeme Adı":"Brüksel Lahana",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":43,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":8.95,
+    "Protein (g)":3.38,
+    "Şeker (g)":2.2,
+    "Fiber (g)":3.8
+  },
+  {
+    "Malzeme Adı":"Buğday",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":338,
+    "Yağ (g)":2.5,
+    "Karbonhidrat (g)":71.0,
+    "Protein (g)":14.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Buğday Kepeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":216,
+    "Yağ (g)":4.3,
+    "Karbonhidrat (g)":65.0,
+    "Protein (g)":16.0,
+    "Şeker (g)":0.4,
+    "Fiber (g)":43.0
+  },
+  {
+    "Malzeme Adı":"Buğday Nişastası",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":353,
+    "Yağ (g)":0.14,
+    "Karbonhidrat (g)":86.98,
+    "Protein (g)":0.17,
+    "Şeker (g)":0.0,
+    "Fiber (g)":2.03
+  },
+  {
+    "Malzeme Adı":"Bulgur",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":342,
+    "Yağ (g)":1.3,
+    "Karbonhidrat (g)":76.0,
+    "Protein (g)":12.0,
+    "Şeker (g)":0.4,
+    "Fiber (g)":18.0
+  },
+  {
+    "Malzeme Adı":"Cağ Kebabı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":213,
+    "Yağ (g)":15.2,
+    "Karbonhidrat (g)":2.0,
+    "Protein (g)":16.45,
+    "Şeker (g)":0.3,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Ceviz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":654,
+    "Yağ (g)":65.0,
+    "Karbonhidrat (g)":14.0,
+    "Protein (g)":15.0,
+    "Şeker (g)":2.6,
+    "Fiber (g)":7.0
+  },
+  {
+    "Malzeme Adı":"Cevizli Baklava",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":453,
+    "Yağ (g)":33.13,
+    "Karbonhidrat (g)":35.61,
+    "Protein (g)":6.5,
+    "Şeker (g)":11.91,
+    "Fiber (g)":2.4
+  },
+  {
+    "Malzeme Adı":"Cezerye",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":138,
+    "Yağ (g)":2.85,
+    "Karbonhidrat (g)":28.24,
+    "Protein (g)":1.63,
+    "Şeker (g)":24.05,
+    "Fiber (g)":2.3
+  },
+  {
+    "Malzeme Adı":"Ciğer",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":164,
+    "Yağ (g)":4.4,
+    "Karbonhidrat (g)":3.8,
+    "Protein (g)":26.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Cin Mısır",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":346,
+    "Yağ (g)":8.2,
+    "Karbonhidrat (g)":48.1,
+    "Protein (g)":10.3,
+    "Şeker (g)":1.6,
+    "Fiber (g)":19.1
+  },
+  {
+    "Malzeme Adı":"Cordon Blue",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":225,
+    "Yağ (g)":13.3,
+    "Karbonhidrat (g)":12.1,
+    "Protein (g)":12.4,
+    "Şeker (g)":1.2,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Çam Balı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":304,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":82.3,
+    "Protein (g)":0.3,
+    "Şeker (g)":82.0,
+    "Fiber (g)":0.2
+  },
+  {
+    "Malzeme Adı":"Çam Fıstığı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":673,
+    "Yağ (g)":68.0,
+    "Karbonhidrat (g)":13.0,
+    "Protein (g)":14.0,
+    "Şeker (g)":3.6,
+    "Fiber (g)":3.7
+  },
+  {
+    "Malzeme Adı":"Çarliston Biber",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":20,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":2.91,
+    "Protein (g)":1.17,
+    "Şeker (g)":0.0,
+    "Fiber (g)":1.0
+  },
+  {
+    "Malzeme Adı":"Çavdar Ekmeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":259,
+    "Yağ (g)":3.3,
+    "Karbonhidrat (g)":48.3,
+    "Protein (g)":8.5,
+    "Şeker (g)":3.85,
+    "Fiber (g)":5.8
+  },
+  {
+    "Malzeme Adı":"Çavdar Unu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":348,
+    "Yağ (g)":1.5,
+    "Karbonhidrat (g)":75.0,
+    "Protein (g)":11.0,
+    "Şeker (g)":1.1,
+    "Fiber (g)":12.0
+  },
+  {
+    "Malzeme Adı":"Çedar Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":403,
+    "Yağ (g)":33.14,
+    "Karbonhidrat (g)":1.28,
+    "Protein (g)":24.9,
+    "Şeker (g)":0.52,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Çekirdeksiz Üzüm",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":69,
+    "Yağ (g)":0.16,
+    "Karbonhidrat (g)":18.1,
+    "Protein (g)":0.72,
+    "Şeker (g)":15.48,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Çemen",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":118,
+    "Yağ (g)":3.22,
+    "Karbonhidrat (g)":22.01,
+    "Protein (g)":5.71,
+    "Şeker (g)":9.14,
+    "Fiber (g)":5.9
+  },
+  {
+    "Malzeme Adı":"Çilek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":32,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":8.0,
+    "Protein (g)":0.7,
+    "Şeker (g)":4.9,
+    "Fiber (g)":2.0
+  },
+  {
+    "Malzeme Adı":"Çilek Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":56,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":14.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":14.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Çilekli Puding",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":123,
+    "Yağ (g)":3.3,
+    "Karbonhidrat (g)":20.0,
+    "Protein (g)":3.2,
+    "Şeker (g)":15.6,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Çipura, Çupra",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":109,
+    "Yağ (g)":2.72,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":19.74,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Çökelek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":98,
+    "Yağ (g)":4.3,
+    "Karbonhidrat (g)":3.4,
+    "Protein (g)":11.0,
+    "Şeker (g)":2.7,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Çörek Otu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":345,
+    "Yağ (g)":14.87,
+    "Karbonhidrat (g)":52.29,
+    "Protein (g)":15.8,
+    "Şeker (g)":0.0,
+    "Fiber (g)":39.8
+  },
+  {
+    "Malzeme Adı":"Dana Bonfile",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":324,
+    "Yağ (g)":25.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":24.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dana But",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":182,
+    "Yağ (g)":7.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":28.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dana Jambon",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":93,
+    "Yağ (g)":1.0,
+    "Karbonhidrat (g)":8.0,
+    "Protein (g)":13.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dana Kasap Köfte",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":204,
+    "Yağ (g)":12.11,
+    "Karbonhidrat (g)":6.52,
+    "Protein (g)":16.16,
+    "Şeker (g)":1.62,
+    "Fiber (g)":0.4
+  },
+  {
+    "Malzeme Adı":"Dana Kontrfile",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":267,
+    "Yağ (g)":17.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":26.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dana Pirzola",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":355,
+    "Yağ (g)":29.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":23.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dana Salam",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":258,
+    "Yağ (g)":22.2,
+    "Karbonhidrat (g)":1.9,
+    "Protein (g)":12.6,
+    "Şeker (g)":1.5,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dana Sosis",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":325,
+    "Yağ (g)":29.08,
+    "Karbonhidrat (g)":3.99,
+    "Protein (g)":11.04,
+    "Şeker (g)":2.54,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Deniz Börülcesi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":25,
+    "Yağ (g)":0.52,
+    "Karbonhidrat (g)":3.8,
+    "Protein (g)":2.74,
+    "Şeker (g)":1.26,
+    "Fiber (g)":1.9
+  },
+  {
+    "Malzeme Adı":"Dereotu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":43,
+    "Yağ (g)":1.12,
+    "Karbonhidrat (g)":7.02,
+    "Protein (g)":3.46,
+    "Şeker (g)":0.0,
+    "Fiber (g)":2.1
+  },
+  {
+    "Malzeme Adı":"Devekuşu Butu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":144,
+    "Yağ (g)":2.6,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":28.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Devekuşu Göğsü",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":144,
+    "Yağ (g)":2.6,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":28.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dil Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":332,
+    "Yağ (g)":25.2,
+    "Karbonhidrat (g)":1.5,
+    "Protein (g)":25.0,
+    "Şeker (g)":1.5,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Doğal Mineralli Su",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":0,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dolmalık Biber",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":20,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":4.6,
+    "Protein (g)":0.9,
+    "Şeker (g)":2.4,
+    "Fiber (g)":1.7
+  },
+  {
+    "Malzeme Adı":"Domates",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":18,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":3.92,
+    "Protein (g)":0.88,
+    "Şeker (g)":2.63,
+    "Fiber (g)":1.2
+  },
+  {
+    "Malzeme Adı":"Domates Salçası",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":82,
+    "Yağ (g)":0.5,
+    "Karbonhidrat (g)":19.0,
+    "Protein (g)":4.3,
+    "Şeker (g)":12.0,
+    "Fiber (g)":4.1
+  },
+  {
+    "Malzeme Adı":"Domates Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":17,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":4.2,
+    "Protein (g)":0.8,
+    "Şeker (g)":3.6,
+    "Fiber (g)":0.4
+  },
+  {
+    "Malzeme Adı":"Domuz Bonfile",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":143,
+    "Yağ (g)":3.5,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":26.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Domuz Fileto",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":242,
+    "Yağ (g)":14.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":27.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Domuz Göbek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":518,
+    "Yağ (g)":53.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":9.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Domuz Jambon",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":154,
+    "Yağ (g)":6.0,
+    "Karbonhidrat (g)":1.5,
+    "Protein (g)":21.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Domuz Omuz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":269,
+    "Yağ (g)":19.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":23.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Domuz Pastırması",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":541,
+    "Yağ (g)":42.0,
+    "Karbonhidrat (g)":1.4,
+    "Protein (g)":37.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Domuz Pirzola",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":231,
+    "Yağ (g)":14.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":24.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Domuz Sucuk",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":455,
+    "Yağ (g)":38.0,
+    "Karbonhidrat (g)":1.9,
+    "Protein (g)":24.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dondurma",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":267,
+    "Yağ (g)":14.26,
+    "Karbonhidrat (g)":32.45,
+    "Protein (g)":4.68,
+    "Şeker (g)":29.66,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Dondurulmış Bamya",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":30,
+    "Yağ (g)":0.25,
+    "Karbonhidrat (g)":6.63,
+    "Protein (g)":1.69,
+    "Şeker (g)":2.97,
+    "Fiber (g)":2.2
+  },
+  {
+    "Malzeme Adı":"Dondurulmuş Ahududu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":103,
+    "Yağ (g)":0.16,
+    "Karbonhidrat (g)":26.16,
+    "Protein (g)":0.7,
+    "Şeker (g)":21.76,
+    "Fiber (g)":4.4
+  },
+  {
+    "Malzeme Adı":"Dondurulmuş Bezelye",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":53,
+    "Yağ (g)":0.47,
+    "Karbonhidrat (g)":11.15,
+    "Protein (g)":3.4,
+    "Şeker (g)":0.0,
+    "Fiber (g)":3.4
+  },
+  {
+    "Malzeme Adı":"Dondurulmuş Çilek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":87,
+    "Yağ (g)":0.14,
+    "Karbonhidrat (g)":23.46,
+    "Protein (g)":0.52,
+    "Şeker (g)":21.49,
+    "Fiber (g)":1.9
+  },
+  {
+    "Malzeme Adı":"Dondurulmuş Fasulye",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":39,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":4.4,
+    "Protein (g)":3.3,
+    "Şeker (g)":0.0,
+    "Fiber (g)":3.0
+  },
+  {
+    "Malzeme Adı":"Dondurulmuş Ispanak",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":31,
+    "Yağ (g)":0.75,
+    "Karbonhidrat (g)":4.33,
+    "Protein (g)":3.94,
+    "Şeker (g)":0.87,
+    "Fiber (g)":3.1
+  },
+  {
+    "Malzeme Adı":"Dondurulmuş Mısır",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":92,
+    "Yağ (g)":4.8,
+    "Karbonhidrat (g)":12.2,
+    "Protein (g)":6.5,
+    "Şeker (g)":0.6,
+    "Fiber (g)":7.3
+  },
+  {
+    "Malzeme Adı":"Dondurulmuş Patates",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":138,
+    "Yağ (g)":3.7,
+    "Karbonhidrat (g)":25.0,
+    "Protein (g)":0.1,
+    "Şeker (g)":0.0,
+    "Fiber (g)":2.0
+  },
+  {
+    "Malzeme Adı":"Dondurulmuş Vişne",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":61,
+    "Yağ (g)":0.5,
+    "Karbonhidrat (g)":12.0,
+    "Protein (g)":0.6,
+    "Şeker (g)":8.5,
+    "Fiber (g)":1.6
+  },
+  {
+    "Malzeme Adı":"Dut Pekmezi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":299,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":75.3,
+    "Protein (g)":0.0,
+    "Şeker (g)":75.3,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dut Pekmezi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":299,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":75.3,
+    "Protein (g)":0.0,
+    "Şeker (g)":75.3,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Dut Pestili",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":395,
+    "Yağ (g)":7.26,
+    "Karbonhidrat (g)":77.83,
+    "Protein (g)":4.44,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.22
+  },
+  {
+    "Malzeme Adı":"Ebegümeci",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":25,
+    "Yağ (g)":0.51,
+    "Karbonhidrat (g)":3.62,
+    "Protein (g)":2.87,
+    "Şeker (g)":0.44,
+    "Fiber (g)":2.6
+  },
+  {
+    "Malzeme Adı":"Ekmek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":266,
+    "Yağ (g)":3.29,
+    "Karbonhidrat (g)":50.61,
+    "Protein (g)":7.64,
+    "Şeker (g)":4.31,
+    "Fiber (g)":2.4
+  },
+  {
+    "Malzeme Adı":"Elma",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":52,
+    "Yağ (g)":0.17,
+    "Karbonhidrat (g)":13.81,
+    "Protein (g)":0.26,
+    "Şeker (g)":10.39,
+    "Fiber (g)":2.4
+  },
+  {
+    "Malzeme Adı":"Elma Sirkesi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":7,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":1.8,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Elma Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":47,
+    "Yağ (g)":0.11,
+    "Karbonhidrat (g)":11.68,
+    "Protein (g)":0.06,
+    "Şeker (g)":10.9,
+    "Fiber (g)":0.1
+  },
+  {
+    "Malzeme Adı":"Enginar",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":47,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":11.0,
+    "Protein (g)":3.3,
+    "Şeker (g)":1.0,
+    "Fiber (g)":5.0
+  },
+  {
+    "Malzeme Adı":"Enginar",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":51,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":11.3,
+    "Protein (g)":2.9,
+    "Şeker (g)":1.0,
+    "Fiber (g)":5.2
+  },
+  {
+    "Malzeme Adı":"Erişte",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":133,
+    "Yağ (g)":2.44,
+    "Karbonhidrat (g)":24.5,
+    "Protein (g)":4.53,
+    "Şeker (g)":1.34,
+    "Fiber (g)":2.7
+  },
+  {
+    "Malzeme Adı":"Eritme Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":340,
+    "Yağ (g)":26.0,
+    "Karbonhidrat (g)":3.0,
+    "Protein (g)":23.5,
+    "Şeker (g)":3.2,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Eski Kaşar",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":373,
+    "Yağ (g)":29.0,
+    "Karbonhidrat (g)":1.0,
+    "Protein (g)":27.0,
+    "Şeker (g)":1.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Esmer Şeker",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":377,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":97.33,
+    "Protein (g)":0.0,
+    "Şeker (g)":96.21,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Et Döner",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":159,
+    "Yağ (g)":4.27,
+    "Karbonhidrat (g)":19.77,
+    "Protein (g)":9.71,
+    "Şeker (g)":1.77,
+    "Fiber (g)":1.1
+  },
+  {
+    "Malzeme Adı":"Et Kavurma",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":217,
+    "Yağ (g)":12.32,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":24.8,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Et Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":3,
+    "Yağ (g)":0.08,
+    "Karbonhidrat (g)":0.33,
+    "Protein (g)":0.35,
+    "Şeker (g)":0.26,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Etli Yaprak Sarma",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":238,
+    "Yağ (g)":18.44,
+    "Karbonhidrat (g)":11.42,
+    "Protein (g)":7.83,
+    "Şeker (g)":2.55,
+    "Fiber (g)":3.1
+  },
+  {
+    "Malzeme Adı":"Ezine Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":314,
+    "Yağ (g)":26.5,
+    "Karbonhidrat (g)":0.3,
+    "Protein (g)":18.5,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Ezogelin",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":78,
+    "Yağ (g)":3.9,
+    "Karbonhidrat (g)":6.3,
+    "Protein (g)":4.3,
+    "Şeker (g)":0.8,
+    "Fiber (g)":4.7
+  },
+  {
+    "Malzeme Adı":"Fasulye Turşusu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":27,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":4.9,
+    "Protein (g)":1.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":2.5
+  },
+  {
+    "Malzeme Adı":"Fesleğen",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":27,
+    "Yağ (g)":0.61,
+    "Karbonhidrat (g)":4.34,
+    "Protein (g)":2.54,
+    "Şeker (g)":0.3,
+    "Fiber (g)":3.9
+  },
+  {
+    "Malzeme Adı":"Fındık",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":628,
+    "Yağ (g)":61.0,
+    "Karbonhidrat (g)":17.0,
+    "Protein (g)":15.0,
+    "Şeker (g)":4.3,
+    "Fiber (g)":10.0
+  },
+  {
+    "Malzeme Adı":"Fındık Ezmesi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":579,
+    "Yağ (g)":40.55,
+    "Karbonhidrat (g)":37.89,
+    "Protein (g)":12.75,
+    "Şeker (g)":35.4,
+    "Fiber (g)":5.9
+  },
+  {
+    "Malzeme Adı":"Fındık İçi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":679,
+    "Yağ (g)":61.5,
+    "Karbonhidrat (g)":11.4,
+    "Protein (g)":16.6,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Fındık Kreması",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":561,
+    "Yağ (g)":37.6,
+    "Karbonhidrat (g)":42.8,
+    "Protein (g)":8.9,
+    "Şeker (g)":41.8,
+    "Fiber (g)":8.3
+  },
+  {
+    "Malzeme Adı":"Fındık Yağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":900,
+    "Yağ (g)":100.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Fıstıklı Baklava",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":431,
+    "Yağ (g)":28.36,
+    "Karbonhidrat (g)":38.88,
+    "Protein (g)":7.74,
+    "Şeker (g)":13.06,
+    "Fiber (g)":3.2
+  },
+  {
+    "Malzeme Adı":"Galeta",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":294,
+    "Yağ (g)":2.17,
+    "Karbonhidrat (g)":60.62,
+    "Protein (g)":7.4,
+    "Şeker (g)":21.01,
+    "Fiber (g)":1.4
+  },
+  {
+    "Malzeme Adı":"Gazlı İçecek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":35,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":8.83,
+    "Protein (g)":0.0,
+    "Şeker (g)":8.5,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Glutensiz Ekmek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":219,
+    "Yağ (g)":2.3,
+    "Karbonhidrat (g)":49.2,
+    "Protein (g)":0.59,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Gofret",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":541,
+    "Yağ (g)":29.0,
+    "Karbonhidrat (g)":65.0,
+    "Protein (g)":4.1,
+    "Şeker (g)":35.0,
+    "Fiber (g)":0.8
+  },
+  {
+    "Malzeme Adı":"Granül Kahve",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":2,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.38,
+    "Protein (g)":0.11,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Greyfurt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":32,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":8.08,
+    "Protein (g)":0.63,
+    "Şeker (g)":6.98,
+    "Fiber (g)":1.1
+  },
+  {
+    "Malzeme Adı":"Gül Reçeli",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":286,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":71.0,
+    "Protein (g)":0.2,
+    "Şeker (g)":68.0,
+    "Fiber (g)":0.7
+  },
+  {
+    "Malzeme Adı":"Güllaç Yaprağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":357,
+    "Yağ (g)":1.41,
+    "Karbonhidrat (g)":84.0,
+    "Protein (g)":1.86,
+    "Şeker (g)":0.01,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Hamsi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":131,
+    "Yağ (g)":4.84,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.35,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Hardal",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":66,
+    "Yağ (g)":3.11,
+    "Karbonhidrat (g)":7.78,
+    "Protein (g)":3.95,
+    "Şeker (g)":2.84,
+    "Fiber (g)":3.2
+  },
+  {
+    "Malzeme Adı":"Harnup Pekmezi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":313,
+    "Yağ (g)":1.0,
+    "Karbonhidrat (g)":73.0,
+    "Protein (g)":3.0,
+    "Şeker (g)":54.2,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Haşhaş Tohumu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":553,
+    "Yağ (g)":44.7,
+    "Karbonhidrat (g)":23.69,
+    "Protein (g)":18.04,
+    "Şeker (g)":13.69,
+    "Fiber (g)":10.0
+  },
+  {
+    "Malzeme Adı":"Havuç",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":41,
+    "Yağ (g)":0.24,
+    "Karbonhidrat (g)":9.58,
+    "Protein (g)":0.93,
+    "Şeker (g)":4.54,
+    "Fiber (g)":2.8
+  },
+  {
+    "Malzeme Adı":"Hellim",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":333,
+    "Yağ (g)":26.47,
+    "Karbonhidrat (g)":1.47,
+    "Protein (g)":22.07,
+    "Şeker (g)":0.47,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Hindi But",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":144,
+    "Yağ (g)":6.7,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":19.5,
+    "Şeker (g)":1.7,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Hindi Fileto",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":84,
+    "Yağ (g)":0.7,
+    "Karbonhidrat (g)":4.5,
+    "Protein (g)":15.0,
+    "Şeker (g)":1.7,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Hindi Salam",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":185,
+    "Yağ (g)":13.0,
+    "Karbonhidrat (g)":5.0,
+    "Protein (g)":12.0,
+    "Şeker (g)":0.6,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Hindi Sosis",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":203,
+    "Yağ (g)":15.0,
+    "Karbonhidrat (g)":5.0,
+    "Protein (g)":12.0,
+    "Şeker (g)":0.6,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Hindi Sucuk",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":377,
+    "Yağ (g)":35.0,
+    "Karbonhidrat (g)":1.5,
+    "Protein (g)":14.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Hindistan Cevizi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":354,
+    "Yağ (g)":33.94,
+    "Karbonhidrat (g)":15.23,
+    "Protein (g)":3.33,
+    "Şeker (g)":6.23,
+    "Fiber (g)":9.0
+  },
+  {
+    "Malzeme Adı":"Hurma",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":277,
+    "Yağ (g)":0.15,
+    "Karbonhidrat (g)":74.97,
+    "Protein (g)":1.81,
+    "Şeker (g)":66.47,
+    "Fiber (g)":6.7
+  },
+  {
+    "Malzeme Adı":"Iceberg",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":14,
+    "Yağ (g)":0.14,
+    "Karbonhidrat (g)":2.97,
+    "Protein (g)":0.9,
+    "Şeker (g)":1.76,
+    "Fiber (g)":1.2
+  },
+  {
+    "Malzeme Adı":"Isırgan",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":37,
+    "Yağ (g)":0.56,
+    "Karbonhidrat (g)":6.95,
+    "Protein (g)":2.8,
+    "Şeker (g)":0.4,
+    "Fiber (g)":2.7
+  },
+  {
+    "Malzeme Adı":"Ispanak",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":23,
+    "Yağ (g)":0.39,
+    "Karbonhidrat (g)":3.63,
+    "Protein (g)":2.86,
+    "Şeker (g)":0.42,
+    "Fiber (g)":2.2
+  },
+  {
+    "Malzeme Adı":"Ispanaklı Börek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":264,
+    "Yağ (g)":11.45,
+    "Karbonhidrat (g)":32.59,
+    "Protein (g)":7.25,
+    "Şeker (g)":0.91,
+    "Fiber (g)":1.7
+  },
+  {
+    "Malzeme Adı":"İğde",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":68,
+    "Yağ (g)":0.23,
+    "Karbonhidrat (g)":17.68,
+    "Protein (g)":0.68,
+    "Şeker (g)":14.86,
+    "Fiber (g)":2.9
+  },
+  {
+    "Malzeme Adı":"İncir",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":74,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":19.0,
+    "Protein (g)":0.8,
+    "Şeker (g)":16.0,
+    "Fiber (g)":2.9
+  },
+  {
+    "Malzeme Adı":"İncir Pekmezi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":254,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":61.0,
+    "Protein (g)":1.2,
+    "Şeker (g)":59.0,
+    "Fiber (g)":2.2
+  },
+  {
+    "Malzeme Adı":"İncir Reçeli",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":125,
+    "Yağ (g)":0.24,
+    "Karbonhidrat (g)":31.6,
+    "Protein (g)":0.66,
+    "Şeker (g)":24.32,
+    "Fiber (g)":2.4
+  },
+  {
+    "Malzeme Adı":"İrmik",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":359,
+    "Yağ (g)":1.1,
+    "Karbonhidrat (g)":73.0,
+    "Protein (g)":12.68,
+    "Şeker (g)":0.0,
+    "Fiber (g)":3.9
+  },
+  {
+    "Malzeme Adı":"İsot",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":363,
+    "Yağ (g)":11.0,
+    "Karbonhidrat (g)":51.0,
+    "Protein (g)":15.0,
+    "Şeker (g)":2.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"İstavrit",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":185,
+    "Yağ (g)":7.89,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.07,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"İyotsuz Tuz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":0,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kabak",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":16,
+    "Yağ (g)":0.18,
+    "Karbonhidrat (g)":3.35,
+    "Protein (g)":1.21,
+    "Şeker (g)":1.73,
+    "Fiber (g)":1.1
+  },
+  {
+    "Malzeme Adı":"Kabak Çekirdeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":541,
+    "Yağ (g)":45.85,
+    "Karbonhidrat (g)":17.81,
+    "Protein (g)":25.54,
+    "Şeker (g)":1.0,
+    "Fiber (g)":3.9
+  },
+  {
+    "Malzeme Adı":"Kabartma Tozu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":0,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kahve Kreması",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":126,
+    "Yağ (g)":10.0,
+    "Karbonhidrat (g)":5.5,
+    "Protein (g)":3.5,
+    "Şeker (g)":0.1,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kakao",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":294,
+    "Yağ (g)":11.0,
+    "Karbonhidrat (g)":9.9,
+    "Protein (g)":24.0,
+    "Şeker (g)":0.6,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kakaolu Gofret",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":557,
+    "Yağ (g)":33.0,
+    "Karbonhidrat (g)":59.0,
+    "Protein (g)":4.8,
+    "Şeker (g)":31.0,
+    "Fiber (g)":1.4
+  },
+  {
+    "Malzeme Adı":"Kakaolu Kek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":337,
+    "Yağ (g)":11.37,
+    "Karbonhidrat (g)":42.47,
+    "Protein (g)":6.33,
+    "Şeker (g)":21.39,
+    "Fiber (g)":1.2
+  },
+  {
+    "Malzeme Adı":"Kakaolu Puding",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":128,
+    "Yağ (g)":3.6,
+    "Karbonhidrat (g)":20.0,
+    "Protein (g)":3.6,
+    "Şeker (g)":16.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kalamar",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":92,
+    "Yağ (g)":1.38,
+    "Karbonhidrat (g)":3.08,
+    "Protein (g)":15.58,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kalkan",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":95,
+    "Yağ (g)":2.95,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":16.05,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kanola Yağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":884,
+    "Yağ (g)":100.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kara Lahana",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":30,
+    "Yağ (g)":0.42,
+    "Karbonhidrat (g)":5.69,
+    "Protein (g)":2.45,
+    "Şeker (g)":0.46,
+    "Fiber (g)":3.6
+  },
+  {
+    "Malzeme Adı":"Karabiber",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":255,
+    "Yağ (g)":3.26,
+    "Karbonhidrat (g)":64.81,
+    "Protein (g)":10.95,
+    "Şeker (g)":0.64,
+    "Fiber (g)":26.5
+  },
+  {
+    "Malzeme Adı":"Karadut Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":47,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":11.0,
+    "Protein (g)":0.4,
+    "Şeker (g)":11.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Karbonat",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":0,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Karides",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":106,
+    "Yağ (g)":1.73,
+    "Karbonhidrat (g)":0.91,
+    "Protein (g)":20.31,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Karnabahar",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":25,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":5.3,
+    "Protein (g)":1.98,
+    "Şeker (g)":2.4,
+    "Fiber (g)":2.5
+  },
+  {
+    "Malzeme Adı":"Karpuz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":30,
+    "Yağ (g)":0.15,
+    "Karbonhidrat (g)":7.55,
+    "Protein (g)":0.61,
+    "Şeker (g)":6.2,
+    "Fiber (g)":0.4
+  },
+  {
+    "Malzeme Adı":"Kaşar Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":325,
+    "Yağ (g)":25.0,
+    "Karbonhidrat (g)":1.0,
+    "Protein (g)":24.0,
+    "Şeker (g)":1.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Katmer",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":387,
+    "Yağ (g)":23.23,
+    "Karbonhidrat (g)":40.14,
+    "Protein (g)":5.72,
+    "Şeker (g)":15.51,
+    "Fiber (g)":1.5
+  },
+  {
+    "Malzeme Adı":"Kavrulmuş Antep Fıstığı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":571,
+    "Yağ (g)":45.97,
+    "Karbonhidrat (g)":27.65,
+    "Protein (g)":21.35,
+    "Şeker (g)":7.81,
+    "Fiber (g)":10.3
+  },
+  {
+    "Malzeme Adı":"Kavrulmuş Ayçekirdeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":457,
+    "Yağ (g)":27.7,
+    "Karbonhidrat (g)":22.2,
+    "Protein (g)":25.1,
+    "Şeker (g)":4.9,
+    "Fiber (g)":8.9
+  },
+  {
+    "Malzeme Adı":"Kavrulmuş Badem",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":603,
+    "Yağ (g)":49.3,
+    "Karbonhidrat (g)":11.5,
+    "Protein (g)":22.7,
+    "Şeker (g)":6.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kavun",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":36,
+    "Yağ (g)":0.14,
+    "Karbonhidrat (g)":9.09,
+    "Protein (g)":0.54,
+    "Şeker (g)":8.12,
+    "Fiber (g)":0.8
+  },
+  {
+    "Malzeme Adı":"Kayısı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":48,
+    "Yağ (g)":0.39,
+    "Karbonhidrat (g)":11.12,
+    "Protein (g)":1.4,
+    "Şeker (g)":9.24,
+    "Fiber (g)":2.0
+  },
+  {
+    "Malzeme Adı":"Kayısı Çekirdeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":578,
+    "Yağ (g)":50.45,
+    "Karbonhidrat (g)":13.77,
+    "Protein (g)":25.32,
+    "Şeker (g)":3.81,
+    "Fiber (g)":7.9
+  },
+  {
+    "Malzeme Adı":"Kayısı Reçeli",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":302,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":75.0,
+    "Protein (g)":0.3,
+    "Şeker (g)":51.0,
+    "Fiber (g)":0.3
+  },
+  {
+    "Malzeme Adı":"Kayısı Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":54,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":13.2,
+    "Protein (g)":0.0,
+    "Şeker (g)":13.2,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kaymak",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":300,
+    "Yağ (g)":30.16,
+    "Karbonhidrat (g)":3.03,
+    "Protein (g)":2.04,
+    "Şeker (g)":0.97,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kaymaklı Lokum",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":390,
+    "Yağ (g)":13.0,
+    "Karbonhidrat (g)":79.1,
+    "Protein (g)":4.0,
+    "Şeker (g)":76.0,
+    "Fiber (g)":1.2
+  },
+  {
+    "Malzeme Adı":"Kaz But",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":161,
+    "Yağ (g)":7.13,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":22.75,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kaz Göğüs",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":161,
+    "Yağ (g)":7.13,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":22.75,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kazandibi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":160,
+    "Yağ (g)":4.13,
+    "Karbonhidrat (g)":27.8,
+    "Protein (g)":2.75,
+    "Şeker (g)":12.94,
+    "Fiber (g)":0.3
+  },
+  {
+    "Malzeme Adı":"Keçi Eti, Bel",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":198,
+    "Yağ (g)":13.23,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":19.72,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Keçi Eti, But",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":163,
+    "Yağ (g)":9.24,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.05,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Keçi Eti, Kol",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":174,
+    "Yağ (g)":10.27,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.43,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Keçi Eti, Sırt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":189,
+    "Yağ (g)":11.91,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.53,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Keçi Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":361,
+    "Yağ (g)":28.85,
+    "Karbonhidrat (g)":1.87,
+    "Protein (g)":23.52,
+    "Şeker (g)":1.87,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Keçi Sütü",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":57,
+    "Yağ (g)":3.0,
+    "Karbonhidrat (g)":4.5,
+    "Protein (g)":3.0,
+    "Şeker (g)":4.5,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Keçiboynuzu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":540,
+    "Yağ (g)":31.36,
+    "Karbonhidrat (g)":56.29,
+    "Protein (g)":8.15,
+    "Şeker (g)":52.0,
+    "Fiber (g)":3.8
+  },
+  {
+    "Malzeme Adı":"Kedi Dili",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":365,
+    "Yağ (g)":9.1,
+    "Karbonhidrat (g)":59.7,
+    "Protein (g)":10.6,
+    "Şeker (g)":25.39,
+    "Fiber (g)":1.0
+  },
+  {
+    "Malzeme Adı":"Kefal",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":117,
+    "Yağ (g)":3.79,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":19.35,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kefir",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":55,
+    "Yağ (g)":3.0,
+    "Karbonhidrat (g)":3.7,
+    "Protein (g)":3.0,
+    "Şeker (g)":1.7,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kekik",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":276,
+    "Yağ (g)":7.43,
+    "Karbonhidrat (g)":63.94,
+    "Protein (g)":9.11,
+    "Şeker (g)":1.71,
+    "Fiber (g)":37.0
+  },
+  {
+    "Malzeme Adı":"Kepekli Ekmek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":259,
+    "Yağ (g)":4.11,
+    "Karbonhidrat (g)":47.14,
+    "Protein (g)":9.13,
+    "Şeker (g)":5.49,
+    "Fiber (g)":4.4
+  },
+  {
+    "Malzeme Adı":"Kereviz Sapı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":14,
+    "Yağ (g)":0.17,
+    "Karbonhidrat (g)":2.97,
+    "Protein (g)":0.69,
+    "Şeker (g)":1.83,
+    "Fiber (g)":1.6
+  },
+  {
+    "Malzeme Adı":"Kestane",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":213,
+    "Yağ (g)":2.26,
+    "Karbonhidrat (g)":45.54,
+    "Protein (g)":2.42,
+    "Şeker (g)":0.0,
+    "Fiber (g)":8.1
+  },
+  {
+    "Malzeme Adı":"Kestane Şekeri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":256,
+    "Yağ (g)":1.7,
+    "Karbonhidrat (g)":59.05,
+    "Protein (g)":1.82,
+    "Şeker (g)":24.79,
+    "Fiber (g)":6.1
+  },
+  {
+    "Malzeme Adı":"Keşkül",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":131,
+    "Yağ (g)":4.5,
+    "Karbonhidrat (g)":20.0,
+    "Protein (g)":2.5,
+    "Şeker (g)":18.0,
+    "Fiber (g)":0.4
+  },
+  {
+    "Malzeme Adı":"Ketçap",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":97,
+    "Yağ (g)":0.38,
+    "Karbonhidrat (g)":25.08,
+    "Protein (g)":1.74,
+    "Şeker (g)":22.77,
+    "Fiber (g)":0.3
+  },
+  {
+    "Malzeme Adı":"Keten Tohumu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":534,
+    "Yağ (g)":42.16,
+    "Karbonhidrat (g)":28.88,
+    "Protein (g)":18.29,
+    "Şeker (g)":1.55,
+    "Fiber (g)":27.3
+  },
+  {
+    "Malzeme Adı":"Kırmızı Erik",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":54,
+    "Yağ (g)":0.25,
+    "Karbonhidrat (g)":13.6,
+    "Protein (g)":0.68,
+    "Şeker (g)":7.82,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Kırmızı Lahana",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":31,
+    "Yağ (g)":0.16,
+    "Karbonhidrat (g)":7.37,
+    "Protein (g)":1.43,
+    "Şeker (g)":3.91,
+    "Fiber (g)":2.1
+  },
+  {
+    "Malzeme Adı":"Kırmızı Mercimek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":336,
+    "Yağ (g)":1.6,
+    "Karbonhidrat (g)":57.4,
+    "Protein (g)":23.7,
+    "Şeker (g)":3.1,
+    "Fiber (g)":32.0
+  },
+  {
+    "Malzeme Adı":"Kıvırcık Marul",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":14,
+    "Yağ (g)":0.14,
+    "Karbonhidrat (g)":2.97,
+    "Protein (g)":0.9,
+    "Şeker (g)":1.76,
+    "Fiber (g)":1.2
+  },
+  {
+    "Malzeme Adı":"Kıyma",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":276,
+    "Yağ (g)":18.58,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":25.35,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kızılcık",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":46,
+    "Yağ (g)":0.13,
+    "Karbonhidrat (g)":12.2,
+    "Protein (g)":0.39,
+    "Şeker (g)":4.04,
+    "Fiber (g)":4.6
+  },
+  {
+    "Malzeme Adı":"Kızılcık",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":120,
+    "Yağ (g)":0.18,
+    "Karbonhidrat (g)":29.65,
+    "Protein (g)":0.14,
+    "Şeker (g)":1.6,
+    "Fiber (g)":1.77
+  },
+  {
+    "Malzeme Adı":"Kimyon",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":374,
+    "Yağ (g)":22.0,
+    "Karbonhidrat (g)":44.0,
+    "Protein (g)":18.0,
+    "Şeker (g)":2.3,
+    "Fiber (g)":11.0
+  },
+  {
+    "Malzeme Adı":"Kiraz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":63,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":16.01,
+    "Protein (g)":1.06,
+    "Şeker (g)":12.82,
+    "Fiber (g)":2.1
+  },
+  {
+    "Malzeme Adı":"Kiraz Domates",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":18,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":3.91,
+    "Protein (g)":0.88,
+    "Şeker (g)":2.63,
+    "Fiber (g)":1.2
+  },
+  {
+    "Malzeme Adı":"Kivi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":61,
+    "Yağ (g)":0.52,
+    "Karbonhidrat (g)":14.66,
+    "Protein (g)":1.14,
+    "Şeker (g)":8.99,
+    "Fiber (g)":3.0
+  },
+  {
+    "Malzeme Adı":"Kokoreç",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":94,
+    "Yağ (g)":2.35,
+    "Karbonhidrat (g)":2.31,
+    "Protein (g)":14.99,
+    "Şeker (g)":0.64,
+    "Fiber (g)":0.3
+  },
+  {
+    "Malzeme Adı":"Kokteyl Zeytin",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":200,
+    "Yağ (g)":21.2,
+    "Karbonhidrat (g)":1.0,
+    "Protein (g)":1.3,
+    "Şeker (g)":0.0,
+    "Fiber (g)":4.7
+  },
+  {
+    "Malzeme Adı":"Kola",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":42,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":7.5,
+    "Protein (g)":0.0,
+    "Şeker (g)":7.5,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Konsantre Portakal Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":44,
+    "Yağ (g)":0.27,
+    "Karbonhidrat (g)":10.06,
+    "Protein (g)":0.8,
+    "Şeker (g)":8.4,
+    "Fiber (g)":0.2
+  },
+  {
+    "Malzeme Adı":"Konserve Bamya",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":38,
+    "Yağ (g)":0.7,
+    "Karbonhidrat (g)":4.7,
+    "Protein (g)":2.4,
+    "Şeker (g)":1.2,
+    "Fiber (g)":3.2
+  },
+  {
+    "Malzeme Adı":"Konserve Barbunya Fasulyesi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":82,
+    "Yağ (g)":0.6,
+    "Karbonhidrat (g)":14.5,
+    "Protein (g)":5.22,
+    "Şeker (g)":1.85,
+    "Fiber (g)":4.3
+  },
+  {
+    "Malzeme Adı":"Konserve Bezelye",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":68,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":8.3,
+    "Protein (g)":5.0,
+    "Şeker (g)":1.5,
+    "Fiber (g)":7.5
+  },
+  {
+    "Malzeme Adı":"Konserve Domates",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":17,
+    "Yağ (g)":0.13,
+    "Karbonhidrat (g)":3.91,
+    "Protein (g)":0.8,
+    "Şeker (g)":2.56,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Konserve Fasulye",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":20,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":4.5,
+    "Protein (g)":1.15,
+    "Şeker (g)":0.96,
+    "Fiber (g)":1.9
+  },
+  {
+    "Malzeme Adı":"Konserve Hamsi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":210,
+    "Yağ (g)":9.71,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":28.89,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Konserve Mantar",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":25,
+    "Yağ (g)":0.29,
+    "Karbonhidrat (g)":5.09,
+    "Protein (g)":1.87,
+    "Şeker (g)":2.2,
+    "Fiber (g)":2.4
+  },
+  {
+    "Malzeme Adı":"Konserve Mısır",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":62,
+    "Yağ (g)":1.3,
+    "Karbonhidrat (g)":10.0,
+    "Protein (g)":1.8,
+    "Şeker (g)":5.0,
+    "Fiber (g)":1.6
+  },
+  {
+    "Malzeme Adı":"Konserve Nohut",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":164,
+    "Yağ (g)":2.59,
+    "Karbonhidrat (g)":27.42,
+    "Protein (g)":8.86,
+    "Şeker (g)":4.8,
+    "Fiber (g)":7.6
+  },
+  {
+    "Malzeme Adı":"Koyun Eti, Bel",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":142,
+    "Yağ (g)":6.64,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.61,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Koyun Eti, But",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":137,
+    "Yağ (g)":7.2,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":18.24,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Koyun Eti, Kol",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":122,
+    "Yağ (g)":5.17,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":18.81,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Koyun Eti, Sırt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":138,
+    "Yağ (g)":7.28,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":18.21,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Koyun Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":311,
+    "Yağ (g)":26.0,
+    "Karbonhidrat (g)":1.9,
+    "Protein (g)":18.0,
+    "Şeker (g)":1.9,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Koyun, Kuyruk Yağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":787,
+    "Yağ (g)":86.12,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":2.87,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Köfte Harcı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":340,
+    "Yağ (g)":4.3,
+    "Karbonhidrat (g)":60.0,
+    "Protein (g)":11.0,
+    "Şeker (g)":4.5,
+    "Fiber (g)":7.0
+  },
+  {
+    "Malzeme Adı":"Kök Kereviz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":42,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":9.2,
+    "Protein (g)":1.5,
+    "Şeker (g)":1.6,
+    "Fiber (g)":1.8
+  },
+  {
+    "Malzeme Adı":"Köri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":325,
+    "Yağ (g)":14.0,
+    "Karbonhidrat (g)":58.0,
+    "Protein (g)":13.0,
+    "Şeker (g)":2.8,
+    "Fiber (g)":33.0
+  },
+  {
+    "Malzeme Adı":"Közlenmiş Biber",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":39,
+    "Yağ (g)":1.2,
+    "Karbonhidrat (g)":7.4,
+    "Protein (g)":0.9,
+    "Şeker (g)":4.1,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Közlenmiş Patlıcan",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":25,
+    "Yağ (g)":0.22,
+    "Karbonhidrat (g)":5.88,
+    "Protein (g)":1.06,
+    "Şeker (g)":2.35,
+    "Fiber (g)":3.5
+  },
+  {
+    "Malzeme Adı":"Krem Peynir",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":349,
+    "Yağ (g)":34.87,
+    "Karbonhidrat (g)":2.66,
+    "Protein (g)":7.55,
+    "Şeker (g)":0.2,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Krem Şanti",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":345,
+    "Yağ (g)":37.0,
+    "Karbonhidrat (g)":2.79,
+    "Protein (g)":2.05,
+    "Şeker (g)":0.11,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Krema",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":334,
+    "Yağ (g)":35.0,
+    "Karbonhidrat (g)":3.0,
+    "Protein (g)":1.5,
+    "Şeker (g)":3.0,
+    "Fiber (g)":1.0
+  },
+  {
+    "Malzeme Adı":"Kuru Erik",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":240,
+    "Yağ (g)":0.38,
+    "Karbonhidrat (g)":63.88,
+    "Protein (g)":2.18,
+    "Şeker (g)":38.13,
+    "Fiber (g)":7.1
+  },
+  {
+    "Malzeme Adı":"Kuru Fasulye",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":93,
+    "Yağ (g)":4.04,
+    "Karbonhidrat (g)":11.61,
+    "Protein (g)":3.41,
+    "Şeker (g)":1.28,
+    "Fiber (g)":2.7
+  },
+  {
+    "Malzeme Adı":"Kuru Maya",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":325,
+    "Yağ (g)":8.0,
+    "Karbonhidrat (g)":41.0,
+    "Protein (g)":40.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":27.0
+  },
+  {
+    "Malzeme Adı":"Kuru Nane",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":356,
+    "Yağ (g)":4.3,
+    "Karbonhidrat (g)":65.5,
+    "Protein (g)":12.1,
+    "Şeker (g)":0.0,
+    "Fiber (g)":10.1
+  },
+  {
+    "Malzeme Adı":"Kuş Üzümü",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":44,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":10.02,
+    "Protein (g)":0.45,
+    "Şeker (g)":0.0,
+    "Fiber (g)":3.42
+  },
+  {
+    "Malzeme Adı":"Kuşburnu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":2,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kuşburnu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":280,
+    "Yağ (g)":0.16,
+    "Karbonhidrat (g)":69.75,
+    "Protein (g)":0.35,
+    "Şeker (g)":43.58,
+    "Fiber (g)":1.4
+  },
+  {
+    "Malzeme Adı":"Kuşkonmaz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":20,
+    "Yağ (g)":0.12,
+    "Karbonhidrat (g)":3.88,
+    "Protein (g)":2.2,
+    "Şeker (g)":1.88,
+    "Fiber (g)":2.1
+  },
+  {
+    "Malzeme Adı":"Kuşkonmaz, Konserve",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":19,
+    "Yağ (g)":0.65,
+    "Karbonhidrat (g)":2.46,
+    "Protein (g)":2.14,
+    "Şeker (g)":1.06,
+    "Fiber (g)":1.6
+  },
+  {
+    "Malzeme Adı":"Kuzu Eti, Bel",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":140,
+    "Yağ (g)":7.29,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":18.47,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kuzu Eti, But",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":122,
+    "Yağ (g)":4.95,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":19.3,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kuzu Eti, Kol",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":120,
+    "Yağ (g)":4.97,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":18.74,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kuzu Eti, Sırt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":136,
+    "Yağ (g)":7.29,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":17.72,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Kuzu Kulağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":22,
+    "Yağ (g)":0.7,
+    "Karbonhidrat (g)":3.2,
+    "Protein (g)":2.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":2.9
+  },
+  {
+    "Malzeme Adı":"Labne",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":194,
+    "Yağ (g)":18.0,
+    "Karbonhidrat (g)":3.5,
+    "Protein (g)":4.5,
+    "Şeker (g)":3.5,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Lahana",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":24,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":6.0,
+    "Protein (g)":1.3,
+    "Şeker (g)":3.2,
+    "Fiber (g)":2.5
+  },
+  {
+    "Malzeme Adı":"Laktozsuz Süt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":44,
+    "Yağ (g)":1.5,
+    "Karbonhidrat (g)":4.7,
+    "Protein (g)":3.0,
+    "Şeker (g)":4.7,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Lavaş",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":238,
+    "Yağ (g)":1.2,
+    "Karbonhidrat (g)":48.57,
+    "Protein (g)":7.14,
+    "Şeker (g)":0.17,
+    "Fiber (g)":1.9
+  },
+  {
+    "Malzeme Adı":"Leblebi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":355,
+    "Yağ (g)":6.26,
+    "Karbonhidrat (g)":58.58,
+    "Protein (g)":18.64,
+    "Şeker (g)":10.33,
+    "Fiber (g)":16.8
+  },
+  {
+    "Malzeme Adı":"Levrek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":148,
+    "Yağ (g)":5.82,
+    "Karbonhidrat (g)":0.49,
+    "Protein (g)":22.16,
+    "Şeker (g)":0.11,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Light Kola",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":0,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Limon",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":29,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":9.32,
+    "Protein (g)":1.1,
+    "Şeker (g)":2.5,
+    "Fiber (g)":2.8
+  },
+  {
+    "Malzeme Adı":"Limon Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":25,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":8.63,
+    "Protein (g)":0.38,
+    "Şeker (g)":2.4,
+    "Fiber (g)":0.4
+  },
+  {
+    "Malzeme Adı":"Limonata",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":40,
+    "Yağ (g)":0.04,
+    "Karbonhidrat (g)":10.43,
+    "Protein (g)":0.07,
+    "Şeker (g)":9.97,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Limonlu Soda",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":43,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":10.85,
+    "Protein (g)":0.09,
+    "Şeker (g)":10.61,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Lokum",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":305,
+    "Yağ (g)":0.01,
+    "Karbonhidrat (g)":77.07,
+    "Protein (g)":0.07,
+    "Şeker (g)":61.86,
+    "Fiber (g)":0.2
+  },
+  {
+    "Malzeme Adı":"Lor Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":85,
+    "Yağ (g)":0.42,
+    "Karbonhidrat (g)":1.85,
+    "Protein (g)":17.27,
+    "Şeker (g)":1.85,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Lüfer",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":124,
+    "Yağ (g)":4.21,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.03,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Madımak",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":69,
+    "Yağ (g)":0.31,
+    "Karbonhidrat (g)":15.57,
+    "Protein (g)":2.07,
+    "Şeker (g)":0.51,
+    "Fiber (g)":3.2
+  },
+  {
+    "Malzeme Adı":"Makarna",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":124,
+    "Yağ (g)":0.98,
+    "Karbonhidrat (g)":25.12,
+    "Protein (g)":4.37,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Makarna, Glutensiz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":358,
+    "Yağ (g)":1.5,
+    "Karbonhidrat (g)":79.0,
+    "Protein (g)":6.5,
+    "Şeker (g)":0.5,
+    "Fiber (g)":1.1
+  },
+  {
+    "Malzeme Adı":"Manda Yoğurdu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":101,
+    "Yağ (g)":6.5,
+    "Karbonhidrat (g)":7.3,
+    "Protein (g)":7.7,
+    "Şeker (g)":7.3,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Mandalina",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":53,
+    "Yağ (g)":0.31,
+    "Karbonhidrat (g)":13.34,
+    "Protein (g)":0.81,
+    "Şeker (g)":10.58,
+    "Fiber (g)":1.8
+  },
+  {
+    "Malzeme Adı":"Mango",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":59,
+    "Yağ (g)":0.4,
+    "Karbonhidrat (g)":15.0,
+    "Protein (g)":0.8,
+    "Şeker (g)":14.0,
+    "Fiber (g)":1.6
+  },
+  {
+    "Malzeme Adı":"Mantar",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":22,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":3.3,
+    "Protein (g)":3.1,
+    "Şeker (g)":2.0,
+    "Fiber (g)":1.0
+  },
+  {
+    "Malzeme Adı":"Mantı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":180,
+    "Yağ (g)":4.54,
+    "Karbonhidrat (g)":26.51,
+    "Protein (g)":7.56,
+    "Şeker (g)":2.08,
+    "Fiber (g)":1.2
+  },
+  {
+    "Malzeme Adı":"Maraş Dondurması",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":180,
+    "Yağ (g)":7.0,
+    "Karbonhidrat (g)":26.0,
+    "Protein (g)":3.5,
+    "Şeker (g)":21.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Margarin",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":526,
+    "Yağ (g)":59.17,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.6,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Maydanoz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":36,
+    "Yağ (g)":0.8,
+    "Karbonhidrat (g)":6.0,
+    "Protein (g)":3.0,
+    "Şeker (g)":0.9,
+    "Fiber (g)":3.3
+  },
+  {
+    "Malzeme Adı":"Mayonez",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":390,
+    "Yağ (g)":33.4,
+    "Karbonhidrat (g)":23.9,
+    "Protein (g)":0.9,
+    "Şeker (g)":6.4,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Mercimek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":75,
+    "Yağ (g)":1.85,
+    "Karbonhidrat (g)":10.73,
+    "Protein (g)":4.2,
+    "Şeker (g)":0.96,
+    "Fiber (g)":5.0
+  },
+  {
+    "Malzeme Adı":"Mezgit",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":128,
+    "Yağ (g)":3.71,
+    "Karbonhidrat (g)":0.48,
+    "Protein (g)":22.08,
+    "Şeker (g)":0.11,
+    "Fiber (g)":0.1
+  },
+  {
+    "Malzeme Adı":"Mısır",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":86,
+    "Yağ (g)":1.18,
+    "Karbonhidrat (g)":19.02,
+    "Protein (g)":3.22,
+    "Şeker (g)":3.22,
+    "Fiber (g)":2.7
+  },
+  {
+    "Malzeme Adı":"Mısır Cipsi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":518,
+    "Yağ (g)":28.41,
+    "Karbonhidrat (g)":63.01,
+    "Protein (g)":6.03,
+    "Şeker (g)":1.16,
+    "Fiber (g)":5.3
+  },
+  {
+    "Malzeme Adı":"Mısır Ekmeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":282,
+    "Yağ (g)":9.42,
+    "Karbonhidrat (g)":42.26,
+    "Protein (g)":6.76,
+    "Şeker (g)":6.8,
+    "Fiber (g)":2.4
+  },
+  {
+    "Malzeme Adı":"Mısır Gevreği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":360,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":86.7,
+    "Protein (g)":6.7,
+    "Şeker (g)":6.5,
+    "Fiber (g)":4.5
+  },
+  {
+    "Malzeme Adı":"Mısır Nişastası",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":381,
+    "Yağ (g)":0.05,
+    "Karbonhidrat (g)":91.27,
+    "Protein (g)":0.26,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Mısır Unu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":361,
+    "Yağ (g)":3.86,
+    "Karbonhidrat (g)":76.85,
+    "Protein (g)":6.93,
+    "Şeker (g)":0.64,
+    "Fiber (g)":13.4
+  },
+  {
+    "Malzeme Adı":"Mısır Yağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":900,
+    "Yağ (g)":100.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Midye",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":86,
+    "Yağ (g)":2.24,
+    "Karbonhidrat (g)":3.69,
+    "Protein (g)":11.9,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Milföy Hamuru",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":255,
+    "Yağ (g)":16.0,
+    "Karbonhidrat (g)":22.0,
+    "Protein (g)":6.3,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Misket Limon",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":30,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":11.0,
+    "Protein (g)":0.7,
+    "Şeker (g)":1.7,
+    "Fiber (g)":2.8
+  },
+  {
+    "Malzeme Adı":"Mor Soğan",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":42,
+    "Yağ (g)":0.08,
+    "Karbonhidrat (g)":10.11,
+    "Protein (g)":0.92,
+    "Şeker (g)":4.28,
+    "Fiber (g)":1.4
+  },
+  {
+    "Malzeme Adı":"Mozarella Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":302,
+    "Yağ (g)":20.03,
+    "Karbonhidrat (g)":3.83,
+    "Protein (g)":25.96,
+    "Şeker (g)":0.6,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Muhallebi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":95,
+    "Yağ (g)":3.5,
+    "Karbonhidrat (g)":10.85,
+    "Protein (g)":5.07,
+    "Şeker (g)":11.23,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Muz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":89,
+    "Yağ (g)":0.33,
+    "Karbonhidrat (g)":22.84,
+    "Protein (g)":1.09,
+    "Şeker (g)":12.23,
+    "Fiber (g)":2.6
+  },
+  {
+    "Malzeme Adı":"Muzlu Puding",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":118,
+    "Yağ (g)":3.5,
+    "Karbonhidrat (g)":19.6,
+    "Protein (g)":2.0,
+    "Şeker (g)":14.8,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Müsli",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":349,
+    "Yağ (g)":8.5,
+    "Karbonhidrat (g)":58.0,
+    "Protein (g)":11.0,
+    "Şeker (g)":13.0,
+    "Fiber (g)":8.8
+  },
+  {
+    "Malzeme Adı":"Nane",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":70,
+    "Yağ (g)":0.94,
+    "Karbonhidrat (g)":14.89,
+    "Protein (g)":3.75,
+    "Şeker (g)":0.0,
+    "Fiber (g)":8.0
+  },
+  {
+    "Malzeme Adı":"Nar",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":68,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":17.17,
+    "Protein (g)":0.95,
+    "Şeker (g)":16.57,
+    "Fiber (g)":0.6
+  },
+  {
+    "Malzeme Adı":"Nar Ekşisi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":299,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":79.64,
+    "Protein (g)":0.0,
+    "Şeker (g)":13.2,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Nar Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":68,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":17.17,
+    "Protein (g)":0.95,
+    "Şeker (g)":16.57,
+    "Fiber (g)":0.6
+  },
+  {
+    "Malzeme Adı":"Nektarin",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":44,
+    "Yağ (g)":0.32,
+    "Karbonhidrat (g)":10.55,
+    "Protein (g)":1.06,
+    "Şeker (g)":7.89,
+    "Fiber (g)":1.7
+  },
+  {
+    "Malzeme Adı":"Nohut",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":180,
+    "Yağ (g)":2.99,
+    "Karbonhidrat (g)":29.68,
+    "Protein (g)":9.54,
+    "Şeker (g)":5.29,
+    "Fiber (g)":8.6
+  },
+  {
+    "Malzeme Adı":"Nugget",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":297,
+    "Yağ (g)":18.28,
+    "Karbonhidrat (g)":16.32,
+    "Protein (g)":15.59,
+    "Şeker (g)":0.88,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Otlu Peynir",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":331,
+    "Yağ (g)":27.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":22.0,
+    "Şeker (g)":1.3,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Palamut",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":205,
+    "Yağ (g)":13.88,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":18.58,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Pancar",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":43,
+    "Yağ (g)":0.17,
+    "Karbonhidrat (g)":9.56,
+    "Protein (g)":1.61,
+    "Şeker (g)":6.76,
+    "Fiber (g)":2.8
+  },
+  {
+    "Malzeme Adı":"Pastırma",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":95,
+    "Yağ (g)":1.16,
+    "Karbonhidrat (g)":1.54,
+    "Protein (g)":19.6,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Patates",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":70,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":15.711,
+    "Protein (g)":1.68,
+    "Şeker (g)":1.15,
+    "Fiber (g)":2.4
+  },
+  {
+    "Malzeme Adı":"Patates Cipsi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":547,
+    "Yağ (g)":37.47,
+    "Karbonhidrat (g)":49.74,
+    "Protein (g)":6.56,
+    "Şeker (g)":4.15,
+    "Fiber (g)":4.4
+  },
+  {
+    "Malzeme Adı":"Patates Nişastası",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":356,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":83.0,
+    "Protein (g)":7.0,
+    "Şeker (g)":3.5,
+    "Fiber (g)":6.0
+  },
+  {
+    "Malzeme Adı":"Patlıcan",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":24,
+    "Yağ (g)":0.19,
+    "Karbonhidrat (g)":5.7,
+    "Protein (g)":1.01,
+    "Şeker (g)":2.35,
+    "Fiber (g)":3.4
+  },
+  {
+    "Malzeme Adı":"Pazı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":18,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":3.7,
+    "Protein (g)":1.8,
+    "Şeker (g)":1.1,
+    "Fiber (g)":1.6
+  },
+  {
+    "Malzeme Adı":"Pekmez",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":280,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":70.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":69.9,
+    "Fiber (g)":0.1
+  },
+  {
+    "Malzeme Adı":"Pestil",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":371,
+    "Yağ (g)":3.0,
+    "Karbonhidrat (g)":85.8,
+    "Protein (g)":0.1,
+    "Şeker (g)":49.16,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Petibör Bisküvi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":353,
+    "Yağ (g)":16.0,
+    "Karbonhidrat (g)":45.0,
+    "Protein (g)":7.0,
+    "Şeker (g)":2.2,
+    "Fiber (g)":1.5
+  },
+  {
+    "Malzeme Adı":"Peynirli Börek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":312,
+    "Yağ (g)":13.66,
+    "Karbonhidrat (g)":38.35,
+    "Protein (g)":8.12,
+    "Şeker (g)":1.01,
+    "Fiber (g)":1.6
+  },
+  {
+    "Malzeme Adı":"Pırasa",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":60,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":14.0,
+    "Protein (g)":1.5,
+    "Şeker (g)":3.9,
+    "Fiber (g)":1.8
+  },
+  {
+    "Malzeme Adı":"Pide",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":275,
+    "Yağ (g)":1.2,
+    "Karbonhidrat (g)":55.7,
+    "Protein (g)":9.1,
+    "Şeker (g)":1.3,
+    "Fiber (g)":2.2
+  },
+  {
+    "Malzeme Adı":"Piliç Döner",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":151,
+    "Yağ (g)":3.67,
+    "Karbonhidrat (g)":19.83,
+    "Protein (g)":9.09,
+    "Şeker (g)":1.78,
+    "Fiber (g)":1.1
+  },
+  {
+    "Malzeme Adı":"Piliç Eti, But",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":177,
+    "Yağ (g)":8.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":24.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Piliç Eti, Göğüs",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":165,
+    "Yağ (g)":3.6,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":31.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Piliç Eti, Kanat",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":203,
+    "Yağ (g)":8.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":30.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Piliç Jambon",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":83,
+    "Yağ (g)":1.0,
+    "Karbonhidrat (g)":5.0,
+    "Protein (g)":13.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Piliç Salam",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":201,
+    "Yağ (g)":15.4,
+    "Karbonhidrat (g)":3.9,
+    "Protein (g)":10.3,
+    "Şeker (g)":0.8,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Piliç Sosis",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":172,
+    "Yağ (g)":9.98,
+    "Karbonhidrat (g)":1.52,
+    "Protein (g)":17.82,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Piliç Sucuk",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":355,
+    "Yağ (g)":31.6,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":14.2,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Pirinç",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":341,
+    "Yağ (g)":0.4,
+    "Karbonhidrat (g)":75.7,
+    "Protein (g)":6.8,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.35
+  },
+  {
+    "Malzeme Adı":"Pirinç Unu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":366,
+    "Yağ (g)":1.42,
+    "Karbonhidrat (g)":80.13,
+    "Protein (g)":5.95,
+    "Şeker (g)":0.12,
+    "Fiber (g)":2.4
+  },
+  {
+    "Malzeme Adı":"Pişmaniye",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":425,
+    "Yağ (g)":10.68,
+    "Karbonhidrat (g)":82.15,
+    "Protein (g)":2.26,
+    "Şeker (g)":66.26,
+    "Fiber (g)":0.6
+  },
+  {
+    "Malzeme Adı":"Portakal",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":47,
+    "Yağ (g)":0.12,
+    "Karbonhidrat (g)":11.75,
+    "Protein (g)":0.94,
+    "Şeker (g)":9.35,
+    "Fiber (g)":2.4
+  },
+  {
+    "Malzeme Adı":"Portakal Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":45,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":10.4,
+    "Protein (g)":0.7,
+    "Şeker (g)":8.4,
+    "Fiber (g)":0.2
+  },
+  {
+    "Malzeme Adı":"Portakallı Gazlı İçecek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":30,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":7.3,
+    "Protein (g)":0.0,
+    "Şeker (g)":7.3,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Probiyotik Yoğurt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":73,
+    "Yağ (g)":3.8,
+    "Karbonhidrat (g)":6.0,
+    "Protein (g)":3.8,
+    "Şeker (g)":6.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Puding",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":123,
+    "Yağ (g)":3.3,
+    "Karbonhidrat (g)":20.0,
+    "Protein (g)":3.2,
+    "Şeker (g)":15.6,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Pudra Şekeri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":389,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":99.6,
+    "Protein (g)":0.0,
+    "Şeker (g)":97.91,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Pudra Şekeri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":389,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":99.6,
+    "Protein (g)":0.0,
+    "Şeker (g)":97.91,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Pul Biber",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":192,
+    "Yağ (g)":9.1,
+    "Karbonhidrat (g)":15.5,
+    "Protein (g)":12.0,
+    "Şeker (g)":15.5,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Rakı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":263,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.53,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Ranch",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":320,
+    "Yağ (g)":33.0,
+    "Karbonhidrat (g)":6.3,
+    "Protein (g)":0.9,
+    "Şeker (g)":2.6,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Reçel",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":198,
+    "Yağ (g)":0.03,
+    "Karbonhidrat (g)":51.2,
+    "Protein (g)":0.25,
+    "Şeker (g)":41.1,
+    "Fiber (g)":0.7
+  },
+  {
+    "Malzeme Adı":"Rezene",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":31,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":7.29,
+    "Protein (g)":1.24,
+    "Şeker (g)":0.0,
+    "Fiber (g)":3.1
+  },
+  {
+    "Malzeme Adı":"Riviera Zeytinyağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":990,
+    "Yağ (g)":100.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Roka",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":25,
+    "Yağ (g)":0.66,
+    "Karbonhidrat (g)":3.65,
+    "Protein (g)":2.58,
+    "Şeker (g)":2.05,
+    "Fiber (g)":1.6
+  },
+  {
+    "Malzeme Adı":"Salatalık",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":15,
+    "Yağ (g)":0.11,
+    "Karbonhidrat (g)":3.63,
+    "Protein (g)":0.67,
+    "Şeker (g)":1.65,
+    "Fiber (g)":0.5
+  },
+  {
+    "Malzeme Adı":"Salatalık Turşusu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":18,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":3.8,
+    "Protein (g)":0.3,
+    "Şeker (g)":1.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Salep",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":96,
+    "Yağ (g)":2.9,
+    "Karbonhidrat (g)":14.59,
+    "Protein (g)":3.24,
+    "Şeker (g)":13.61,
+    "Fiber (g)":0.6
+  },
+  {
+    "Malzeme Adı":"Sandviç Ekmeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":271,
+    "Yağ (g)":4.13,
+    "Karbonhidrat (g)":46.6,
+    "Protein (g)":9.9,
+    "Şeker (g)":4.21,
+    "Fiber (g)":3.0
+  },
+  {
+    "Malzeme Adı":"Sardalya",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":151,
+    "Yağ (g)":5.92,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":22.71,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Sarı Biber",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":26,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":6.0,
+    "Protein (g)":1.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Sarımsak",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":149,
+    "Yağ (g)":0.5,
+    "Karbonhidrat (g)":33.06,
+    "Protein (g)":6.36,
+    "Şeker (g)":1.0,
+    "Fiber (g)":2.1
+  },
+  {
+    "Malzeme Adı":"Sazan",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":127,
+    "Yağ (g)":5.6,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":17.83,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Semizotu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":20,
+    "Yağ (g)":0.4,
+    "Karbonhidrat (g)":3.4,
+    "Protein (g)":2.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Sığır Eti, Bonfile",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":136,
+    "Yağ (g)":6.27,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":19.88,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Sığır Eti, But",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":123,
+    "Yağ (g)":4.63,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.39,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Sığır Eti, Kol",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":131,
+    "Yağ (g)":5.07,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":21.25,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Sığır Eti, Kontrfile",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":123,
+    "Yağ (g)":5.13,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":19.21,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Sığır Eti, Pirzola",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":156,
+    "Yağ (g)":8.68,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":19.56,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Sızma Zeytinyağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":884,
+    "Yağ (g)":100.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Simit",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":257,
+    "Yağ (g)":1.62,
+    "Karbonhidrat (g)":50.5,
+    "Protein (g)":10.02,
+    "Şeker (g)":5.05,
+    "Fiber (g)":2.2
+  },
+  {
+    "Malzeme Adı":"Sivri Biber",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":39,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":9.0,
+    "Protein (g)":2.0,
+    "Şeker (g)":5.0,
+    "Fiber (g)":1.5
+  },
+  {
+    "Malzeme Adı":"Siyah Çay",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":1,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.3,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Siyah Havuç",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":42,
+    "Yağ (g)":0.14,
+    "Karbonhidrat (g)":8.0,
+    "Protein (g)":0.87,
+    "Şeker (g)":4.54,
+    "Fiber (g)":2.0
+  },
+  {
+    "Malzeme Adı":"Siyah Üzüm",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":68,
+    "Yağ (g)":0.15,
+    "Karbonhidrat (g)":17.84,
+    "Protein (g)":0.67,
+    "Şeker (g)":15.54,
+    "Fiber (g)":0.8
+  },
+  {
+    "Malzeme Adı":"Soğan",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":32,
+    "Yağ (g)":0.08,
+    "Karbonhidrat (g)":7.55,
+    "Protein (g)":0.8,
+    "Şeker (g)":5.02,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Somon",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":146,
+    "Yağ (g)":5.93,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":21.62,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Soya Kıyma",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":280,
+    "Yağ (g)":1.0,
+    "Karbonhidrat (g)":32.0,
+    "Protein (g)":52.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Soya Sosu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":53,
+    "Yağ (g)":0.04,
+    "Karbonhidrat (g)":7.61,
+    "Protein (g)":6.28,
+    "Şeker (g)":1.7,
+    "Fiber (g)":0.8
+  },
+  {
+    "Malzeme Adı":"Su",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":0,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Sucuk",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":436,
+    "Yağ (g)":40.0,
+    "Karbonhidrat (g)":3.0,
+    "Protein (g)":16.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Süt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":60,
+    "Yağ (g)":3.25,
+    "Karbonhidrat (g)":4.52,
+    "Protein (g)":3.22,
+    "Şeker (g)":5.26,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Süt Tozu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":363,
+    "Yağ (g)":1.25,
+    "Karbonhidrat (g)":52.0,
+    "Protein (g)":36.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Sütlaç",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":134,
+    "Yağ (g)":1.69,
+    "Karbonhidrat (g)":26.62,
+    "Protein (g)":3.63,
+    "Şeker (g)":16.53,
+    "Fiber (g)":0.4
+  },
+  {
+    "Malzeme Adı":"Sütlü Çikolata",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":535,
+    "Yağ (g)":30.0,
+    "Karbonhidrat (g)":59.0,
+    "Protein (g)":8.0,
+    "Şeker (g)":52.0,
+    "Fiber (g)":3.4
+  },
+  {
+    "Malzeme Adı":"Süzme Yoğurt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":97,
+    "Yağ (g)":5.5,
+    "Karbonhidrat (g)":3.9,
+    "Protein (g)":8.0,
+    "Şeker (g)":3.9,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Şalgam",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":28,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":6.43,
+    "Protein (g)":0.9,
+    "Şeker (g)":3.8,
+    "Fiber (g)":1.8
+  },
+  {
+    "Malzeme Adı":"Şarap",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":85,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":2.61,
+    "Protein (g)":0.07,
+    "Şeker (g)":0.62,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Şeftali",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":39,
+    "Yağ (g)":0.25,
+    "Karbonhidrat (g)":9.54,
+    "Protein (g)":0.91,
+    "Şeker (g)":8.39,
+    "Fiber (g)":1.5
+  },
+  {
+    "Malzeme Adı":"Şeftali Reçeli",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":306,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":76.3,
+    "Protein (g)":0.3,
+    "Şeker (g)":72.1,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Şeftali Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":52,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":12.9,
+    "Protein (g)":0.0,
+    "Şeker (g)":12.9,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Şeker",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":387,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":99.98,
+    "Protein (g)":0.0,
+    "Şeker (g)":99.91,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Şevketi Bostan",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":119,
+    "Yağ (g)":7.41,
+    "Karbonhidrat (g)":3.53,
+    "Protein (g)":9.82,
+    "Şeker (g)":2.23,
+    "Fiber (g)":0.6
+  },
+  {
+    "Malzeme Adı":"Şinitzel",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":297,
+    "Yağ (g)":18.82,
+    "Karbonhidrat (g)":16.32,
+    "Protein (g)":15.59,
+    "Şeker (g)":0.88,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Tahin",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":695,
+    "Yağ (g)":57.1,
+    "Karbonhidrat (g)":13.6,
+    "Protein (g)":25.7,
+    "Şeker (g)":1.0,
+    "Fiber (g)":12.1
+  },
+  {
+    "Malzeme Adı":"Tahin Helvası",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":437,
+    "Yağ (g)":21.04,
+    "Karbonhidrat (g)":56.69,
+    "Protein (g)":10.03,
+    "Şeker (g)":20.81,
+    "Fiber (g)":4.2
+  },
+  {
+    "Malzeme Adı":"Tam Buğday Ekmeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":278,
+    "Yağ (g)":5.4,
+    "Karbonhidrat (g)":51.4,
+    "Protein (g)":8.4,
+    "Şeker (g)":3.84,
+    "Fiber (g)":6.0
+  },
+  {
+    "Malzeme Adı":"Tarhana",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":273,
+    "Yağ (g)":3.99,
+    "Karbonhidrat (g)":50.59,
+    "Protein (g)":7.79,
+    "Şeker (g)":1.98,
+    "Fiber (g)":2.2
+  },
+  {
+    "Malzeme Adı":"Tavşan Eti",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":136,
+    "Yağ (g)":5.55,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.05,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Tavuk Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":5,
+    "Yağ (g)":0.12,
+    "Karbonhidrat (g)":0.62,
+    "Protein (g)":0.39,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Taze Soğan",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":32,
+    "Yağ (g)":0.19,
+    "Karbonhidrat (g)":7.34,
+    "Protein (g)":1.83,
+    "Şeker (g)":2.33,
+    "Fiber (g)":2.6
+  },
+  {
+    "Malzeme Adı":"Tere",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":32,
+    "Yağ (g)":0.7,
+    "Karbonhidrat (g)":5.5,
+    "Protein (g)":2.6,
+    "Şeker (g)":4.4,
+    "Fiber (g)":1.1
+  },
+  {
+    "Malzeme Adı":"Tereyağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":717,
+    "Yağ (g)":81.11,
+    "Karbonhidrat (g)":0.06,
+    "Protein (g)":0.85,
+    "Şeker (g)":0.06,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Ton Balığı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":170,
+    "Yağ (g)":10.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":20.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Tonik",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":34,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":8.8,
+    "Protein (g)":0.0,
+    "Şeker (g)":8.8,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Tost Ekmeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":264,
+    "Yağ (g)":3.3,
+    "Karbonhidrat (g)":48.7,
+    "Protein (g)":8.1,
+    "Şeker (g)":5.0,
+    "Fiber (g)":3.6
+  },
+  {
+    "Malzeme Adı":"Toz Biber",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":314,
+    "Yağ (g)":16.76,
+    "Karbonhidrat (g)":54.66,
+    "Protein (g)":12.26,
+    "Şeker (g)":7.19,
+    "Fiber (g)":34.2
+  },
+  {
+    "Malzeme Adı":"Toz Sarımsak",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":332,
+    "Yağ (g)":0.76,
+    "Karbonhidrat (g)":72.71,
+    "Protein (g)":16.8,
+    "Şeker (g)":24.3,
+    "Fiber (g)":9.9
+  },
+  {
+    "Malzeme Adı":"Tulum Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":251,
+    "Yağ (g)":14.71,
+    "Karbonhidrat (g)":2.84,
+    "Protein (g)":26.0,
+    "Şeker (g)":0.65,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Tulum Peyniri",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":251,
+    "Yağ (g)":14.71,
+    "Karbonhidrat (g)":2.84,
+    "Protein (g)":26.0,
+    "Şeker (g)":0.65,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Turp",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":16,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":3.4,
+    "Protein (g)":0.68,
+    "Şeker (g)":2.12,
+    "Fiber (g)":1.6
+  },
+  {
+    "Malzeme Adı":"Turşu, Acur",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":144,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":2.4,
+    "Protein (g)":0.7,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Turşu, Biber",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":24,
+    "Yağ (g)":0.8,
+    "Karbonhidrat (g)":4.5,
+    "Protein (g)":2.5,
+    "Şeker (g)":0.0,
+    "Fiber (g)":3.1
+  },
+  {
+    "Malzeme Adı":"Turşu, Lahana",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":19,
+    "Yağ (g)":0.14,
+    "Karbonhidrat (g)":4.28,
+    "Protein (g)":0.91,
+    "Şeker (g)":1.78,
+    "Fiber (g)":2.5
+  },
+  {
+    "Malzeme Adı":"Turşu, Salatalık, Gedelek, Bursa",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":117,
+    "Yağ (g)":0.26,
+    "Karbonhidrat (g)":31.81,
+    "Protein (g)":0.37,
+    "Şeker (g)":14.63,
+    "Fiber (g)":1.1
+  },
+  {
+    "Malzeme Adı":"Tuz",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":0,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Tuzlu Kraker",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":428,
+    "Yağ (g)":11.35,
+    "Karbonhidrat (g)":70.91,
+    "Protein (g)":9.22,
+    "Şeker (g)":0.36,
+    "Fiber (g)":3.0
+  },
+  {
+    "Malzeme Adı":"Türk Kahvesi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":38,
+    "Yağ (g)":0.02,
+    "Karbonhidrat (g)":9.56,
+    "Protein (g)":0.11,
+    "Şeker (g)":9.55,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Un",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":348,
+    "Yağ (g)":0.7,
+    "Karbonhidrat (g)":85.4,
+    "Protein (g)":3.0,
+    "Şeker (g)":0.3,
+    "Fiber (g)":3.0
+  },
+  {
+    "Malzeme Adı":"Üzüm",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":69,
+    "Yağ (g)":0.16,
+    "Karbonhidrat (g)":18.1,
+    "Protein (g)":0.72,
+    "Şeker (g)":15.48,
+    "Fiber (g)":0.9
+  },
+  {
+    "Malzeme Adı":"Üzüm Sirkesi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":7,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":1.6,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Üzüm Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":61,
+    "Yağ (g)":0.08,
+    "Karbonhidrat (g)":14.96,
+    "Protein (g)":0.56,
+    "Şeker (g)":14.86,
+    "Fiber (g)":0.1
+  },
+  {
+    "Malzeme Adı":"Vanilin",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":385,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":96.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":96.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Vişne",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":50,
+    "Yağ (g)":0.3,
+    "Karbonhidrat (g)":12.18,
+    "Protein (g)":1.0,
+    "Şeker (g)":8.49,
+    "Fiber (g)":1.6
+  },
+  {
+    "Malzeme Adı":"Vişne Reçeli",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":235,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":58.29,
+    "Protein (g)":0.5,
+    "Şeker (g)":41.36,
+    "Fiber (g)":1.3
+  },
+  {
+    "Malzeme Adı":"Vişne Suyu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":55,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":13.5,
+    "Protein (g)":0.1,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Yaban Mersini",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":57,
+    "Yağ (g)":0.33,
+    "Karbonhidrat (g)":14.49,
+    "Protein (g)":0.74,
+    "Şeker (g)":9.96,
+    "Fiber (g)":2.4
+  },
+  {
+    "Malzeme Adı":"Yağsız Süt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":35,
+    "Yağ (g)":0.18,
+    "Karbonhidrat (g)":4.85,
+    "Protein (g)":3.41,
+    "Şeker (g)":5.09,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Yarım Yağlı Beyaz Peynir",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":211,
+    "Yağ (g)":13.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":25.0,
+    "Şeker (g)":1.2,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Yarım Yağlı Krema",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":182,
+    "Yağ (g)":18.0,
+    "Karbonhidrat (g)":3.0,
+    "Protein (g)":2.0,
+    "Şeker (g)":2.0,
+    "Fiber (g)":1.0
+  },
+  {
+    "Malzeme Adı":"Yarım Yağlı Süt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":44,
+    "Yağ (g)":1.5,
+    "Karbonhidrat (g)":4.7,
+    "Protein (g)":3.0,
+    "Şeker (g)":4.5,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Yarım Yağlı Yoğurt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":49,
+    "Yağ (g)":1.5,
+    "Karbonhidrat (g)":4.6,
+    "Protein (g)":4.0,
+    "Şeker (g)":4.6,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Yaş Maya",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":104,
+    "Yağ (g)":1.9,
+    "Karbonhidrat (g)":18.0,
+    "Protein (g)":8.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":8.0
+  },
+  {
+    "Malzeme Adı":"Yayık Ayran",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":40,
+    "Yağ (g)":0.9,
+    "Karbonhidrat (g)":4.8,
+    "Protein (g)":3.3,
+    "Şeker (g)":4.8,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Yenidünya",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":47,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":12.14,
+    "Protein (g)":0.43,
+    "Şeker (g)":0.0,
+    "Fiber (g)":1.7
+  },
+  {
+    "Malzeme Adı":"Yer Fıstığı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":567,
+    "Yağ (g)":49.24,
+    "Karbonhidrat (g)":16.13,
+    "Protein (g)":25.8,
+    "Şeker (g)":3.97,
+    "Fiber (g)":8.5
+  },
+  {
+    "Malzeme Adı":"Yeşil Erik",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":66,
+    "Yağ (g)":0.2,
+    "Karbonhidrat (g)":17.1,
+    "Protein (g)":0.65,
+    "Şeker (g)":4.46,
+    "Fiber (g)":0.2
+  },
+  {
+    "Malzeme Adı":"Yeşil Fasulye",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":31,
+    "Yağ (g)":0.1,
+    "Karbonhidrat (g)":7.0,
+    "Protein (g)":1.8,
+    "Şeker (g)":1.4,
+    "Fiber (g)":3.4
+  },
+  {
+    "Malzeme Adı":"Yeşil Mercimek",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":336,
+    "Yağ (g)":1.3,
+    "Karbonhidrat (g)":57.4,
+    "Protein (g)":23.7,
+    "Şeker (g)":3.5,
+    "Fiber (g)":26.0
+  },
+  {
+    "Malzeme Adı":"Yeşil Zeytin",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":145,
+    "Yağ (g)":15.32,
+    "Karbonhidrat (g)":3.84,
+    "Protein (g)":1.03,
+    "Şeker (g)":0.54,
+    "Fiber (g)":3.3
+  },
+  {
+    "Malzeme Adı":"Yoğurt",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":70,
+    "Yağ (g)":4.0,
+    "Karbonhidrat (g)":4.6,
+    "Protein (g)":4.0,
+    "Şeker (g)":4.6,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Yufka",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":201,
+    "Yağ (g)":1.54,
+    "Karbonhidrat (g)":39.94,
+    "Protein (g)":6.01,
+    "Şeker (g)":0.33,
+    "Fiber (g)":1.8
+  },
+  {
+    "Malzeme Adı":"Yulaf",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":389,
+    "Yağ (g)":6.9,
+    "Karbonhidrat (g)":66.27,
+    "Protein (g)":16.89,
+    "Şeker (g)":0.0,
+    "Fiber (g)":10.6
+  },
+  {
+    "Malzeme Adı":"Yulaf Ekmeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":269,
+    "Yağ (g)":4.4,
+    "Karbonhidrat (g)":48.5,
+    "Protein (g)":8.4,
+    "Şeker (g)":8.14,
+    "Fiber (g)":4.0
+  },
+  {
+    "Malzeme Adı":"Yulaf Kepeği",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":246,
+    "Yağ (g)":7.03,
+    "Karbonhidrat (g)":66.22,
+    "Protein (g)":17.3,
+    "Şeker (g)":1.45,
+    "Fiber (g)":15.4
+  },
+  {
+    "Malzeme Adı":"Yulaf Unu",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":404,
+    "Yağ (g)":9.12,
+    "Karbonhidrat (g)":65.7,
+    "Protein (g)":14.66,
+    "Şeker (g)":0.8,
+    "Fiber (g)":6.5
+  },
+  {
+    "Malzeme Adı":"Yumurta",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":247,
+    "Yağ (g)":9.94,
+    "Karbonhidrat (g)":0.77,
+    "Protein (g)":12.58,
+    "Şeker (g)":0.77,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Yumurta Beyazı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":52,
+    "Yağ (g)":0.17,
+    "Karbonhidrat (g)":0.73,
+    "Protein (g)":10.9,
+    "Şeker (g)":0.71,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Yumurta Sarısı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":322,
+    "Yağ (g)":26.54,
+    "Karbonhidrat (g)":3.59,
+    "Protein (g)":15.86,
+    "Şeker (g)":0.56,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Zencefil",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":79,
+    "Yağ (g)":0.8,
+    "Karbonhidrat (g)":18.0,
+    "Protein (g)":1.8,
+    "Şeker (g)":1.7,
+    "Fiber (g)":2.0
+  },
+  {
+    "Malzeme Adı":"Zerdeçal",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":354,
+    "Yağ (g)":9.88,
+    "Karbonhidrat (g)":64.93,
+    "Protein (g)":7.83,
+    "Şeker (g)":3.21,
+    "Fiber (g)":21.1
+  },
+  {
+    "Malzeme Adı":"Zeytin",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":105,
+    "Yağ (g)":9.54,
+    "Karbonhidrat (g)":6.06,
+    "Protein (g)":0.88,
+    "Şeker (g)":0.0,
+    "Fiber (g)":3.0
+  },
+  {
+    "Malzeme Adı":"Zeytin Ezmesi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":281,
+    "Yağ (g)":28.0,
+    "Karbonhidrat (g)":4.4,
+    "Protein (g)":3.1,
+    "Şeker (g)":0.3,
+    "Fiber (g)":3.0
+  },
+  {
+    "Malzeme Adı":"Zeytinyağı",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":884,
+    "Yağ (g)":100.0,
+    "Karbonhidrat (g)":0.0,
+    "Protein (g)":0.0,
+    "Şeker (g)":0.0,
+    "Fiber (g)":0.0
+  },
+  {
+    "Malzeme Adı":"Zeytinyağlı Yaprak Sarma",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":180,
+    "Yağ (g)":13.58,
+    "Karbonhidrat (g)":13.87,
+    "Protein (g)":2.22,
+    "Şeker (g)":2.74,
+    "Fiber (g)":3.0
+  },
+  {
+    "Malzeme Adı":"Zile Pekmezi",
+    "Porsiyon (g)":100,
+    "Enerji (kcal)":322,
+    "Yağ (g)":0.0,
+    "Karbonhidrat (g)":79.3,
+    "Protein (g)":1.1,
+    "Şeker (g)":74.0,
+    "Fiber (g)":0.0
+  }
+]

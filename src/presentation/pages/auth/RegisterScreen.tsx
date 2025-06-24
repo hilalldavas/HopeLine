@@ -5,10 +5,11 @@ import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 
 interface RegisterScreenProps {
-  goToLogin: () => void;
+  onRegister: () => void;
+  onLogin: () => void;
 }
 
-const RegisterScreen: React.FC<RegisterScreenProps> = ({ goToLogin }) => {
+const RegisterScreen: React.FC<RegisterScreenProps> = ({ onRegister, onLogin }) => {
   const { register, loading, error } = useRegisterViewModel();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -48,7 +49,7 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({ goToLogin }) => {
         onPress={() => register(name, email, password)}
         disabled={loading}
       />
-      <TouchableOpacity onPress={goToLogin} style={styles.linkContainer}>
+      <TouchableOpacity onPress={onLogin} style={styles.linkContainer}>
         <Text style={styles.linkText}>Zaten hesabın var mı? <Text style={{ fontWeight: 'bold' }}>Giriş Yap</Text></Text>
       </TouchableOpacity>
     </View>

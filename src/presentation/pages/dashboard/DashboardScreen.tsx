@@ -42,12 +42,7 @@ const DashboardScreen: React.FC = () => {
         </View>
       </ScrollView>
       {/* Alt menü */}
-      <View style={styles.tabBar}>
-        <Text style={[styles.tabItem, styles.tabItemActive]}>Ana Sayfa</Text>
-        <Text style={styles.tabItem}>Profil</Text>
-        <Text style={styles.tabItem}>İlaçlar</Text>
-        <Text style={styles.tabItem}>Uyarılar</Text>
-      </View>
+      
     </View>
   );
 };
@@ -70,6 +65,15 @@ const styles = StyleSheet.create({
   tabBar: { flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', height: 56, borderTopWidth: 1, borderColor: '#eee', backgroundColor: '#fff' },
   tabItem: { fontSize: 16, color: '#888', fontWeight: '500', paddingVertical: 6, paddingHorizontal: 8 },
   tabItemActive: { color: '#1976D2', fontWeight: '700', borderBottomWidth: 2, borderBottomColor: '#1976D2' },
+  tabLabelsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    height: 56,
+    borderTopWidth: 1,
+    borderColor: '#eee',
+    backgroundColor: '#fff',
+  },
 });
 
 export default DashboardScreen; 

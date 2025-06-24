@@ -1,14 +1,78 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, SafeAreaView } from 'react-native';
+import React, { useState, useRef } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, SafeAreaView, TextInput, Platform, ScrollView } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import yemekler from '../../../data/yemek.json';
 
-const mockMeals = [
-  { id: '1', name: 'Kahvaltı', items: 'Yulaf, süt, ceviz' },
-  { id: '2', name: 'Öğle', items: 'Izgara tavuk, bulgur pilavı, yoğurt' },
-  { id: '3', name: 'Akşam', items: 'Sebze çorbası, salata' },
-];
+const OGUNLER = ['Kahvaltı', 'Öğle', 'Akşam', 'Ara Öğün'];
+
+interface Meal {
+  id: string;
+  name: string;
+  date: string; // yyyy-MM-dd
+  ogun: string;
+}
 
 const NutritionScreen: React.FC = () => {
-  const [water, setWater] = useState(5); // örnek: 5 bardak
+  const [water, setWater] = useState(0);
+  const [meals, setMeals] = useState<Meal[]>([]);
+  const [search, setSearch] = useState('');
+  const [filteredMeals, setFilteredMeals] = useState<any[]>([]);
+  const [selectedMeals, setSelectedMeals] = useState<any[]>([]); // çoklu seçim
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [mealDate, setMealDate] = useState<Date>(new Date());
+  const [selectedOgun, setSelectedOgun] = useState(OGUNLER[0]);
+  const [inputLayout, setInputLayout] = useState({ x: 0, y: 0, width: 0, height: 0 });
+  const inputRef = useRef<any>(null);
+
+  // Yemek arama
+  React.useEffect(() => {
+    if (search.length > 0) {
+      setFilteredMeals(
+        yemekler.filter((y: any) =>
+          (y["Malzeme Adı"] || '').toLowerCase().includes(search.toLowerCase()) &&
+          !selectedMeals.some((m) => m["Malzeme Adı"] === y["Malzeme Adı"])
+        )
+      );
+    } else {
+      setFilteredMeals([]);
+    }
+  }, [search, selectedMeals]);
+
+  const formatDate = (date: Date) => date.toISOString().slice(0, 10);
+
+  const addMeals = () => {
+    if (selectedMeals.length === 0) return;
+    setMeals([
+      ...meals,
+      ...selectedMeals.map((m) => ({
+        id: Date.now().toString() + Math.random().toString().slice(2, 8),
+        name: m["Malzeme Adı"],
+        date: formatDate(mealDate),
+        ogun: selectedOgun,
+      })),
+    ]);
+    setSearch('');
+    setSelectedMeals([]);
+    setMealDate(new Date());
+    setSelectedOgun(OGUNLER[0]);
+  };
+
+  const deleteMeal = (id: string) => {
+    setMeals(meals.filter(m => m.id !== id));
+  };
+
+  const removeSelectedMeal = (name: string) => {
+    setSelectedMeals(selectedMeals.filter(m => m["Malzeme Adı"] !== name));
+  };
+
+  // Gruplama: { '2025-06-24|Öğle': [meal, ...], ... }
+  const groupedMeals = meals.reduce((acc: any, meal) => {
+    const key = meal.date + '|' + meal.ogun;
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(meal);
+    return acc;
+  }, {});
+  const groupKeys = Object.keys(groupedMeals).sort((a, b) => b.localeCompare(a));
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -22,26 +86,111 @@ const NutritionScreen: React.FC = () => {
             ))}
             <Text style={styles.waterText}>{water} bardak</Text>
           </View>
-          <TouchableOpacity style={styles.addButton} disabled>
-            <Text style={styles.addButtonText}>+ Su Ekle</Text>
-          </TouchableOpacity>
+          <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 8 }}>
+            <TouchableOpacity style={styles.waterBtn} onPress={() => setWater(Math.max(0, water - 1))}><Text style={styles.waterBtnText}>-</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.waterBtn} onPress={() => setWater(water + 1)}><Text style={styles.waterBtnText}>+</Text></TouchableOpacity>
+          </View>
         </View>
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Yemek Listesi</Text>
-          <FlatList
-            data={mockMeals}
-            keyExtractor={item => item.id}
-            renderItem={({ item }) => (
-              <View style={styles.mealCard}>
-                <Text style={styles.mealName}>{item.name}</Text>
-                <Text style={styles.mealItems}>{item.items}</Text>
-              </View>
-            )}
-            contentContainerStyle={{ paddingBottom: 12 }}
-          />
-          <TouchableOpacity style={styles.addButton} disabled>
-            <Text style={styles.addButtonText}>+ Yemek Ekle</Text>
+          <View style={styles.inputRow}>
+            <TextInput
+              ref={inputRef}
+              style={styles.input}
+              placeholder="Yemek ara..."
+              value={search}
+              onChangeText={text => setSearch(text)}
+              editable={selectedMeals.length < 10}
+              onLayout={e => setInputLayout(e.nativeEvent.layout)}
+            />
+          </View>
+          {search.length > 0 && (
+            <View style={[styles.autocompleteBox, {
+              position: 'absolute',
+              top: inputLayout.y + inputLayout.height + 4,
+              left: inputLayout.x,
+              width: inputLayout.width,
+              zIndex: 20,
+              elevation: 20,
+            }]}
+            >
+              {filteredMeals.slice(0, 5).map((yemek, idx) => (
+                <TouchableOpacity key={idx} onPress={() => {
+                  setSelectedMeals([...selectedMeals, yemek]);
+                  setSearch('');
+                }} style={styles.autocompleteItem}>
+                  <Text style={styles.autocompleteName}>{yemek["Malzeme Adı"]}</Text>
+                </TouchableOpacity>
+              ))}
+              {filteredMeals.length === 0 && <Text style={styles.noResult}>Sonuç yok</Text>}
+            </View>
+          )}
+          {selectedMeals.length > 0 && (
+            <View style={styles.selectedMealsBox}>
+              {selectedMeals.map((m, idx) => (
+                <View key={idx} style={styles.selectedMealItem}>
+                  <Text style={styles.selectedMealName}>{m["Malzeme Adı"]}</Text>
+                  <TouchableOpacity onPress={() => removeSelectedMeal(m["Malzeme Adı"]) }>
+                    <Text style={styles.removeBtn}>✕</Text>
+                  </TouchableOpacity>
+                </View>
+              ))}
+            </View>
+          )}
+          {selectedMeals.length > 0 && (
+            <View style={styles.ogunRow}>
+              {OGUNLER.map((ogun) => (
+                <TouchableOpacity
+                  key={ogun}
+                  style={[styles.ogunBtn, selectedOgun === ogun && styles.ogunBtnSelected]}
+                  onPress={() => setSelectedOgun(ogun)}
+                >
+                  <Text style={[styles.ogunBtnText, selectedOgun === ogun && styles.ogunBtnTextSelected]}>{ogun}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+          {selectedMeals.length > 0 && (
+            <TouchableOpacity style={styles.pickerButton} onPress={() => setShowDatePicker(true)}>
+              <Text style={styles.pickerButtonText}>Tarih Seç: {formatDate(mealDate)}</Text>
+            </TouchableOpacity>
+          )}
+          {showDatePicker && (
+            <DateTimePicker
+              value={mealDate}
+              mode="date"
+              display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+              onChange={(_: any, selectedDate?: Date) => {
+                setShowDatePicker(false);
+                if (selectedDate) setMealDate(selectedDate);
+              }}
+            />
+          )}
+          <TouchableOpacity style={[styles.addButton, selectedMeals.length === 0 && { opacity: 0.5 }]} onPress={addMeals} disabled={selectedMeals.length === 0}>
+            <Text style={styles.addButtonText}>+ Yemekleri Ekle</Text>
           </TouchableOpacity>
+          <ScrollView style={{ marginTop: 10 }} contentContainerStyle={{ paddingBottom: 24 }}>
+            {groupKeys.length === 0 ? (
+              <Text style={styles.noMealText}>Henüz yemek eklenmedi.</Text>
+            ) : (
+              groupKeys.map((item) => {
+                const [date, ogun] = item.split('|');
+                return (
+                  <View key={item} style={styles.groupBox}>
+                    <Text style={styles.groupTitle}>{date} - {ogun}</Text>
+                    {groupedMeals[item].map((meal: Meal) => (
+                      <View key={meal.id} style={styles.mealCard}>
+                        <Text style={styles.mealName}>{meal.name}</Text>
+                        <TouchableOpacity onPress={() => deleteMeal(meal.id)}>
+                          <Text style={styles.deleteBtn}>🗑️</Text>
+                        </TouchableOpacity>
+                      </View>
+                    ))}
+                  </View>
+                );
+              })
+            )}
+          </ScrollView>
         </View>
       </View>
     </SafeAreaView>
@@ -51,17 +200,40 @@ const NutritionScreen: React.FC = () => {
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#fff' },
   container: { flex: 1, backgroundColor: '#fff', padding: 24 },
-  title: { fontSize: 24, fontWeight: '700', color: '#1976D2', marginBottom: 24, alignSelf: 'center', letterSpacing: 0.5 },
-  section: { marginBottom: 32 },
-  sectionTitle: { fontSize: 17, fontWeight: '600', color: '#222', marginBottom: 12 },
+  title: { fontSize: 26, fontWeight: '800', color: '#1976D2', marginBottom: 28, alignSelf: 'center', letterSpacing: 0.5 },
+  section: { marginBottom: 36 },
+  sectionTitle: { fontSize: 18, fontWeight: '700', color: '#222', marginBottom: 14 },
   waterRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 10 },
-  waterIcon: { fontSize: 28, marginRight: 2 },
-  waterText: { fontSize: 16, color: '#1976D2', fontWeight: '600', marginLeft: 8 },
-  addButton: { marginTop: 8, backgroundColor: '#1976D2', borderRadius: 10, paddingVertical: 12, alignItems: 'center', opacity: 0.8 },
-  addButtonText: { color: '#fff', fontSize: 16, fontWeight: '600' },
-  mealCard: { backgroundColor: '#F5F5F5', borderRadius: 14, padding: 14, marginBottom: 10, shadowColor: '#000', shadowOpacity: 0.04, shadowRadius: 8, elevation: 2 },
-  mealName: { fontSize: 15, fontWeight: '700', color: '#1976D2', marginBottom: 4 },
-  mealItems: { fontSize: 15, color: '#444' },
+  waterIcon: { fontSize: 32, marginRight: 2 },
+  waterText: { fontSize: 18, color: '#1976D2', fontWeight: '700', marginLeft: 8 },
+  waterBtn: { backgroundColor: '#E3EAFD', borderRadius: 8, padding: 12, marginHorizontal: 8 },
+  waterBtnText: { fontSize: 22, color: '#1976D2', fontWeight: '700' },
+  inputRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 8 },
+  input: { backgroundColor: '#fff', borderRadius: 8, borderWidth: 1, borderColor: '#eee', padding: 14, fontSize: 16, flex: 1 },
+  clearBtn: { marginLeft: 8, backgroundColor: '#E3EAFD', borderRadius: 8, padding: 8 },
+  autocompleteBox: { backgroundColor: '#fff', borderRadius: 14, borderWidth: 1, borderColor: '#eee', maxHeight: 180, shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 16, elevation: 12, overflow: 'hidden' },
+  autocompleteItem: { padding: 14, borderBottomWidth: 1, borderBottomColor: '#f0f0f0' },
+  autocompleteName: { fontSize: 16, color: '#1976D2', fontWeight: '700' },
+  noResult: { padding: 12, color: '#888', textAlign: 'center' },
+  selectedMealsBox: { flexDirection: 'row', flexWrap: 'wrap', marginBottom: 10 },
+  selectedMealItem: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#E3EAFD', borderRadius: 8, paddingHorizontal: 12, paddingVertical: 7, marginRight: 7, marginBottom: 7 },
+  selectedMealName: { color: '#1976D2', fontWeight: '700', fontSize: 15, marginRight: 5 },
+  removeBtn: { color: '#D32F2F', fontSize: 17, fontWeight: '700' },
+  ogunRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10 },
+  ogunBtn: { backgroundColor: '#F5F5F5', borderRadius: 8, paddingVertical: 8, paddingHorizontal: 16, marginHorizontal: 2 },
+  ogunBtnSelected: { backgroundColor: '#1976D2' },
+  ogunBtnText: { color: '#1976D2', fontWeight: '700', fontSize: 14 },
+  ogunBtnTextSelected: { color: '#fff' },
+  pickerButton: { backgroundColor: '#E3EAFD', borderRadius: 8, padding: 10, marginBottom: 10, alignItems: 'center' },
+  pickerButtonText: { color: '#1976D2', fontWeight: '600', fontSize: 15 },
+  addButton: { marginTop: 10, backgroundColor: '#1976D2', borderRadius: 10, paddingVertical: 14, alignItems: 'center' },
+  addButtonText: { color: '#fff', fontSize: 17, fontWeight: '700' },
+  groupBox: { marginBottom: 18, backgroundColor: '#F5F5F5', borderRadius: 16, padding: 12, shadowColor: '#000', shadowOpacity: 0.04, shadowRadius: 8, elevation: 2 },
+  groupTitle: { fontSize: 15, fontWeight: '700', color: '#1976D2', marginBottom: 8, marginLeft: 2 },
+  mealCard: { backgroundColor: '#fff', borderRadius: 12, padding: 12, marginBottom: 8, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', shadowColor: '#000', shadowOpacity: 0.02, shadowRadius: 2, elevation: 1 },
+  mealName: { fontSize: 15, fontWeight: '700', color: '#1976D2' },
+  deleteBtn: { fontSize: 20, color: '#D32F2F', marginLeft: 8 },
+  noMealText: { color: '#888', alignSelf: 'center', marginTop: 18, fontSize: 15 },
 });
 
 export default NutritionScreen; 

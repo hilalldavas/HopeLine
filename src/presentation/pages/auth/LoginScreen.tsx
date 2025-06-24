@@ -5,10 +5,11 @@ import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 
 interface LoginScreenProps {
-  goToRegister: () => void;
+  onLogin: () => void;
+  onRegister: () => void;
 }
 
-const LoginScreen: React.FC<LoginScreenProps> = ({ goToRegister }) => {
+const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin, onRegister }) => {
   const { login, loading, error } = useLoginViewModel();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -41,7 +42,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ goToRegister }) => {
         onPress={() => login(email, password)}
         disabled={loading}
       />
-      <TouchableOpacity onPress={goToRegister} style={styles.linkContainer}>
+      <TouchableOpacity onPress={onRegister} style={styles.linkContainer}>
         <Text style={styles.linkText}>Hesabın yok mu? <Text style={{ fontWeight: 'bold' }}>Kayıt Ol</Text></Text>
       </TouchableOpacity>
     </View>
