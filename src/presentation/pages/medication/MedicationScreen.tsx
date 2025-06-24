@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput, SafeAreaView, Modal, Dimensions, Animated } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput, SafeAreaView, Modal, Dimensions, Animated, Platform } from 'react-native';
 import allDrugs from '../../../data/oncologydrugdata.json';
 import * as Animatable from 'react-native-animatable';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Calendar, LocaleConfig } from 'react-native-calendars';
 
 // Animated baloncuklar
 const BackgroundAnimation = () => {
@@ -76,6 +79,18 @@ interface Drug {
   isActive?: boolean;
 }
 
+// Takvim Türkçe ayarları
+LocaleConfig.locales['tr'] = {
+  monthNames: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
+  monthNamesShort: ['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'],
+  dayNames: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
+  dayNamesShort: ['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'],
+  today: 'Bugün'
+};
+LocaleConfig.defaultLocale = 'tr';
+
+const MEDICATIONS_STORAGE_KEY = '@HopeLine_Medications';
+
 const MedicationScreen: React.FC = () => {
   const [search, setSearch] = useState('');
   const [filteredDrugs, setFilteredDrugs] = useState<any[]>([]);
@@ -85,6 +100,13 @@ const MedicationScreen: React.FC = () => {
   const [userDrugs, setUserDrugs] = useState<Drug[]>([]);
   const [editDrugId, setEditDrugId] = useState<string | null>(null);
   const [historyModalVisible, setHistoryModalVisible] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().slice(0, 10));
+  const [modalVisible, setModalVisible] = useState(false);
+  const [newDrugName, setNewDrugName] = useState('');
+  const [newDose, setNewDose] = useState('');
+  const [date, setDate] = useState<Date>(new Date());
+  const [showTimePicker, setShowTimePicker] = useState(false);
+  const [markedDates, setMarkedDates] = useState<any>({});
 
   useEffect(() => {
     if (search.length > 0) {
@@ -98,73 +120,62 @@ const MedicationScreen: React.FC = () => {
     }
   }, [search]);
 
-  const addDrug = () => {
-    if (!selectedDrug || !dose || !time) return;
+  // İlaçları AsyncStorage'dan yükle/kaydet
+  useEffect(() => {
+    (async () => {
+      try {
+        const stored = await AsyncStorage.getItem(MEDICATIONS_STORAGE_KEY);
+        if (stored) setUserDrugs(JSON.parse(stored));
+      } catch {}
+    })();
+  }, []);
+  useEffect(() => {
+    AsyncStorage.setItem(MEDICATIONS_STORAGE_KEY, JSON.stringify(userDrugs));
+  }, [userDrugs]);
+
+  // Takvimde işaretli günler
+  useEffect(() => {
+    const newMarked: any = {};
+    userDrugs.filter(d => d.isActive !== false).forEach(d => {
+      if (d.addedAt) {
+        const day = d.addedAt.slice(0, 10);
+        newMarked[day] = { marked: true, dotColor: '#1976D2', activeOpacity: 0.7 };
+      }
+    });
+    setMarkedDates(newMarked);
+  }, [userDrugs]);
+
+  // Seçili günün ilaçları
+  const todaysDrugs = userDrugs.filter(d => d.isActive !== false && d.addedAt?.slice(0, 10) === selectedDate);
+
+  const handleDayPress = (day: { dateString: string }) => {
+    setSelectedDate(day.dateString);
+  };
+
+  const handleAddDrug = () => {
+    if (!newDrugName || !newDose || !date) return;
     setUserDrugs([
       ...userDrugs,
       {
         id: Date.now().toString(),
-        name: selectedDrug["ÜRÜN ADI"],
-        dose,
-        time,
-        etkenMadde: selectedDrug["ETKEN MADDE"],
-        addedAt: new Date().toISOString(),
+        name: newDrugName,
+        dose: newDose,
+        time: date.toTimeString().slice(0, 5),
+        etkenMadde: selectedDrug ? selectedDrug["ETKEN MADDE"] : 'Bilinmiyor',
+        addedAt: selectedDate + 'T' + date.toTimeString().slice(0, 5),
         isActive: true,
       },
     ]);
-    setSearch('');
-    setSelectedDrug(null);
-    setDose('');
-    setTime('');
-  };
-
-  const clearSelectedDrug = () => {
+    setModalVisible(false);
+    setNewDrugName('');
+    setNewDose('');
+    setDate(new Date(selectedDate));
     setSelectedDrug(null);
     setSearch('');
-    setDose('');
-    setTime('');
   };
 
-  const deleteDrug = (id: string) => {
-    setUserDrugs(userDrugs.map(drug =>
-      drug.id === id ? { ...drug, isActive: false } : drug
-    ));
-    if (editDrugId === id) {
-      setEditDrugId(null);
-      clearSelectedDrug();
-    }
-  };
-
-  const startEditDrug = (drug: Drug) => {
-    setEditDrugId(drug.id);
-    setSelectedDrug({
-      "ÜRÜN ADI": drug.name,
-      "ETKEN MADDE": drug.etkenMadde,
-      "DOZ MİKTARI": drug.dose,
-    });
-    setDose(drug.dose);
-    setTime(drug.time);
-    setSearch(drug.name);
-  };
-
-  const updateDrug = () => {
-    if (!selectedDrug || !dose || !time || !editDrugId) return;
-    setUserDrugs(userDrugs.map(drug =>
-      drug.id === editDrugId
-        ? {
-            ...drug,
-            name: selectedDrug["ÜRÜN ADI"],
-            dose,
-            time,
-            etkenMadde: selectedDrug["ETKEN MADDE"]
-          }
-        : drug
-    ));
-    setEditDrugId(null);
-    setSearch('');
-    setSelectedDrug(null);
-    setDose('');
-    setTime('');
+  const handleDelete = (id: string) => {
+    setUserDrugs(userDrugs.map(drug => drug.id === id ? { ...drug, isActive: false } : drug));
   };
 
   function formatDateTime(dateString?: string) {
@@ -192,148 +203,141 @@ const MedicationScreen: React.FC = () => {
       <BackgroundAnimation />
       <Animatable.View animation="slideInUp" duration={800} style={styles.container}>
         <Text style={styles.title}>İlaç Takibi</Text>
-        <View style={styles.addPanel}>
-          <Text style={styles.panelTitle}>İlaç Ekle</Text>
-          <View style={styles.inputRow}>
-            <View style={{ flex: 1 }}>
-              <TextInput
-                style={styles.input}
-                placeholder="İlaç adı yazın"
-                value={selectedDrug ? selectedDrug["ÜRÜN ADI"] : search}
-                onChangeText={text => {
-                  setSearch(text);
-                  setSelectedDrug(null);
-                  setDose('');
-                }}
-                editable={!selectedDrug}
-              />
-              {search.length > 0 && !selectedDrug && (
-                <View style={styles.autocompleteBox}>
-                  {filteredDrugs.slice(0, 5).map(drug => (
-                    <TouchableOpacity key={drug.BARKOD} onPress={() => {
-                      setSelectedDrug(drug);
-                      setDose(drug["DOZ MİKTARI"] || '');
-                    }} style={styles.autocompleteItem}>
-                      <View style={styles.autocompleteContent}>
-                        <Text style={styles.autocompleteDrugName}>{(drug["ÜRÜN ADI"] || '').trim()}</Text>
-                        <View style={styles.autocompleteInfoRow}>
-                          <Text style={styles.autocompleteEtiket}>Etken Madde:</Text>
-                          <Text style={styles.autocompleteValue}>{drug["ETKEN MADDE"]}</Text>
-                          {drug["DOZ MİKTARI"] && (
-                            <>
-                              <Text style={styles.autocompleteEtiket}>  |  Doz:</Text>
-                              <Text style={styles.autocompleteValue}>{drug["DOZ MİKTARI"]}</Text>
-                            </>
-                          )}
-                        </View>
-                      </View>
-                    </TouchableOpacity>
-                  ))}
-                  {filteredDrugs.length === 0 && <Text style={styles.noResult}>Sonuç yok</Text>}
-                </View>
-              )}
-            </View>
-            {selectedDrug && (
-              <TouchableOpacity style={styles.clearDrug} onPress={clearSelectedDrug}>
-                <Text style={{ fontSize: 18, color: '#1976D2' }}>✕</Text>
-              </TouchableOpacity>
-            )}
-          </View>
-          {selectedDrug && (
-            <View style={styles.etkenBox}>
-              <Text style={styles.etkenLabel}>Etken Madde:</Text>
-              <Text style={styles.etkenValue}>{selectedDrug["ETKEN MADDE"]}</Text>
-              {selectedDrug["DOZ MİKTARI"] && (
-                <Text style={styles.etkenValue}>Doz: {selectedDrug["DOZ MİKTARI"]}</Text>
-              )}
-            </View>
-          )}
-          {!(search.length > 0 && !selectedDrug) && (
-            <>
-              <View style={styles.inputRow}>
-                <TextInput
-                  style={[styles.input, { flex: 1, marginRight: 6 }]}
-                  placeholder="Doz (örn. 500mg)"
-                  value={dose}
-                  onChangeText={setDose}
-                  editable={!!selectedDrug}
-                />
-                <TextInput
-                  style={[styles.input, { flex: 1, marginLeft: 6 }]}
-                  placeholder="Saat (örn. 08:00) ⏰"
-                  value={time}
-                  onChangeText={setTime}
-                  editable={!!selectedDrug}
-                />
-              </View>
-              {editDrugId ? (
-                <TouchableOpacity style={[styles.addButton, !(selectedDrug && dose && time) && { opacity: 0.5 }]} onPress={updateDrug} disabled={!(selectedDrug && dose && time)}>
-                  <Text style={styles.addButtonText}>Güncelle</Text>
-                </TouchableOpacity>
-              ) : (
-                <TouchableOpacity style={[styles.addButton, !(selectedDrug && dose && time) && { opacity: 0.5 }]} onPress={addDrug} disabled={!(selectedDrug && dose && time)}>
-                  <Text style={styles.addButtonText}>Ekle</Text>
-                </TouchableOpacity>
-              )}
-            </>
-          )}
-        </View>
-        <Text style={styles.sectionTitle}>İlaçlarım</Text>
+        <Calendar
+          current={selectedDate}
+          onDayPress={handleDayPress}
+          markedDates={{
+            ...markedDates,
+            [selectedDate]: { ...markedDates[selectedDate], selected: true, selectedColor: '#1976D2' }
+          }}
+          theme={{
+            arrowColor: '#1976D2',
+            todayTextColor: '#1976D2',
+            selectedDayBackgroundColor: '#1976D2',
+          }}
+          style={styles.calendar}
+        />
+        <Text style={styles.listTitle}>{selectedDate} Günü İlaçları</Text>
         <FlatList
-          data={userDrugs.filter(drug => drug.isActive !== false)}
+          data={todaysDrugs}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <View style={styles.card}>
-              <Text style={styles.cardIcon}>💊</Text>
-              <View style={styles.cardInfoBox}>
-                <Text style={styles.medName}>{item.name}</Text>
-                <Text style={styles.etkenList}>Etken Madde: {item.etkenMadde}</Text>
-                <View style={styles.cardRow}>
-                  <View style={styles.doseBox}><Text style={styles.dose}>{item.dose}</Text></View>
-                  <View style={styles.timeBox}><Text style={styles.time}>{item.time}</Text></View>
-                </View>
-                <View style={{ flexDirection: 'row', marginTop: 8 }}>
-                  <TouchableOpacity style={[styles.actionButton, { backgroundColor: '#E3F2FD', marginRight: 8 }]} onPress={() => startEditDrug(item)}>
-                    <Text style={{ color: '#1976D2', fontWeight: '700' }}>Düzenle</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity style={[styles.actionButton, { backgroundColor: '#FFEBEE' }]} onPress={() => deleteDrug(item.id)}>
-                    <Text style={{ color: '#D32F2F', fontWeight: '700' }}>Sil</Text>
-                  </TouchableOpacity>
+              <View style={styles.infoBox}>
+                <Text style={styles.appName}>{item.name}</Text>
+                <View style={styles.timeBox}><Text style={styles.time}>{item.time}</Text></View>
+                <View style={styles.metaRow}>
+                  <View style={styles.metaBox}>
+                    <Text style={styles.metaLabel}>Etken Madde:</Text>
+                    <Text style={styles.metaValue}>{item.etkenMadde || 'Bilinmiyor'}</Text>
+                  </View>
+                  <View style={styles.metaBox}>
+                    <Text style={styles.metaLabel}>Doz:</Text>
+                    <Text style={styles.metaValue}>{item.dose}</Text>
+                  </View>
                 </View>
               </View>
+              <TouchableOpacity onPress={() => handleDelete(item.id)}>
+                <Text style={styles.actionIcon}>🗑️</Text>
+              </TouchableOpacity>
             </View>
           )}
-          ListEmptyComponent={<View style={styles.emptyBox}><Text style={styles.emptyText}>Henüz ilaç eklenmedi.</Text></View>}
-          contentContainerStyle={{ paddingBottom: 24 }}
+          ListEmptyComponent={<Text style={styles.emptyListText}>Seçili gün için ilaç yok.</Text>}
+          contentContainerStyle={{ paddingBottom: 100 }}
         />
-        <TouchableOpacity style={styles.historyButton} onPress={() => setHistoryModalVisible(true)}>
-          <Text style={styles.historyButtonText}>Geçmişi Gör</Text>
-        </TouchableOpacity>
-        <Modal
-          visible={historyModalVisible}
-          animationType="slide"
-          transparent={true}
-          onRequestClose={() => setHistoryModalVisible(false)}
-        >
-          <View style={styles.modalOverlay}>
-            <View style={styles.modalContent}>
-              <Text style={styles.modalTitle}>İlaç Geçmişi</Text>
-              <FlatList
-                data={[...userDrugs].sort((a, b) => (b.addedAt || '').localeCompare(a.addedAt || ''))}
-                keyExtractor={item => item.id + '_history'}
-                renderItem={({ item }) => (
-                  <DrugHistoryItem item={item} formatDateTime={formatDateTime} />
+      </Animatable.View>
+      <TouchableOpacity
+        style={styles.addButton}
+        onPress={() => {
+          setSelectedDrug(null);
+          setSearch('');
+          setNewDrugName('');
+          setNewDose('');
+          setDate(new Date(selectedDate));
+          setModalVisible(true);
+        }}
+      >
+        <Text style={styles.addButtonText}>+ İlaç Ekle</Text>
+      </TouchableOpacity>
+      <Modal visible={modalVisible} animationType="slide" transparent onRequestClose={() => setModalVisible(false)}>
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>İlaç Ekle</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="İlaç adı ara..."
+              value={search}
+              onChangeText={text => {
+                setSearch(text);
+                setSelectedDrug(null);
+                setNewDrugName('');
+                setNewDose('');
+              }}
+            />
+            {search.length > 0 && !selectedDrug && (
+              <View style={styles.autocompleteBox}>
+                {filteredDrugs.slice(0, 3).map(drug => (
+                  <TouchableOpacity
+                    key={drug.BARKOD}
+                    onPress={() => {
+                      setSelectedDrug(drug);
+                      setNewDrugName(drug["ÜRÜN ADI"] || '');
+                      setNewDose(drug["DOZ MİKTARI"] || 'Bilinmiyor');
+                      setSearch(drug["ÜRÜN ADI"] || '');
+                    }}
+                    style={styles.autocompleteItem}
+                  >
+                    <Text style={styles.autocompleteDrugName}>{(drug["ÜRÜN ADI"] || '').trim()}</Text>
+                    <Text style={styles.autocompleteEtken}>Etken Madde: {drug["ETKEN MADDE"] || 'Bilinmiyor'}</Text>
+                  </TouchableOpacity>
+                ))}
+                {filteredDrugs.length > 3 && (
+                  <Text style={{fontSize:10, color:'#aaa', textAlign:'center', marginTop:2, marginBottom:2}}>Daha fazla sonuç için aramaya devam edin...</Text>
                 )}
-                ListEmptyComponent={<View style={styles.emptyBox}><Text style={styles.emptyText}>Henüz geçmiş yok.</Text></View>}
-                contentContainerStyle={{ paddingBottom: 24 }}
+                {filteredDrugs.length === 0 && <Text style={styles.noResult}>Sonuç yok</Text>}
+              </View>
+            )}
+            {selectedDrug && (
+              <TextInput
+                style={[styles.input, { color: '#1976D2' }]}
+                value={selectedDrug["ETKEN MADDE"] || 'Bilinmiyor'}
+                editable={false}
+                placeholder="Etken Madde"
               />
-              <TouchableOpacity style={styles.closeModalButton} onPress={() => setHistoryModalVisible(false)}>
-                <Text style={styles.closeModalButtonText}>Kapat</Text>
+            )}
+            <TextInput
+              style={styles.input}
+              placeholder="Doz (örn. 500mg)"
+              value={newDose}
+              onChangeText={setNewDose}
+              editable={true}
+            />
+            <TouchableOpacity style={styles.pickerButton} onPress={() => setShowTimePicker(true)}>
+              <Text style={styles.pickerButtonText}>Saat Seç: {date.toTimeString().slice(0, 5)}</Text>
+            </TouchableOpacity>
+            {showTimePicker && (
+              <DateTimePicker
+                value={date}
+                mode="time"
+                is24Hour
+                display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+                onChange={(_, selectedTime) => {
+                  setShowTimePicker(false);
+                  if (selectedTime) setDate(new Date(date.setHours(selectedTime.getHours(), selectedTime.getMinutes())));
+                }}
+              />
+            )}
+            <View style={styles.buttonRow}>
+              <TouchableOpacity style={[styles.modalButton, styles.cancelButton]} onPress={() => setModalVisible(false)}>
+                <Text style={styles.cancelButtonText}>İptal</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.modalButton, styles.saveButton]} onPress={handleAddDrug}>
+                <Text style={styles.saveButtonText}>Kaydet</Text>
               </TouchableOpacity>
             </View>
           </View>
-        </Modal>
-      </Animatable.View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 };
@@ -345,27 +349,47 @@ const styles = StyleSheet.create({
   addPanel: { backgroundColor: '#F5F5F5', borderRadius: 18, padding: 18, marginBottom: 28, shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 12, elevation: 3 },
   panelTitle: { fontSize: 18, fontWeight: '700', color: '#1976D2', marginBottom: 14 },
   inputRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 8 },
-  input: { backgroundColor: '#fff', borderRadius: 8, borderWidth: 1, borderColor: '#eee', padding: 12, fontSize: 15 },
-  autocompleteBox: { backgroundColor: '#fff', borderRadius: 8, borderWidth: 1, borderColor: '#eee', marginTop: 2, marginBottom: 8, maxHeight: 120 },
-  autocompleteItem: {
+  input: {
+    backgroundColor: '#f8f8f8',
+    borderRadius: 6,
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+    fontSize: 13,
+    marginBottom: 6,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+  },
+  autocompleteBox: {
     backgroundColor: '#fff',
-    borderRadius: 10,
-    marginBottom: 8,
-    padding: 12,
+    borderRadius: 8,
+    marginTop: 2,
+    marginBottom: 6,
+    elevation: 2,
     shadowColor: '#000',
     shadowOpacity: 0.04,
-    shadowRadius: 4,
-    elevation: 2,
+    shadowRadius: 2,
+    paddingVertical: 2,
+    maxHeight: 120,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+  },
+  autocompleteItem: {
+    paddingVertical: 7,
+    paddingHorizontal: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f0f0',
+    backgroundColor: '#fafbfc',
+    marginBottom: 2,
+    borderRadius: 6,
   },
   autocompleteContent: {
     flexDirection: 'column',
     alignItems: 'flex-start',
   },
   autocompleteDrugName: {
+    fontSize: 13,
     fontWeight: '700',
     color: '#1976D2',
-    fontSize: 16,
-    marginBottom: 4,
   },
   autocompleteInfoRow: {
     flexDirection: 'row',
@@ -391,19 +415,61 @@ const styles = StyleSheet.create({
   etkenBox: { flexDirection: 'row', alignItems: 'center', marginBottom: 8, marginTop: 2 },
   etkenLabel: { fontSize: 14, color: '#1976D2', fontWeight: '600', marginRight: 4 },
   etkenValue: { fontSize: 14, color: '#444', fontWeight: '500' },
-  addButton: { backgroundColor: '#1976D2', borderRadius: 10, paddingVertical: 14, alignItems: 'center', marginTop: 8 },
-  addButtonText: { color: '#fff', fontSize: 17, fontWeight: '700', letterSpacing: 0.5 },
+  addButton: {
+    backgroundColor: '#1976D2',
+    borderRadius: 16,
+    paddingVertical: 16,
+    alignItems: 'center',
+    marginVertical: 12,
+    width: '80%',
+    alignSelf: 'center',
+    elevation: 2,
+  },
+  addButtonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+    letterSpacing: 0.5,
+  },
   sectionTitle: { fontSize: 18, fontWeight: '700', color: '#222', marginBottom: 14 },
-  card: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#F5F5F5', borderRadius: 18, padding: 16, marginBottom: 16, shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 10, elevation: 2 },
+  card: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 8,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    shadowColor: '#000',
+    shadowOpacity: 0.02,
+    shadowRadius: 1,
+    elevation: 1,
+  },
   cardIcon: { fontSize: 28, marginRight: 14 },
   cardInfoBox: { flex: 1 },
   medName: { fontSize: 16, fontWeight: '700', color: '#1976D2', marginBottom: 2 },
   etkenList: { fontSize: 13, color: '#888', marginBottom: 4 },
   cardRow: { flexDirection: 'row', alignItems: 'center' },
   doseBox: { backgroundColor: '#E3EAFD', borderRadius: 8, paddingHorizontal: 10, paddingVertical: 4, marginRight: 8 },
-  dose: { fontSize: 15, color: '#1976D2', fontWeight: '500' },
-  timeBox: { backgroundColor: '#E3EAFD', borderRadius: 8, paddingHorizontal: 12, paddingVertical: 4 },
-  time: { fontSize: 15, color: '#1976D2', fontWeight: '600' },
+  dose: {
+    fontSize: 11,
+    color: '#666',
+    marginTop: 2,
+  },
+  timeBox: {
+    backgroundColor: '#F0F4FA',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    alignSelf: 'flex-start',
+    marginBottom: 2,
+  },
+  time: {
+    fontSize: 12,
+    color: '#1976D2',
+    fontWeight: '600',
+  },
   emptyBox: { backgroundColor: '#F5F5F5', borderRadius: 14, padding: 18, alignItems: 'center', marginTop: 12 },
   emptyText: { color: '#888', fontSize: 15 },
   actionButton: {
@@ -513,6 +579,90 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 2,
   },
+  calendar: {
+    marginBottom: 24,
+  },
+  listTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#222',
+    marginBottom: 14,
+  },
+  infoBox: { flex: 1 },
+  appName: {
+    fontSize: 13,
+    fontWeight: 'bold',
+    color: '#1976D2',
+    marginBottom: 2,
+  },
+  actionIcon: {
+    fontSize: 22,
+    color: '#90A4AE',
+    marginLeft: 10,
+  },
+  emptyListText: {
+    color: '#888',
+    fontSize: 15,
+    textAlign: 'center',
+    marginTop: 100,
+  },
+  pickerButton: {
+    backgroundColor: '#1976D2',
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  pickerButtonText: {
+    color: '#fff',
+    fontWeight: '700',
+    fontSize: 15,
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  cancelButton: {
+    backgroundColor: '#E3F2FD',
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+  },
+  cancelButtonText: {
+    color: '#1976D2',
+    fontWeight: '700',
+    fontSize: 15,
+  },
+  saveButton: {
+    backgroundColor: '#1976D2',
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+  },
+  saveButtonText: {
+    color: '#fff',
+    fontWeight: '700',
+    fontSize: 15,
+  },
+  modalButton: {
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    marginHorizontal: 5,
+  },
+  autocompleteEtken: {
+    fontSize: 11,
+    color: '#888',
+  },
+  metaRow: { flexDirection: 'row', gap: 8, marginTop: 2 },
+  metaBox: { backgroundColor: '#F5F5F5', borderRadius: 6, paddingHorizontal: 8, paddingVertical: 3, marginRight: 6 },
+  metaLabel: { fontSize: 10, color: '#888', fontWeight: 'bold' },
+  metaValue: { fontSize: 11, color: '#444', fontWeight: '500' },
 });
 
 export default MedicationScreen;

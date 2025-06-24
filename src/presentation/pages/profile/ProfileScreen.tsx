@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, Dimensions, Animated } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, Dimensions, Animated, Modal, Button, TextInput } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
 interface ProfileScreenProps {
@@ -78,40 +78,107 @@ const BackgroundAnimation = () => {
 };
 
 const ProfileScreen: React.FC<ProfileScreenProps> = ({ onLogout }) => {
+  const [editModalVisible, setEditModalVisible] = React.useState(false);
+  const [profile, setProfile] = React.useState(mockProfile);
+  const [editProfile, setEditProfile] = React.useState(profile);
+
+  const handleEdit = () => {
+    setEditProfile(profile);
+    setEditModalVisible(true);
+  };
+  const handleSave = () => {
+    setProfile(editProfile);
+    setEditModalVisible(false);
+  };
+  const handleCancel = () => {
+    setEditModalVisible(false);
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
       <BackgroundAnimation />
       <ScrollView contentContainerStyle={styles.container}>
         <Animatable.View animation="slideInUp" duration={800} style={styles.profileCard}>
           <View style={styles.photoContainer}>
-            <Image source={mockProfile.photo} style={styles.photo} />
+            <Image source={profile.photo} style={styles.photo} />
           </View>
           <Text style={styles.title}>Profil Bilgileri</Text>
           <View style={styles.infoRow}>
             <Text style={styles.label}>İsim:</Text>
-            <Text style={styles.value}>{mockProfile.name}</Text>
+            <Text style={styles.value}>{profile.name}</Text>
           </View>
           <View style={styles.infoRow}>
             <Text style={styles.label}>E-posta:</Text>
-            <Text style={styles.value}>{mockProfile.email}</Text>
+            <Text style={styles.value}>{profile.email}</Text>
           </View>
           <View style={styles.infoRow}>
             <Text style={styles.label}>Tanı Tarihi:</Text>
-            <Text style={styles.value}>{mockProfile.diagnosisDate}</Text>
+            <Text style={styles.value}>{profile.diagnosisDate}</Text>
           </View>
           <View style={styles.infoRow}>
             <Text style={styles.label}>Tedavi Süreci:</Text>
-            <Text style={styles.value}>{mockProfile.treatmentProcess}</Text>
+            <Text style={styles.value}>{profile.treatmentProcess}</Text>
           </View>
           <View style={styles.infoRow}>
             <Text style={styles.label}>Doktor:</Text>
-            <Text style={styles.value}>{mockProfile.doctorName}</Text>
+            <Text style={styles.value}>{profile.doctorName}</Text>
           </View>
-          <TouchableOpacity style={styles.editButton} disabled>
+          <TouchableOpacity style={styles.editButton} onPress={handleEdit}>
             <Text style={styles.editButtonText}>Düzenle</Text>
           </TouchableOpacity>
         </Animatable.View>
       </ScrollView>
+      <Modal
+        visible={editModalVisible}
+        transparent
+        animationType="fade"
+        onRequestClose={handleCancel}
+      >
+        <View style={{ flex:1, backgroundColor:'rgba(0,0,0,0.2)', justifyContent:'center', alignItems:'center' }}>
+          <View style={{ backgroundColor:'#fff', borderRadius:12, padding:24, minWidth:250, alignItems:'center' }}>
+            <Text style={{ fontSize:18, fontWeight:'700', color:'#1976D2', marginBottom:16 }}>Profil Düzenle</Text>
+            <TextInput
+              style={{ borderWidth:1, borderColor:'#eee', borderRadius:8, padding:8, width:220, marginBottom:10 }}
+              value={editProfile.name}
+              onChangeText={text => setEditProfile({ ...editProfile, name: text })}
+              placeholder="İsim"
+            />
+            <TextInput
+              style={{ borderWidth:1, borderColor:'#eee', borderRadius:8, padding:8, width:220, marginBottom:10 }}
+              value={editProfile.email}
+              onChangeText={text => setEditProfile({ ...editProfile, email: text })}
+              placeholder="E-posta"
+              keyboardType="email-address"
+            />
+            <TextInput
+              style={{ borderWidth:1, borderColor:'#eee', borderRadius:8, padding:8, width:220, marginBottom:10 }}
+              value={editProfile.diagnosisDate}
+              onChangeText={text => setEditProfile({ ...editProfile, diagnosisDate: text })}
+              placeholder="Tanı Tarihi (YYYY-AA-GG)"
+            />
+            <TextInput
+              style={{ borderWidth:1, borderColor:'#eee', borderRadius:8, padding:8, width:220, marginBottom:10 }}
+              value={editProfile.treatmentProcess}
+              onChangeText={text => setEditProfile({ ...editProfile, treatmentProcess: text })}
+              placeholder="Tedavi Süreci"
+            />
+            <TextInput
+              style={{ borderWidth:1, borderColor:'#eee', borderRadius:8, padding:8, width:220, marginBottom:18 }}
+              value={editProfile.doctorName}
+              onChangeText={text => setEditProfile({ ...editProfile, doctorName: text })}
+              placeholder="Doktor"
+            />
+            <View style={{ flexDirection:'row', justifyContent:'space-between', width:220 }}>
+              <TouchableOpacity onPress={handleCancel} style={{ flex:1, backgroundColor:'#E3F2FD', borderRadius:8, padding:10, marginRight:8, alignItems:'center' }}>
+                <Text style={{ color:'#1976D2', fontWeight:'700' }}>İptal</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={handleSave} style={{ flex:1, backgroundColor:'#1976D2', borderRadius:8, padding:10, alignItems:'center' }}>
+                <Text style={{ color:'#fff', fontWeight:'700' }}>Kaydet</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
