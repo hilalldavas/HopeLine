@@ -1,203 +1,136 @@
-# HopeLine Projesi Teknik Dokümantasyonu
-
-Bu doküman, HopeLine projesinin teknik yapısı, mimarisi, özellikleri ve kurulum adımları hakkında detaylı bilgi sağlamak amacıyla oluşturulmuştur.
+# HopeLineProject Dokümantasyonu
 
 ## 1. Proje Hakkında
+HopeLineProject, kanser hastalarının tedavi süreçlerini kolaylaştırmak ve sağlık takibini dijitalleştirmek amacıyla geliştirilmiş bir mobil uygulamadır. Kullanıcılar; ilaç takibi, semptom, ruh hali, beslenme, randevu ve raporlama gibi birçok sağlık verisini kolayca kaydedebilir ve takip edebilir. Ayrıca, entegre yapay zeka asistanı ile anlık destek alabilirler.
 
-HopeLine, kanser hastalarının tedavi süreçlerini kolaylaştırmayı hedefleyen bir mobil sağlık uygulamasıdır. Kullanıcıların ilaç takibi, semptom yönetimi, ruh hali ve beslenme takibi gibi önemli sağlık verilerini kaydetmelerine ve bu verileri raporlamalarına olanak tanır. Ayrıca, entegre yapay zeka asistanı ile kullanıcılara anlık destek sunar.
+## 2. Kullanılan Teknolojiler
+- **React Native**: Mobil uygulama geliştirme
+- **TypeScript**: Tip güvenliği için
+- **@google/generative-ai**: Yapay zeka asistanı (Gemini API)
+- **react-native-calendars**: Takvim ve randevu yönetimi
+- **Victory Native**: Grafik ve veri görselleştirme
+- **AsyncStorage**: Lokal veri saklama
+- **Jest**: Test altyapısı
+- **Diğerleri**: react-navigation, reanimated, animatable, svg, html-to-pdf vb.
 
-## 2. Teknoloji Yığını
-
-Proje, modern ve yaygın olarak kullanılan teknolojiler üzerine kurulmuştur:
-
-- **Platform:** React Native
-- **Dil:** TypeScript
-- **Yapay Zeka:** Google Gemini (`@google/generative-ai`)
-- **UI Kütüphaneleri:**
-  - `react-native-calendars`: Takvim özellikleri için.
-  - `victory-native` & `react-native-svg`: Veri görselleştirme ve grafikler için.
-  - `react-native-animatable`: Animasyonlar için.
-- **Navigasyon:** Özel state-tabanlı yönlendirme (`App.tsx` içinde).
-- **Asenkron Depolama:** `@react-native-async-storage/async-storage`
-- **Kod Kalitesi:** ESLint, Prettier
-- **Test:** Jest
-
-## 3. Proje Mimarisi
-
-Proje, sürdürülebilir ve ölçeklenebilir bir kod tabanı sağlamak için **Katmanlı Mimari (Layered Architecture)** prensiplerini benimser. Ana kaynak kodu `src/` dizini altında aşağıdaki gibi organize edilmiştir:
-
+## 3. Klasör ve Dosya Yapısı
 ```
-/src
-├── assets/         # Resimler, fontlar gibi statik varlıklar
-├── core/           # Uygulama genelindeki temel mantık (tema, sabitler, servisler)
-├── data/           # Veri katmanı (veri kaynakları, repolar, modeller)
-├── domain/         # İş mantığı katmanı (entity'ler, use case'ler)
-├── presentation/   # Sunum katmanı (ekranlar, component'ler, view-model'ler)
-│   ├── components/ # Yeniden kullanılabilir UI component'leri (Button, Input, Chatbox)
-│   └── pages/      # Uygulama ekranları (Login, Dashboard, Medication vb.)
-└── services/       # Üçüncü parti servislerle iletişim (örn: geminiService.ts)
+HopeLineProject/
+├── src/
+│   ├── assets/           # Görseller ve statik dosyalar
+│   ├── core/             # Tema, sabitler, servisler
+│   ├── data/             # Modeller, veri kaynakları, repository'ler
+│   ├── domain/           # Entity ve use-case'ler
+│   ├── presentation/     # Ekranlar, component'ler, viewmodel'ler
+│   │   ├── components/   # CustomButton, CustomInput, Chatbox vb.
+│   │   └── pages/        # auth, dashboard, medication, profile vb.
+│   ├── services/         # Harici servisler (ör: geminiService)
+│   └── types/            # Tip tanımları
+├── App.tsx               # Uygulama giriş noktası
+├── package.json          # Bağımlılıklar
+├── ...                   # Diğer config ve platform dosyaları
 ```
 
-Bu yapı, sorumlulukların ayrılmasını (Separation of Concerns) sağlayarak kodun daha okunabilir, yönetilebilir ve test edilebilir olmasına yardımcı olur.
+## 4. Kurulum ve Çalıştırma
+1. **Projeyi klonlayın:**
+   ```bash
+   git clone <repo-url>
+   cd HopeLineProject
+   ```
+2. **Bağımlılıkları yükleyin:**
+   ```bash
+   npm install
+   # veya
+   yarn install
+   ```
+3. **iOS için pod yükleyin:**
+   ```bash
+   cd ios && pod install && cd ..
+   ```
+4. **Projeyi başlatın:**
+   - Android: `npm run android`
+   - iOS: `npm run ios`
 
-## 4. Kurulum ve Başlatma
+## 5. Temel Özellikler
+### 5.1. Giriş/Kayıt
+- Kullanıcılar e-posta ve şifre ile kayıt olabilir ve giriş yapabilir.
 
-Projeyi yerel geliştirme ortamınızda çalıştırmak için aşağıdaki adımları izleyin:
+### 5.2. Ana Sayfa (Dashboard)
+- Kullanıcıya özet sağlık verileri ve hızlı erişim sunar.
 
-1.  **Depoyu Klonlayın:**
-    ```bash
-    git clone <repository-url>
-    cd HopeLineProject
-    ```
+### 5.3. İlaç Takibi
+- Kullanıcılar ilaçlarını takvim üzerinden gün gün ekleyebilir.
+- İlaç eklerken otomatik arama, doz ve etken madde desteği vardır.
+- Eklenen ilaçlar modern kartlarda, etken madde ve doz bilgisiyle gösterilir.
 
-2.  **Bağımlılıkları Yükleyin:**
-    ```bash
-    npm install
-    # veya
-    yarn install
-    ```
+### 5.4. Takvim & Randevu
+- Kullanıcılar randevularını takvimde görebilir ve yeni randevu ekleyebilir.
+- Randevu ekleme, silme ve gün bazlı listeleme desteği vardır.
 
-3.  **iOS için Pod'ları Yükleyin:**
-    ```bash
-    cd ios && pod install && cd ..
-    ```
+### 5.5. Semptom, Ruh Hali, Beslenme, Raporlama
+- Her biri için ayrı ekranlar ve veri giriş formları bulunur.
+- Kullanıcılar günlük sağlık durumlarını kaydedebilir.
 
-4.  **Uygulamayı Başlatın:**
-    - **Android:**
-      ```bash
-      npm run android
-      ```
-    - **iOS:**
-      ```bash
-      npm run ios
-      ```
+### 5.6. Profil
+- Kullanıcı bilgileri görüntülenir ve düzenlenebilir.
+- Profil fotoğrafı, isim, e-posta, tanı tarihi, tedavi süreci ve doktor bilgisi yer alır.
 
-## 5. Uygulama Akışı ve Navigasyon
+### 5.7. Akıllı Asistan (Chatbox)
+- Kullanıcılar sağlıkla ilgili sorularını yazabilir.
+- Google Gemini API ile Türkçe, empatik ve yapılandırılmış yanıtlar alınır.
+- Acil durumlarda uyarı verir.
 
-Proje, `React Navigation` gibi standart bir kütüphane yerine `App.tsx` dosyasında yönetilen **state tabanlı** özel bir navigasyon yapısı kullanır.
-
--   **Giriş Durumu (`isLoggedIn`):** Kullanıcının giriş yapıp yapmadığını kontrol eden bir state mevcuttur. Bu state, gösterilecek ekranları belirler (Giriş/Kayıt veya Ana Uygulama).
--   **Ekran Yönlendirme (`renderScreen`):** Bu fonksiyon, `isLoggedIn` ve `activeTab` state'lerine göre hangi ekranın render edileceğine karar verir.
--   **Sekme Çubuğu (`TabBar`):** Kullanıcı giriş yaptığında, ekranın altında `TabBar` componenti belirir ve `activeTab` state'ini güncelleyerek ekranlar arası geçişi sağlar.
-
-**`App.tsx`'den Örnek Kod:**
-
-```javascript
-// App.tsx
-
-const App = () => {
-  // Aktif sekmeyi ve giriş durumunu yöneten state'ler
-  const [activeTab, setActiveTab] = useState('dashboard');
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // Başlangıçta giriş yapılmış varsayılıyor
-
-  const renderScreen = () => {
-    // Eğer giriş yapılmamışsa, login veya register ekranını göster
-    if (!isLoggedIn) {
-      // ... kimlik doğrulama ekranları
-    }
-
-    // Giriş yapılmışsa, aktif sekmeye göre ilgili ekranı göster
-    switch (activeTab) {
-      case 'dashboard':
-        return <DashboardScreen />;
-      case 'medication':
-        return <MedicationScreen />;
-      // ... diğer ekranlar
-      default:
-        return <DashboardScreen />;
-    }
-  };
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
-        {renderScreen()}
-      </View>
-      {/* Giriş yapılmışsa TabBar'ı göster */}
-      {isLoggedIn && (
-        <TabBar 
-          activeTab={activeTab} 
-          onTabPress={setActiveTab} 
-        />
-      )}
-    </SafeAreaView>
-  );
+## 6. Örnek Kod Parçaları
+### İlaç Ekleme Fonksiyonu
+```ts
+const handleAddDrug = () => {
+  if (!newDrugName || !newDose || !date) return;
+  setUserDrugs([
+    ...userDrugs,
+    {
+      id: Date.now().toString(),
+      name: newDrugName,
+      dose: newDose,
+      time: date.toTimeString().slice(0, 5),
+      etkenMadde: selectedDrug ? selectedDrug["ETKEN MADDE"] : 'Bilinmiyor',
+      addedAt: selectedDate + 'T' + date.toTimeString().slice(0, 5),
+      isActive: true,
+    },
+  ]);
+  setModalVisible(false);
+  setNewDrugName('');
+  setNewDose('');
+  setDate(new Date(selectedDate));
+  setSelectedDrug(null);
+  setSearch('');
 };
 ```
 
-## 6. Öne Çıkan Özellikler ve Modüller
-
-### Akıllı Asistan (Chatbox)
-
-Uygulamanın en önemli özelliklerinden biri, kullanıcılara destek olmak için tasarlanmış yapay zeka tabanlı sohbet kutusudur. Bu component, `src/presentation/components/Chatbox.tsx` dosyasında yer alır ve Google Gemini API'sini kullanır.
-
-**Temel İşleyiş:**
-
-1.  **Başlatma:** Component, `GoogleGenerativeAI` istemcisini `API_KEY` ile başlatır.
-2.  **Kullanıcı Girdisi:** Kullanıcı, belirtilerini veya sorusunu metin giriş alanına yazar.
-3.  **API İsteği (`generateResponse`):** `Gönder` butonuna basıldığında, kullanıcının mesajı özel bir prompt şablonu ile Gemini API'sine gönderilir. Bu prompt, yapay zekadan belirli bir `JSON` formatında cevap vermesini ister.
-4.  **JSON Yanıtı:** API'den gelen yanıt, içerisinde `responseText`, `identifiedSymptom` ve `isUrgent` alanlarını içeren bir JSON nesnesidir.
-5.  **Yanıtın İşlenmesi:** Gelen JSON parse edilir. Yanıt metni ekranda gösterilir ve eğer `isUrgent` (acil) durumu `true` ise kullanıcıya bir uyarı gösterilir.
-
-**`Chatbox.tsx`'den Örnek Kod:**
-
-```javascript
-// src/presentation/components/Chatbox.tsx
-
+### Chatbox Kullanımı
+```ts
 const generateResponse = async (userMessage: string) => {
-    // ... (istemci kontrolü)
-    try {
-      setIsLoading(true);
-      // ...
-
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro-latest', /* ... safety settings */ });
-      
-      // AI'dan yapısal JSON dönmesini isteyen özel prompt
-      const prompt = `
-        Context: You are an AI assistant in a health app for cancer patients. Your role is to analyze user input and provide a structured JSON response in Turkish.
-        Patient's input: "${userMessage}"
-        Output Format:
-        Return ONLY a valid JSON object with this structure:
-        {
-          "responseText": "Your empathetic, reassuring response in Turkish.",
-          "identifiedSymptom": "The main symptom identified in Turkish, or null.",
-          "isUrgent": true if urgent, otherwise false.
-        }
-      `;
-
-      const result = await chat.sendMessage(prompt);
-      const response = await result.response;
-      const text = response.text();
-
-      // Yanıtı parse et ve state'i güncelle
-      const cleanedText = text.replace(/```json/g, '').replace(/```/g, '').trim();
-      const parsedResponse = JSON.parse(cleanedText);
-      
-      setMessages(prev => [...prev, { text: parsedResponse.responseText, isUser: false }]);
-
-      // Acil durum kontrolü
-      if (parsedResponse.isUrgent) {
-        Alert.alert('Acil Durum Uyarısı!', '...');
-      }
-      
-    } catch (error: any) {
-      // ... (hata yönetimi)
-    } finally {
-      // ...
+  // ...
+  const prompt = `
+    Context: You are an AI assistant in a health app for cancer patients. Your role is to analyze user input and provide a structured JSON response in Turkish.
+    Patient's input: "${userMessage}"
+    Output Format:
+    Return ONLY a valid JSON object with this structure:
+    {
+      "responseText": "Your empathetic, reassuring response in Turkish.",
+      "identifiedSymptom": "The main symptom identified in Turkish, or null.",
+      "isUrgent": true if urgent, otherwise false.
     }
+  `;
+  // ...
 };
 ```
 
-### Uygulama Ekranları
+## 7. Geliştirici Notları ve Katkı Sağlama
+- Kodda Clean Architecture prensipleri uygulanmıştır.
+- Katmanlar arası bağımlılık minimumda tutulmuştur.
+- Katkı sağlamak için fork'layıp PR gönderebilirsiniz.
+- Sorularınız için proje sahibiyle iletişime geçebilirsiniz.
 
-Uygulama, `src/presentation/pages/` dizini altında çeşitli modüllere ayrılmış ekranlardan oluşur:
+---
 
--   **auth:** `LoginScreen`, `RegisterScreen`
--   **dashboard:** `DashboardScreen` (Ana karşılama ekranı)
--   **calendar:** `CalendarScreen` (Randevu ve etkinlik takvimi)
--   **medication:** `MedicationScreen` (İlaç takip ve hatırlatma)
--   **mood:** `MoodScreen` (Ruh hali takibi)
--   **nutrition:** `NutritionScreen` (Beslenme takibi)
--   **profile:** `ProfileScreen` (Kullanıcı profili ve ayarlar)
--   **report:** `ReportScreen` (Sağlık verilerinin raporlanması)
--   **symptom:** `SymptomScreen` (Semptom takibi) 
+Her türlü katkı ve geri bildirim için teşekkürler! 
